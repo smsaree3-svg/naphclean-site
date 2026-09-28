@@ -162,7 +162,12 @@ section[id]{scroll-margin-top:calc(var(--hdr-h) + 16px)}
 .price b{font:750 1.45rem/1 var(--display);color:var(--ink)}
 .price s{color:var(--muted);font-size:.95rem}
 .price .off{color:var(--deal);font-weight:650;font-size:.86rem}
-.card .act{margin-top:auto;padding-top:6px}
+.card .act{margin-top:auto;padding-top:6px;display:grid;gap:8px}
+.btn.light{--b:#fff;--bh:#E6EEFF;--bi:var(--ink)}
+.planbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:380px){.planbtns{grid-template-columns:1fr}}
+.mbar .acts{display:flex;gap:8px;flex:1;max-width:340px;margin-left:auto}
+.mbar .acts .btn{flex:1;max-width:none;margin:0;padding:14px 10px;font-size:.95rem}
 .stepper{display:inline-flex;align-items:center;justify-content:space-between;background:var(--ink);color:#fff;border-radius:999px;padding:4px;width:100%}
 .stepper button{border:0;background:rgba(255,255,255,.12);color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.25rem;line-height:1;display:grid;place-items:center;flex:none}
 .stepper button:hover{background:rgba(255,255,255,.22)}
@@ -882,8 +887,8 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
   function actHTML(p){
     if(soldOut(p)) return '<button class="btn block ghost" type="button" disabled>Out of stock</button>';
     var q=qty(p.id);
-    return q ? '<div class="stepper" role="group" aria-label="Quantity of '+esc(p.title)+'"><button type="button" data-dec="'+p.id+'" aria-label="Remove one">−</button><span>'+q+' in bag</span><button type="button" data-inc="'+p.id+'" aria-label="Add one">+</button></div>'
-             : '<button class="btn block" type="button" data-add="'+p.id+'">Add to bag</button>';
+    return q ? '<div class="stepper" role="group" aria-label="Quantity of '+esc(p.title)+'"><button type="button" data-dec="'+p.id+'" aria-label="Remove one">−</button><span>'+q+' in bag</span><button type="button" data-inc="'+p.id+'" aria-label="Add one">+</button></div><button class="btn navy block" type="button" data-buy="'+p.id+'">Buy now</button>'
+             : '<button class="btn block" type="button" data-add="'+p.id+'">Add to bag</button><button class="btn navy block" type="button" data-buy="'+p.id+'">Buy now</button>';
   }
   function cardHTML(p){
     var pp=per100(p);
@@ -903,6 +908,8 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
     if(h){ setHero(h.dataset.hero); setShop(h.dataset.hero); return; }
     if(s){ setShop(s.dataset.shop); setHero(s.dataset.shop); return; }
     var a=e.target.closest("[data-add]"), i=e.target.closest("[data-inc]"), d=e.target.closest("[data-dec]");
+    var bn=e.target.closest("[data-buy]");
+    if(bn){ var bid=bn.dataset.buy; if(!P[bid]||soldOut(P[bid])) return; if(!qty(bid)) setQty(bid,1); location.hash="checkout"; return; }
     if(a){ var id=a.dataset.add; if(!P[id]||soldOut(P[id])) return; setQty(id,qty(id)+1); toast(P[id],1); }
     else if(i){ setQty(i.dataset.inc,qty(i.dataset.inc)+1); }
     else if(d){ setQty(d.dataset.dec,qty(d.dataset.dec)-1); }
@@ -958,13 +965,14 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
       '<div class="packs">'+ids.map(function(id){ var p=P[id]; return '<div class="pk"><img src="'+img(p.images[0])+'" alt=""><span><b>'+r.counts[id]+' × '+esc(p.size_label)+'</b> '+esc(p.collection)+'</span><span class="tnum">'+inr(p.price*r.counts[id])+'</span></div>'; }).join("")+'</div>'+
       '<div class="sum"><span>Cheapest mix'+(r.grams>need?', with '+(r.grams-need)+'g spare':'')+'</span><b class="tnum">'+inr(r.cost)+'</b></div>'+
       (mrp>r.cost?'<p style="font-size:.88rem;color:#AFC3F3;margin-top:-6px">You save '+inr(mrp-r.cost)+' on M.R.P. One refill lasts 6 to 8 weeks.</p>':'')+
-      '<button class="btn block" type="button" id="addPlan">Add this plan to bag'+ICON.arrow+'</button>';
+      '<div class="planbtns"><button class="btn block" type="button" id="addPlan">Add to bag</button><button class="btn light block" type="button" id="buyPlan">Buy now'+ICON.arrow+'</button></div>';
     $("result").innerHTML=h;
   }
   $("spaces").addEventListener("click",function(e){ var b=e.target.closest("[data-sp]"); if(!b) return; plan[b.dataset.sp]=Math.max(0,Math.min(20,plan[b.dataset.sp]+(+b.dataset.d))); renderSpaces(); renderPlan(); });
   $("result").addEventListener("click",function(e){
     var pc=e.target.closest("[data-pc]"); if(pc){ planC=pc.dataset.pc; renderPlan(); return; }
-    if(e.target.closest("#addPlan") && planPick){ Object.keys(planPick.counts).forEach(function(id){ bag[id]=(bag[id]||0)+planPick.counts[id]; }); saveBag(); openBag(); }
+    var ap=e.target.closest("#addPlan"), bp=e.target.closest("#buyPlan");
+    if((ap||bp) && planPick){ Object.keys(planPick.counts).forEach(function(id){ setQty(id,(bag[id]||0)+planPick.counts[id]); }); if(bp){ location.hash="checkout"; } else { openBag(); } }
   });
 
   /* ================= bag drawer ================= */
@@ -1071,8 +1079,8 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
       function add(){ setQty(p.id,qty(p.id)+q); toast(p,q); }
       $("pAdd").addEventListener("click",add);
       $("pBuy").addEventListener("click",function(){ setQty(p.id,qty(p.id)+q); location.hash="checkout"; });
-      pdpBar=function(){ return '<div class="p"><b class="tnum">'+inr(q*p.price)+'</b><small>'+(q>1?q+" × ":"")+esc(C)+' '+esc(p.size_label)+'</small></div><button class="btn" type="button" id="mAdd">Add to bag</button>'; };
-      $("mbar").onclick=function(e){ if(e.target.closest("#mAdd")) add(); };
+      pdpBar=function(){ return '<div class="p"><b class="tnum">'+inr(q*p.price)+'</b><small>'+(q>1?q+" × ":"")+esc(C)+' '+esc(p.size_label)+'</small></div><div class="acts"><button class="btn" type="button" id="mAdd">Add to bag</button><button class="btn navy" type="button" id="mBuy">Buy now</button></div>'; };
+      $("mbar").onclick=function(e){ if(e.target.closest("#mAdd")) add(); else if(e.target.closest("#mBuy")) $("pBuy").click(); };
     }
     paintMbar();
     document.title=p.title+" | NaphClean";
