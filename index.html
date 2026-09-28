@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <script>if(location.protocol==="http:"&&/naphclean\.com$/.test(location.hostname))location.replace("https://naphclean.com"+location.pathname+location.search+location.hash);</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Lab-tested 99.5%+ pure NaphClean naphthalene balls for wardrobes, cupboards and storage. Classic White or Multicolour, 50g to 400g, free shipping across India. Bulk orders welcome.">
+<meta name="description" content="Lab-tested 99.5%+ pure NaphClean naphthalene balls for wardrobes, cupboards and storage. Mess-free zip-lock packs, 50g to 400g, free shipping across India. A family-owned, women-led small business from Kolkata.">
 <link rel="canonical" href="https://naphclean.com/">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <meta name="theme-color" content="#0B2A78">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NaphClean">
 <meta property="og:title" content="NaphClean | Premium Naphthalene Balls for Wardrobes and Homes">
-<meta property="og:description" content="Lab-tested 99.5%+ pure NaphClean naphthalene balls for wardrobes, cupboards and storage. Classic White or Multicolour, 50g to 400g, free shipping across India. Bulk orders welcome.">
+<meta property="og:description" content="Lab-tested 99.5%+ pure NaphClean naphthalene balls for wardrobes, cupboards and storage. Mess-free zip-lock packs, 50g to 400g, free shipping across India. A family-owned, women-led small business from Kolkata.">
 <meta property="og:url" content="https://naphclean.com/">
 <meta property="og:image" content="https://naphclean.com/images/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -235,6 +235,18 @@ section[id]{scroll-margin-top:calc(var(--hdr-h) + 16px)}
 
 /* compare + why */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.story{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center;background:linear-gradient(135deg,#FFF6F2 0%,#F4F8FF 60%);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,4vw,52px)}
+.story-tx{display:grid;gap:14px}
+.story h2{font-size:clamp(2rem,4vw,3rem)}
+.story-tx p:not(.eyebrow){color:var(--muted);font-size:1.05rem}
+.values{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.values li{display:grid;grid-template-columns:auto 1fr;column-gap:16px;row-gap:2px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;box-shadow:var(--sh-1)}
+.values .vi{grid-row:span 2;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--mist);color:var(--navy)}
+.values li:nth-child(2) .vi{background:#FDE8EF;color:#B23A62}
+.values li:nth-child(3) .vi{background:#E9F6DA;color:var(--green-d)}
+.values b{color:var(--ink);font-size:1.15rem}
+.values li>span:last-child{color:var(--muted);font-size:.93rem}
+@media (max-width:900px){.story{grid-template-columns:1fr;gap:24px}}
 @media (max-width:860px){.split{grid-template-columns:1fr}}
 .tile{border-radius:var(--r-lg);overflow:hidden;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}
 .tile img{width:100%;height:auto;aspect-ratio:16/11;object-fit:cover}
@@ -279,6 +291,12 @@ section[id]{scroll-margin-top:calc(var(--hdr-h) + 16px)}
 .f2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media (max-width:520px){.f2{grid-template-columns:1fr}}
 .fld{display:grid;gap:6px;align-content:start}
+.more{grid-column:1/-1;border:1px dashed var(--line-2);border-radius:14px;padding:12px 14px}
+.more summary{cursor:pointer;font-weight:650;color:var(--blue);font-size:.93rem;list-style:none}
+.more summary::-webkit-details-marker{display:none}
+.more summary::before{content:"+ "}
+.more[open] summary::before{content:"− "}
+.more[open] summary{margin-bottom:12px}
 .fld label{font-weight:650;font-size:.88rem;color:var(--ink)}
 .inp{width:100%;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:13px 14px;transition:border-color .2s,box-shadow .2s;color:var(--text)}
 .inp:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 4px rgba(31,95,214,.14)}
@@ -446,6 +464,9 @@ textarea.inp{min-height:96px;resize:vertical}
 .stk.out{background:#FDE8EC;color:var(--deal)}
 .sizes button.so{opacity:.55}
 .btn[disabled]{opacity:.6;cursor:not-allowed;box-shadow:none}
+.mine{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:16px}
+.mine small{width:100%;font:500 .7rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.mine .pill{text-decoration:none!important;font-family:var(--mono)}
 .demo-note{background:#FFF6E3;color:#8A5300;border:1px solid #F6DFAE;border-radius:14px;padding:10px 14px;font-size:.9rem;margin-bottom:18px}
 .flash{background:#FDE8EC;color:#9E1F36;border-radius:14px;padding:12px 14px;font-weight:600;margin:0 0 18px}
 
@@ -553,7 +574,7 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
 
 <div class="mnav" id="mnav" hidden role="dialog" aria-label="Menu">
   <div class="top"><span class="brand" style="margin:0"><img src="images/logo.webp" alt="" width="40" height="40"><b>NaphClean</b></span><button class="iconbtn" type="button" data-close aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-  <a href="#shop" data-close>Shop</a><a href="#how" data-close>How it works</a><a href="#planner" data-close>Pack planner</a><a href="#bulk" data-close>Bulk orders</a><a href="#track" data-close>Track order</a><a href="#faq" data-close>Help</a>
+  <a href="#shop" data-close>Shop</a><a href="#how" data-close>How it works</a><a href="#planner" data-close>Pack planner</a><a href="#story" data-close>Our story</a><a href="#bulk" data-close>Bulk orders</a><a href="#track" data-close>Track order</a><a href="#faq" data-close>Help</a>
   <div class="foot"><span>+91 62894 79696</span><span>care@naphclean.com</span><span>Mon to Sat, 9 AM to 6 PM IST</span></div>
 </div>
 
@@ -571,8 +592,8 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
         </div>
         <ul class="proof">
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>99.5%+ pure</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Every batch lab tested</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Resealable zip pouch</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Zip-lock pack, no mess</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Women-led family business</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Made in Kolkata</li>
         </ul>
       </div>
@@ -672,8 +693,9 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
         </article>
         <article class="tile">
           <img src="images/life1.webp" alt="NaphClean 100g pouch on a shelf beside folded linen" loading="lazy" width="1000" height="894">
-          <div class="tx"><h3>The pouch keeps them potent</h3>
-            <p>An airtight, resealable zip pouch keeps unused balls at full strength until you need them. Best before 36 months from packing, so stocking up is safe.</p>
+          <div class="tx"><h3>Zip-lock pack. Zero mess.</h3>
+            <p>Every NaphClean pack closes with a zip lock. Take out what you need, press it shut and put it away. No loose balls rolling around, no smell escaping into the room, nothing to spill.</p>
+            <p>The seal also keeps the balls you have not used at full strength. Best before 36 months from packing, so stocking up is safe.</p>
             <p><a href="#p-white-200">See the 200g pack</a></p>
           </div>
         </article>
@@ -695,6 +717,24 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
           <div class="fact"><span class="k">6 to 8</span><b>Weeks per placement</b><span>In a closed wardrobe or cupboard.</span></div>
           <div class="fact"><span class="k">36</span><b>Months shelf life</b><span>Sealed, from the date of packing.</span></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0" id="story" aria-label="Our story">
+    <div class="wrap">
+      <div class="story">
+        <div class="story-tx">
+          <p class="eyebrow">Our story</p>
+          <h2>A small family business, run by women.</h2>
+          <p>NaphClean is a family-owned brand from Kolkata, led by women. We are a small team, not a big company, so we look after every order ourselves, from checking the batch to sealing the pack.</p>
+          <p>When you buy NaphClean you are supporting a women-led small business. Thank you for that.</p>
+        </div>
+        <ul class="values">
+          <li><span class="vi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span><b>Family-owned</b><span>Run by one family, with the care that comes with it.</span></li>
+          <li><span class="vi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></span><b>Women-led</b><span>A women-run enterprise, from the products to the packing.</span></li>
+          <li><span class="vi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M3 9h18"/><path d="M9 20v-6h6v6"/></svg></span><b>Small business</b><span>Made in Kolkata. Every order counts for us.</span></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -781,9 +821,9 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
 <footer class="ftr">
   <div class="wrap">
     <div class="top">
-      <div><h4>NaphClean</h4><span>Premium naphthalene balls for wardrobes, cupboards and storage. Packed and marketed by Lumisha India Private Limited, Kolkata.</span></div>
+      <div><h4>NaphClean</h4><span>Premium naphthalene balls in mess-free zip-lock packs. A family-owned, women-led small business from Kolkata. Packed and marketed by Lumisha India Private Limited.</span></div>
       <div><h4>Shop</h4><a href="#shop">All packs</a><a href="#planner">Pack planner</a><a href="#bulk">Bulk orders</a><a href="#checkout">Checkout</a></div>
-      <div><h4>Help</h4><a href="#track">Track your order</a><a href="#faq">FAQ</a><a href="#faq">Shipping and returns</a><a href="#faq">Privacy</a></div>
+      <div><h4>Help</h4><a href="#story">Our story</a><a href="#track">Track your order</a><a href="#faq">FAQ</a><a href="#faq">Shipping and returns</a><a href="#faq">Privacy</a></div>
       <div><h4>Contact</h4><a data-wa-href href="https://wa.me/916289479696?text=Hello%20NaphClean" target="_blank" rel="noopener">WhatsApp <span data-wa-num style="display:inline;padding:0">+91 62894 79696</span></a><a href="mailto:care@naphclean.com">care@naphclean.com</a><span>16 Golaghata Road, Ground Floor, Kolkata, West Bengal 700048</span><span>Mon to Sat, 9 AM to 6 PM IST</span><div class="fsocs"><a class="fsoc" href="https://www.instagram.com/naphclean/" target="_blank" rel="noopener" aria-label="NaphClean on Instagram" title="NaphClean on Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a><a class="fsoc" href="https://www.facebook.com/NaphClean/" target="_blank" rel="noopener" aria-label="NaphClean on Facebook" title="NaphClean on Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.4V14h2.7v8h3.4z"/></svg><span>Facebook</span></a><a class="fsoc" href="https://www.linkedin.com/company/lumisha-india-private-limited" target="_blank" rel="noopener" aria-label="Lumisha India on LinkedIn" title="Lumisha India on LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3v-11zm6.5 0h3.8v1.5h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6v5.4h-4v-4.8c0-1.2 0-2.7-1.6-2.7s-1.9 1.3-1.9 2.6v4.9h-4v-11z"/></svg><span>LinkedIn</span></a><a class="fsoc" data-wa-href href="https://wa.me/916289479696?text=Hello%20NaphClean" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><svg width="20" height="20" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.2 1.4z"/></svg><span>WhatsApp</span></a></div></div>
     </div>
     <div class="big" aria-hidden="true">Naph<em>Clean</em>.</div>
@@ -1026,6 +1066,7 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
   function paintMbar(){
     var m=$("mbar"), t=totals(lines()), view=currentView();
     if(view==="pdp" && pdpBar){ m.hidden=false; m.innerHTML=pdpBar(); }
+    else if(view==="coView" && t.n){ m.hidden=false; m.innerHTML='<div class="p"><b class="tnum" id="mTot">'+inr(coTotal())+'</b><small>'+t.n+' item'+(t.n>1?"s":"")+', total</small></div><button class="btn" type="submit" form="coForm">Place order</button>'; }
     else if(view==="landing" && t.n){ m.hidden=false; m.innerHTML='<div class="p"><b class="tnum">'+inr(t.sum)+'</b><small>'+t.n+' item'+(t.n>1?"s":"")+'</small></div><a class="btn" href="#checkout">Checkout'+ICON.arrow+'</a>'; }
     else { m.hidden=true; m.innerHTML=""; }
     document.body.style.paddingBottom=(!m.hidden && window.innerWidth<=900)?"78px":"";
@@ -1057,11 +1098,11 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
             '<button class="btn block" type="button" id="pAdd">Add to bag · <span id="qAmt">'+inr(p.price)+'</span></button></div>'+
           '<button class="btn navy block" type="button" id="pBuy">Buy now</button>')+
           '<div class="deliver"><b style="color:var(--ink)">'+(shipFor(p.price)?'Delivery '+inr(S.shipping_fee)+(S.free_shipping_over?', free over '+inr(S.free_shipping_over):''):'Free delivery')+'</b><div class="pin"><input class="inp" id="pinIn" inputmode="numeric" maxlength="6" placeholder="Enter PIN code" value="'+esc(ls("nc3_pin")||"")+'" aria-label="PIN code"><button class="btn sm navy" type="button" id="pinGo">Check</button></div><div id="pinOut" class="hint">Usually arrives in '+(S.delivery_min||3)+' to '+(S.delivery_max||6)+' days</div></div>'+
-          '<div class="perks"><div>'+ICON.check+'<b>99.5%+ pure</b>Lab tested</div><div>'+ICON.check+'<b>7-day</b>Damage replacement</div><div>'+ICON.check+'<b>Secure</b>UPI, cards, WhatsApp</div></div>'+
+          '<div class="perks"><div>'+ICON.check+'<b>Zip-lock pack</b>Stores with no mess</div><div>'+ICON.check+'<b>99.5%+ pure</b>Lab tested</div><div>'+ICON.check+'<b>7-day</b>Damage replacement</div><div>'+ICON.check+'<b>Secure</b>UPI, cards, WhatsApp</div></div>'+
           '<div class="acc pacc">'+
             (p.bullets&&p.bullets.length?'<details open><summary>About this pack</summary><div class="ans"><ul>'+p.bullets.map(function(b){ return '<li>'+esc(b)+'</li>'; }).join("")+'</ul></div></details>':'')+
             (p.family==="naphthalene"?'<details><summary>How to use</summary><div class="ans"><ul><li>Put 4 to 6 balls in a small mesh or cloth pouch.</li><li>Hang it high in the wardrobe, not on the clothes.</li><li>Keep the door closed.</li><li>Top up every 6 to 8 weeks, or when the balls look small.</li></ul></div></details>':'')+
-            '<details><summary>Specifications</summary><div class="ans"><table class="spec"><tbody><tr><th>Brand</th><td>NaphClean</td></tr><tr><th>Variant</th><td>'+esc(C)+'</td></tr><tr><th>Net quantity</th><td>'+esc(p.size_label)+'</td></tr>'+(p.family==="naphthalene"?'<tr><th>Purity</th><td>99.5%+ naphthalene</td></tr>':'')+'<tr><th>Pack</th><td>Resealable zip pouch</td></tr>'+(p.sku?'<tr><th>SKU</th><td>'+esc(p.sku)+'</td></tr>':'')+
+            '<details><summary>Specifications</summary><div class="ans"><table class="spec"><tbody><tr><th>Brand</th><td>NaphClean</td></tr><tr><th>Variant</th><td>'+esc(C)+'</td></tr><tr><th>Net quantity</th><td>'+esc(p.size_label)+'</td></tr>'+(p.family==="naphthalene"?'<tr><th>Purity</th><td>99.5%+ naphthalene</td></tr>':'')+'<tr><th>Pack</th><td>Zip-lock pouch, reseals for mess-free storage</td></tr>'+(p.sku?'<tr><th>SKU</th><td>'+esc(p.sku)+'</td></tr>':'')+
               '<tr><th>Shelf life</th><td>Best before 36 months from packing</td></tr><tr><th>Manufactured by</th><td>Calcutta Chemical Products, Kolkata 700001</td></tr><tr><th>Packed and marketed by</th><td>Lumisha India Private Limited, 16 Golaghata Road, Kolkata 700048</td></tr><tr><th>Country of origin</th><td>India</td></tr><tr><th>Customer care</th><td><span data-wa-num>'+fmtPhone(S.whatsapp)+'</span>, '+esc(S.support_email||"care@naphclean.com")+'</td></tr></tbody></table></div></details>'+
             '<details><summary>Safety</summary><div class="ans"><p class="safety"><b>Keep away from children and pets.</b> Do not ingest. If swallowed, seek medical advice. Not for kitchens or anywhere near food. For enclosed storage spaces only. Store in a cool, dry place away from heat and flame.</p></div></details>'+
           '</div>'+
@@ -1125,29 +1166,51 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
       '<h1 class="co-h">Checkout</h1>'+
       '<div class="co-grid">'+
         '<form id="coForm" novalidate class="co-main">'+
-          '<section class="co-card"><h2><span>1</span>Contact</h2><div class="f2">'+
-            f("name","Full name",'autocomplete="name" required')+f("phone","Mobile number",'inputmode="tel" autocomplete="tel" required',false,"For delivery updates on WhatsApp")+
-            f("email","Email (optional)",'type="email" autocomplete="email"',true)+'</div></section>'+
-          '<section class="co-card"><h2><span>2</span>Delivery address</h2><div class="f2">'+
-            f("address1","House, building, street",'autocomplete="address-line1" required',true)+f("address2","Area and landmark (optional)",'autocomplete="address-line2"',true)+
-            f("pin","PIN code",'inputmode="numeric" maxlength="6" autocomplete="postal-code" required')+f("city","Town or city",'autocomplete="address-level2" required')+
+          '<section class="co-card"><h2><span>1</span>Delivery details</h2><div class="f2">'+
+            f("phone","Mobile number",'type="tel" inputmode="tel" autocomplete="tel" maxlength="14" required',false,"For delivery updates on WhatsApp")+f("name","Full name",'autocomplete="name" required')+
+            f("pin","PIN code",'inputmode="numeric" maxlength="6" autocomplete="postal-code" required',false,'<span id="pinHint">City and state fill in by themselves</span>')+f("city","Town or city",'autocomplete="address-level2" required')+
+            f("address1","House no, building, street, area",'autocomplete="street-address" required',true)+
             '<div class="fld full"><label for="co_state">State</label><select class="inp" id="co_state" data-k="state" autocomplete="address-level1"><option value="">Select state</option>'+NC.STATES.map(function(s){ return '<option'+(co.state===s?' selected':'')+'>'+s+'</option>'; }).join("")+'</select></div>'+
-            '<div class="fld full"><label for="co_note">Note for us (optional)</label><input class="inp" id="co_note" data-k="note" maxlength="200" value="'+esc(co.note||"")+'" placeholder="Gate code, preferred delivery time"></div>'+
-          '</div><p class="hint co-eta">Arrives '+dText()+'</p></section>'+
-          '<section class="co-card"><h2><span>3</span>Payment</h2><div class="paylist" role="radiogroup" aria-label="Payment method">'+
+            '<details class="more full"'+(co.email||co.address2||co.note?' open':'')+'><summary>Add a landmark, email or note (optional)</summary><div class="f2">'+
+              f("address2","Landmark",'autocomplete="address-line2"',true)+f("email","Email",'type="email" autocomplete="email"',true)+
+              '<div class="fld full"><label for="co_note">Note for us</label><input class="inp" id="co_note" data-k="note" maxlength="200" value="'+esc(co.note||"")+'" placeholder="Gate code, preferred delivery time"></div>'+
+            '</div></details>'+
+          '</div><p class="hint co-eta">Arrives '+dText()+'. Your details are saved on this device for next time.</p></section>'+
+          '<section class="co-card"><h2><span>2</span>Payment</h2><div class="paylist" role="radiogroup" aria-label="Payment method">'+
             M.map(function(m){ return '<label class="paym'+(co.method===m.k?' on':'')+'"><input type="radio" name="pay" value="'+m.k+'"'+(co.method===m.k?' checked':'')+'><span class="pic">'+m.ic+'</span><span><b>'+m.t+'</b><small>'+m.d+'</small></span></label>'; }).join("")+
           '</div></section>'+
         '</form>'+
         '<aside class="co-side"><div class="co-card sum" id="coSum"></div></aside>'+
       '</div></div>';
-    v.querySelectorAll("[data-k]").forEach(function(i){ i.addEventListener("input",function(){ co[i.dataset.k]=i.value; i.classList.remove("bad"); saveCo(); }); i.addEventListener("change",function(){ co[i.dataset.k]=i.value; i.classList.remove("bad"); saveCo(); }); });
+    v.querySelectorAll("[data-k]").forEach(function(i){ i.addEventListener("input",function(){ if(i.dataset.k==="city"||i.dataset.k==="state") co._autoPin=false; co[i.dataset.k]=i.value; i.classList.remove("bad"); saveCo(); }); i.addEventListener("change",function(){ co[i.dataset.k]=i.value; i.classList.remove("bad"); saveCo(); }); });
+    var pinIn=$("co_pin"); pinIn.addEventListener("input",function(){ pinIn.value=pinIn.value.replace(/\D/g,"").slice(0,6); co.pin=pinIn.value; saveCo(); if(/^[1-9]\d{5}$/.test(pinIn.value)) pinFill(pinIn.value); });
+    if(/^[1-9]\d{5}$/.test(co.pin||"") && (!co.city||!co.state)) pinFill(co.pin);
     v.querySelectorAll('input[name="pay"]').forEach(function(r){ r.addEventListener("change",function(){ co.method=r.value; saveCo(); v.querySelectorAll(".paym").forEach(function(l){ l.classList.toggle("on", l.querySelector("input").checked); }); paintSummary(); }); });
     $("coForm").addEventListener("submit",function(e){ e.preventDefault(); placeOrder(); });
     paintSummary();
     if(coDisc) recheckDiscount();
   }
+  var pinCache={};
+  function stateMatch(n){ var k=String(n||"").toLowerCase().replace(/&/g,"and").replace(/\s+/g," ").trim(); return NC.STATES.filter(function(s){ return s.toLowerCase()===k; })[0]||""; }
+  function pinFill(pin){
+    var hint=$("pinHint");
+    function apply(r){ if(co.pin!==pin) return; var c=$("co_city"), st=$("co_state");
+      if(!r){ if(hint) hint.textContent="Please type your city and state."; return; }
+      if(c && (!c.value.trim() || co._autoPin)){ c.value=r.city; co.city=r.city; c.classList.remove("bad"); }
+      if(st && r.state && (!st.value || co._autoPin)){ st.value=r.state; co.state=r.state; st.classList.remove("bad"); }
+      co._autoPin=true; saveCo(); if(hint) hint.innerHTML='<span class="ok">'+esc(r.city+(r.state?", "+r.state:""))+'</span>'; }
+    if(pinCache[pin]!==undefined) return apply(pinCache[pin]);
+    if(hint) hint.textContent="Finding your area…";
+    var ctl=window.AbortController?new AbortController():null, to=setTimeout(function(){ if(ctl) ctl.abort(); },6000);
+    fetch("https://api.postalpincode.in/pincode/"+pin,ctl?{signal:ctl.signal}:{}).then(function(r){ return r.json(); }).then(function(j){ clearTimeout(to);
+      var po=j&&j[0]&&j[0].Status==="Success"&&j[0].PostOffice||[]; if(!po.length){ pinCache[pin]=null; return apply(null); }
+      var d=po[0].District||"", city=/^70\d{4}$/.test(pin)&&/kolkata|24 parganas|howrah/i.test(d)?"Kolkata":d;
+      pinCache[pin]={city:city, state:stateMatch(po[0].State)}; apply(pinCache[pin]);
+    }).catch(function(){ clearTimeout(to); apply(null); });
+  }
+  function coTotal(){ var t=totals(lines()), disc=coDisc&&coDisc.ok?coDisc.discount:0; return t.sum-disc+shipFor(t.sum-disc); }
   function paintSummary(){
-    var el=$("coSum"); if(!el) return; var L=lines(), t=totals(L);
+    var el=$("coSum"); if(!el) return; var L=lines(), t=totals(L); var mt=$("mTot"); if(mt) mt.textContent=inr(coTotal());
     if(!L.length){ renderCheckout(); return; }
     var disc=coDisc&&coDisc.ok?coDisc.discount:0, ship=shipFor(t.sum-disc), total=t.sum-disc+ship;
     var btn={razorpay:ICON.lock+"Pay "+inr(total)+" securely", upi:"Place order and pay "+inr(total), whatsapp:ICON.wa+"Place order · "+inr(total)}[co.method]||"Place order";
@@ -1264,21 +1327,23 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
   function lookup(no, phone){
     var v=$("orderView"); v.innerHTML='<div class="wrap ord"><p class="hint">Looking up order '+esc(no)+'…</p></div>';
     NC.orderStatus(no, phone).then(function(o){
-      if(!o){ renderTrack(no, "We could not find that order with this mobile number."); return; }
+      if(!o){ renderTrack(no, "We could not find order "+no+" with mobile "+phone+". Check both against your order confirmation, or WhatsApp us.", phone); return; }
       v.innerHTML='<div class="wrap ord"><nav class="crumbs"><a href="#track">'+ICON.back+'Track another order</a></nav><div class="ord-head"><span class="okball">'+ICON.check+'</span><div><p class="eyebrow">Order '+esc(o.order_no)+'</p><h1>'+({new:"Order received",confirmed:"Order confirmed",packed:"Packed and ready",shipped:"On its way",delivered:"Delivered",cancelled:"Order cancelled"}[o.status]||"Order status")+'</h1>'+
         '<p class="lede">Placed '+new Date(o.created_at).toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"})+' · '+inr(o.total)+' · '+(o.payment_status==="paid"?'Paid':'Payment pending')+'</p></div></div>'+
         '<div class="ord-grid"><div class="co-card"><h2>Status</h2>'+timeline(o.status)+(o.tracking_no?'<div class="trk"><small>Tracking</small><b>'+esc(o.courier||"Courier")+' · '+esc(o.tracking_no)+'</b></div>':'')+'</div>'+
         '<aside class="co-card sum"><h2>Items</h2><div class="sumlines">'+o.items.map(function(l){ return '<div class="sl"><span class="im"><img src="'+img(l.image)+'" alt=""><i>'+l.qty+'</i></span><span class="nm">'+esc(l.title.replace(/^NaphClean\s+/,""))+'</span><b class="tnum">'+inr(l.qty*l.price)+'</b></div>'; }).join("")+'</div>'+
         '<p class="hint">Need help? WhatsApp <span data-wa-num>'+fmtPhone(S.whatsapp)+'</span></p></aside></div></div>';
       rememberOrder(o.order_no, phone); document.title="Order "+o.order_no+" | NaphClean";
-    }).catch(function(e){ renderTrack(no, NC.err(e)); });
+    }).catch(function(e){ renderTrack(no, NC.err(e), phone); });
   }
-  function renderTrack(no, msg){
-    var v=$("orderView");
+  function renderTrack(no, msg, phone){
+    var v=$("orderView"), mine=[]; try{ mine=JSON.parse(ls("nc3_orders")||"[]"); }catch(e){}
     v.innerHTML='<div class="wrap ord narrow"><div class="co-card"><p class="eyebrow">Order tracking</p><h1 style="font-size:clamp(2rem,4vw,2.8rem);margin:10px 0 8px">Track your order</h1><p class="lede" style="margin-bottom:18px">Enter your order number (it starts with NC) and the mobile number you ordered with.</p>'+
       (msg?'<p class="flash">'+esc(msg)+'</p>':'')+
-      '<form id="trkForm" class="form" novalidate><div class="f2"><div class="fld"><label for="trkNo">Order number</label><input class="inp" id="trkNo" value="'+esc(no||"")+'" placeholder="NC1A2B3C" autocapitalize="characters"></div><div class="fld"><label for="trkPh">Mobile number</label><input class="inp" id="trkPh" inputmode="tel" placeholder="10-digit mobile"></div></div>'+
-      '<p class="err" id="trkErr"></p><button class="btn block" type="submit">Track order</button></form></div></div>';
+      (mine.length?'<div class="mine"><small>Your orders on this device</small>'+mine.map(function(o){ return '<a class="pill" href="#order-'+esc(o.no)+'">'+esc(o.no)+'</a>'; }).join("")+'</div>':'')+
+      '<form id="trkForm" class="form" novalidate><div class="f2"><div class="fld"><label for="trkNo">Order number</label><input class="inp" id="trkNo" value="'+esc(no||"")+'" placeholder="e.g. NC4F82A1" autocapitalize="characters" autocomplete="off"></div><div class="fld"><label for="trkPh">Mobile number</label><input class="inp" id="trkPh" type="tel" inputmode="tel" value="'+esc(phone||"")+'" placeholder="10-digit mobile"></div></div>'+
+      '<p class="err" id="trkErr"></p><button class="btn block" type="submit">Track order</button></form>'+
+      '<p class="hint" style="margin-top:14px">Your order number is on the confirmation screen and in our WhatsApp message. Lost it? <a data-wa-href href="'+esc(waHref("Hello NaphClean, I need help finding my order."))+'" target="_blank" rel="noopener">WhatsApp us</a> with your mobile number.</p></div></div>';
     $("trkForm").addEventListener("submit",function(e){ e.preventDefault(); var n=$("trkNo").value.trim().toUpperCase(), ph=NC.phone10($("trkPh").value);
       if(!/^NC[0-9A-F]{6}$/.test(n)){ $("trkErr").textContent="Order numbers look like NC1A2B3C."; return; } if(ph.length<10){ $("trkErr").textContent="Enter the 10-digit mobile number."; return; }
       lookup(n, ph); });
