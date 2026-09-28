@@ -68,6 +68,8 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
 .p-on{background:var(--good-bg);color:var(--good)} .p-off{background:var(--neutral-bg);color:var(--neutral)} .p-low{background:var(--warn-bg);color:var(--warn)} .p-out{background:var(--bad-bg);color:var(--bad)}
 
 /* login */
+.okmsg{background:#E9F6DA;color:#2F5A08;border-radius:12px;padding:12px 14px;font-size:.9rem;line-height:1.5}
+.pwbox summary{cursor:pointer;color:var(--muted);font-size:.88rem}
 .login{min-height:100%;display:grid;place-items:center;padding:24px 16px;background:radial-gradient(60% 60% at 70% 20%,#DCE9FF,transparent 70%),var(--paper)}
 .login .box{width:min(400px,100%);background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:var(--sh-2);display:grid;gap:16px}
 .brand{display:flex;align-items:center;gap:10px}
@@ -217,11 +219,15 @@ td.r,th.r{text-align:right}
   <form class="box" id="loginForm" novalidate>
     <div class="brand"><img src="../images/logo.webp" alt=""><div><b>NaphClean</b><small>Store admin</small></div></div>
     <h1 style="font-size:1.6rem">Sign in</h1>
-    <div class="fld"><label for="lgEmail">Email</label><input class="inp" id="lgEmail" type="email" autocomplete="username" value="amit@lumisha.in"></div>
-    <div class="fld"><label for="lgPw">Password</label><input class="inp" id="lgPw" type="password" autocomplete="current-password"></div>
+    <p class="muted" style="font-size:.92rem;margin-top:-6px">No password needed. We email you a secure link that signs you straight in.</p>
+    <div class="fld"><label for="lgEmail">Admin email</label><input class="inp" id="lgEmail" type="email" autocomplete="username" value="amit@lumisha.in"></div>
     <p class="err" id="lgErr" role="alert"></p>
-    <button class="btn green" type="submit" id="lgBtn">Sign in</button>
-    <p class="muted" style="font-size:.84rem">Forgot the password? Reset it in Supabase: Authentication, Users, then the three dots next to your email.</p>
+    <p class="okmsg" id="lgOk" role="status" hidden></p>
+    <button class="btn green" type="submit" id="lgBtn">Email me a sign-in link</button>
+    <details class="pwbox"><summary>Sign in with a password instead</summary>
+      <div class="fld" style="margin-top:10px"><label for="lgPw">Password</label><input class="inp" id="lgPw" type="password" autocomplete="current-password"></div>
+      <button class="btn" type="button" id="lgPwBtn" style="margin-top:10px;width:100%">Sign in with password</button>
+    </details>
   </form>
 </div>
 
@@ -272,15 +278,26 @@ td.r,th.r{text-align:right}
   }
 
   /* ---------------- auth ---------------- */
-  function showLogin(msg){ $("app").hidden=true; $("login").hidden=false; $("lgErr").textContent=msg||""; setTimeout(function(){ $("lgPw").focus(); },50); }
-  $("loginForm").addEventListener("submit",function(e){ e.preventDefault(); var b=$("lgBtn"); b.disabled=true; b.textContent="Signing in…"; $("lgErr").textContent="";
-    A.signIn($("lgEmail").value,$("lgPw").value).then(start).catch(function(er){ $("lgErr").textContent=NC.err(er); }).then(function(){ b.disabled=false; b.textContent="Sign in"; }); });
+  function showLogin(msg){ $("app").hidden=true; $("login").hidden=false; $("lgErr").textContent=msg||""; setTimeout(function(){ $("lgBtn").focus(); },50); }
+  $("loginForm").addEventListener("submit",function(e){ e.preventDefault(); var b=$("lgBtn"), em=$("lgEmail").value.trim(); $("lgErr").textContent=""; $("lgOk").hidden=true;
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){ $("lgErr").textContent="Enter your email address."; return; }
+    b.disabled=true; b.textContent="Sending…";
+    A.sendLink(em).then(function(){ $("lgOk").hidden=false; $("lgOk").innerHTML="Link sent to <b>"+NC.esc(em)+"</b>. Open the email on this device and tap <b>Log In</b>. Check Spam if it is not in your inbox within a minute."; b.textContent="Send the link again"; })
+      .catch(function(er){ $("lgErr").textContent=NC.err(er); b.textContent="Email me a sign-in link"; }).then(function(){ b.disabled=false; }); });
+  $("lgPwBtn").addEventListener("click",function(){ var b=$("lgPwBtn"); b.disabled=true; b.textContent="Signing in…"; $("lgErr").textContent="";
+    A.signIn($("lgEmail").value,$("lgPw").value).then(start).catch(function(er){ $("lgErr").textContent=NC.err(er); }).then(function(){ b.disabled=false; b.textContent="Sign in with password"; }); });
+  $("lgPw").addEventListener("keydown",function(e){ if(e.key==="Enter"){ e.preventDefault(); $("lgPwBtn").click(); } });
+  var linkErr=(function(){ var h=location.hash||""; if(/error_description=/.test(h)){ var m=decodeURIComponent((h.match(/error_description=([^&]+)/)||[])[1]||"").replace(/\+/g," "); history.replaceState(null,"",location.pathname); return /expired|invalid/i.test(m)?"That sign-in link has expired or was already used. Send a new one.":m; } return ""; })();
+  var started=false;
+  A.onAuth&&A.onAuth(function(ev,s){ if(ev==="SIGNED_IN" && s && !started && $("app").hidden){ start(s); } });
   $("signOut").addEventListener("click",function(){ A.signOut().then(function(){ location.hash=""; if(NC.live) showLogin(); else location.reload(); }); });
-  function boot(){ A.session().then(function(s){ if(!s) return showLogin(); return start(s); }).catch(function(){ showLogin(); }); }
+  function boot(){ A.session().then(function(s){ if(/access_token=/.test(location.hash)) history.replaceState(null,"",location.pathname); if(!s) return showLogin(linkErr); return start(s); }).catch(function(){ showLogin(linkErr); }); }
   function start(s){
+    if(started) return Promise.resolve(); started=true;
+    if(/access_token=/.test(location.hash)) history.replaceState(null,"",location.pathname);
     me=(s&&s.user&&s.user.email)||"";
     return A.isAdmin().then(function(ok){
-      if(!ok){ A.signOut(); return showLogin("This account is signed in but is not a store admin. Ask an admin to add "+me+" in Settings."); }
+      if(!ok){ started=false; A.signOut(); return showLogin("This account is signed in but is not a store admin. Ask an admin to add "+me+" in Settings."); }
       $("login").hidden=true; $("app").hidden=false; $("who").textContent=me; $("demoTag").hidden=NC.live;
       return loadAll().then(function(){ route(); A.onNewOrder(function(o){ D.orders.unshift(o); badge(); toast("New order "+o.order_no+" · "+inr(o.total)); if(cur==="home"||cur==="orders") route(); }); });
     });
