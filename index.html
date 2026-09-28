@@ -467,6 +467,14 @@ textarea.inp{min-height:96px;resize:vertical}
 .mine{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:16px}
 .mine small{width:100%;font:500 .7rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .mine .pill{text-decoration:none!important;font-family:var(--mono)}
+.ptag{font:600 .66rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;font-style:normal;background:var(--lime);color:var(--ink);border-radius:999px;padding:4px 7px;margin-left:6px;vertical-align:2px}
+.paidbox{margin-top:4px}
+.paybox .paidbox .paidok{background:rgba(200,240,158,.16);color:var(--lime);border-radius:14px;padding:12px 14px;display:flex;gap:10px;align-items:center;font:600 .95rem/1.45 var(--body);letter-spacing:0}
+.paybox .paidbox .paidok svg{flex:none;width:18px;height:18px}
+.utrmore summary{cursor:pointer;color:#AFC3F3;font-size:.86rem;margin-top:6px}
+.utrmore[open] summary{margin-bottom:10px}
+@keyframes pulseRing{0%{box-shadow:0 0 0 0 rgba(200,240,158,.7)}100%{box-shadow:0 0 0 16px rgba(200,240,158,0)}}
+.pulse{animation:pulseRing 1.2s ease-out 3}
 .demo-note{background:#FFF6E3;color:#8A5300;border:1px solid #F6DFAE;border-radius:14px;padding:10px 14px;font-size:.9rem;margin-bottom:18px}
 .flash{background:#FDE8EC;color:#9E1F36;border-radius:14px;padding:12px 14px;font-weight:600;margin:0 0 18px}
 
@@ -1150,8 +1158,8 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
   function saveCo(){ var keep={}; ["name","phone","email","address1","address2","pin","city","state","method"].forEach(function(k){ if(co[k]) keep[k]=co[k]; }); ls("nc3_co",JSON.stringify(keep)); }
   function methods(){
     var m=[];
-    if(S.pay_razorpay && S.razorpay_key_id) m.push({k:"razorpay",t:"Pay online",d:"UPI, cards, netbanking and wallets through Razorpay. Confirmed instantly.",ic:ICON.lock});
-    if(S.pay_upi && S.upi_id) m.push({k:"upi",t:"Pay by UPI",d:"Scan a QR or open GPay, PhonePe or Paytm with the amount filled in.",ic:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v7h-4M14 18v3"/></svg>'});
+    if(S.pay_razorpay && S.razorpay_key_id) m.push({k:"razorpay",t:"Pay online: UPI, GPay, PhonePe, cards",d:"Pay in any UPI app, by card or netbanking. Confirmed instantly, nothing else to do.",ic:ICON.lock,tag:"Fastest"});
+    if(S.pay_upi && S.upi_id) m.push({k:"upi",t:"Pay to our UPI ID",d:"Scan a QR or open your UPI app with the amount filled in. We confirm the payment by hand.",ic:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v7h-4M14 18v3"/></svg>'});
     if(S.pay_whatsapp || !m.length) m.push({k:"whatsapp",t:"Order on WhatsApp",d:"Send your order on WhatsApp. We confirm and share payment details in the chat.",ic:ICON.wa});
     return m;
   }
@@ -1177,7 +1185,7 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
             '</div></details>'+
           '</div><p class="hint co-eta">Arrives '+dText()+'. Your details are saved on this device for next time.</p></section>'+
           '<section class="co-card"><h2><span>2</span>Payment</h2><div class="paylist" role="radiogroup" aria-label="Payment method">'+
-            M.map(function(m){ return '<label class="paym'+(co.method===m.k?' on':'')+'"><input type="radio" name="pay" value="'+m.k+'"'+(co.method===m.k?' checked':'')+'><span class="pic">'+m.ic+'</span><span><b>'+m.t+'</b><small>'+m.d+'</small></span></label>'; }).join("")+
+            M.map(function(m){ return '<label class="paym'+(co.method===m.k?' on':'')+'"><input type="radio" name="pay" value="'+m.k+'"'+(co.method===m.k?' checked':'')+'><span class="pic">'+m.ic+'</span><span><b>'+m.t+(m.tag?' <em class="ptag">'+m.tag+'</em>':'')+'</b><small>'+m.d+'</small></span></label>'; }).join("")+
           '</div></section>'+
         '</form>'+
         '<aside class="co-side"><div class="co-card sum" id="coSum"></div></aside>'+
@@ -1304,7 +1312,8 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
         '<p>Scan the code with any UPI app, or tap the button on your phone. The amount and order number are filled in.</p>'+
         '<a class="btn block" href="'+esc(uri)+'">Open UPI app</a>'+
         '<div class="upiid"><span>UPI ID <b>'+esc(r.upi_id)+'</b></span><button class="copy" type="button" data-copy="'+esc(r.upi_id)+'">Copy</button></div>'+
-        '<form id="utrForm" class="utr" novalidate><label for="utrIn">Paid? Enter the 12-digit UPI reference so we can match it faster</label><div class="pinrow"><input class="inp" id="utrIn" inputmode="numeric" maxlength="30" placeholder="UPI reference (UTR)"><button class="btn sm navy" type="submit">Send</button></div><p class="hint" id="utrOut"></p></form></div></div>';
+        '<div class="paidbox" id="paidBox">'+(rec.claimed?'<div class="paidok">'+ICON.check+' Thanks! We will confirm your payment shortly and message you on WhatsApp.</div>':'<button class="btn light block" type="button" id="iPaid">'+ICON.check+'I have paid</button>')+'</div>'+
+        '<details class="utrmore"><summary>Add the UPI reference number (optional)</summary><form id="utrForm" class="utr" novalidate><div class="pinrow"><input class="inp" id="utrIn" inputmode="numeric" maxlength="30" placeholder="12-digit UPI reference (UTR)"><button class="btn sm navy" type="submit">Send</button></div><p class="hint" id="utrOut"></p></form></details></div></div>';
     } else if(r.payment_method==="razorpay"){
       pay='<div class="paybox single" id="payBox">'+(rec.paid?'<div class="paidok">'+ICON.check+' Payment received. Thank you!</div>':'<h3>Pay '+inr(r.total)+' securely</h3><p>UPI, cards, netbanking and wallets through Razorpay.</p><button class="btn block" type="button" id="payAgain">'+ICON.lock+'Pay '+inr(r.total)+'</button>')+'</div>';
     } else {
@@ -1319,6 +1328,10 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
         '<div class="addr"><small>Delivering to</small><b>'+esc(rec.name)+'</b><span>'+esc(rec.address)+'</span><span>+91 '+esc(rec.phone)+'</span></div>'+
         '<p class="hint">Questions? WhatsApp <span data-wa-num>'+fmtPhone(S.whatsapp)+'</span> with your order number.</p></aside></div></div>';
     var pa=$("payAgain"); if(pa) pa.addEventListener("click",function(){ payOnline(rec); });
+    var ip=$("iPaid"); if(ip){ ip.addEventListener("click",function(){ ip.disabled=true; ip.textContent="Letting us know…";
+      NC.submitUpiRef(no, rec.phone, "CUSTOMERSAIDPAID").then(function(){ rec.claimed=true; ls("nc3_last",JSON.stringify(rec)); $("paidBox").innerHTML='<div class="paidok">'+ICON.check+' Thanks! We will confirm your payment shortly and message you on WhatsApp.</div>'; })
+        .catch(function(er){ ip.disabled=false; ip.innerHTML=ICON.check+"I have paid"; notice(NC.err(er)); }); });
+      var nudged=false; document.addEventListener("visibilitychange",function once(){ if(document.visibilityState==="visible" && !nudged && $("iPaid") && location.hash==="#order-"+no){ nudged=true; $("iPaid").classList.add("pulse"); $("iPaid").scrollIntoView({block:"center",behavior:"smooth"}); } }); }
     var uf=$("utrForm"); if(uf) uf.addEventListener("submit",function(e){ e.preventDefault(); var ref=$("utrIn").value.trim(); $("utrOut").textContent="Sending…";
       NC.submitUpiRef(no, rec.phone, ref).then(function(ok){ $("utrOut").innerHTML=ok?'<span class="ok">Thanks. We will confirm your payment shortly.</span>':'We could not attach it. Please WhatsApp us the reference.'; })
         .catch(function(er){ $("utrOut").innerHTML='<span style="color:var(--deal)">'+esc(NC.err(er))+'</span>'; }); });
