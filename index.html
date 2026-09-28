@@ -20,759 +20,1083 @@
 <title>NaphClean | Premium Naphthalene Balls by Lumisha India</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
 <style>
+/* NaphClean. Single light theme by design: the brand lives on white and mist. Every surface paints its own colour. */
 :root{
-  --hdr:#0B2A78; --hdr2:#15398F; --hdr-ink:#FFFFFF; --hdr-muted:#B9C8EC;
-  --page:#EEF2F8; --card:#FFFFFF; --ink:#0F1111; --muted:#565959; --line:#D5D9D9; --soft:#F3F6FB;
-  --link:#0763C9; --price:#0F1111; --deal:#CC0C39; --ok:#007600; --navy:#0B2A78;
-  --green:#5FA814; --green-hover:#4E8E0E; --green-ink:#FFFFFF;
-  --buy:#0B2A78; --buy-hover:#0A2263; --buy-ink:#FFFFFF;
-  --focus:#0763C9; --shadow:0 2px 5px rgba(15,17,17,.12);
-  --display:"Baloo 2","Trebuchet MS",system-ui,sans-serif; --body:"Figtree",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  color-scheme:dark;
-  --hdr:#050C20; --hdr2:#0D1A3C; --hdr-ink:#EEF3FF; --hdr-muted:#97A8CD;
-  --page:#0A1226; --card:#121C36; --ink:#E8EDF7; --muted:#A3AEC6; --line:#2A3656; --soft:#18243F;
-  --link:#7DB4FF; --price:#F2F5FB; --deal:#FF6B86; --ok:#6FD36F; --navy:#A9C1FF;
-  --green:#7CC93A; --green-hover:#93D957; --green-ink:#08210A;
-  --buy:#A9C1FF; --buy-hover:#C3D4FF; --buy-ink:#07143A;
-  --focus:#7DB4FF; --shadow:0 2px 6px rgba(0,0,0,.35);
-}}
-:root[data-theme="dark"]{
-  color-scheme:dark;
-  --hdr:#050C20; --hdr2:#0D1A3C; --hdr-ink:#EEF3FF; --hdr-muted:#97A8CD;
-  --page:#0A1226; --card:#121C36; --ink:#E8EDF7; --muted:#A3AEC6; --line:#2A3656; --soft:#18243F;
-  --link:#7DB4FF; --price:#F2F5FB; --deal:#FF6B86; --ok:#6FD36F; --navy:#A9C1FF;
-  --green:#7CC93A; --green-hover:#93D957; --green-ink:#08210A;
-  --buy:#A9C1FF; --buy-hover:#C3D4FF; --buy-ink:#07143A;
-  --focus:#7DB4FF; --shadow:0 2px 6px rgba(0,0,0,.35);
+  color-scheme:light;
+  --ink:#0A1F5C; --navy:#0B2A78; --navy-2:#12368F; --blue:#1F5FD6;
+  --mist:#EEF4FF; --mist-2:#E2EBFC; --paper:#FAFCFF; --white:#FFFFFF;
+  --line:#DCE4F2; --line-2:#C9D5EA; --muted:#56627A; --text:#16213F;
+  --green:#5FA814; --green-d:#4A870E; --lime:#C8F09E; --deal:#D9344F;
+  --warn-bg:#FFF6E3; --warn:#8A5300;
+  --r-sm:10px; --r:18px; --r-lg:28px;
+  --sh-1:0 1px 2px rgba(10,31,92,.06),0 4px 14px rgba(10,31,92,.06);
+  --sh-2:0 2px 6px rgba(10,31,92,.08),0 18px 44px rgba(10,31,92,.12);
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --hdr-h:68px;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--page);color:var(--ink);font:14px/1.45 var(--body);-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--text);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
-a{color:var(--link);text-decoration:none}
+a{color:var(--blue);text-decoration:none}
 a:hover{text-decoration:underline}
-h1,h2,h3{margin:0;line-height:1.25;text-wrap:balance}
-p{margin:0}
 button,input,select,textarea{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px}
-.wrap{max-width:1500px;margin:0 auto;padding-inline:16px}
-.card{background:var(--card);border-radius:8px}
-.muted{color:var(--muted)}
+h1,h2,h3,h4{font-family:var(--display);color:var(--ink);margin:0;line-height:1.04;letter-spacing:-.02em;text-wrap:balance;font-weight:750}
+p{margin:0}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px}
+.eyebrow{font:500 .76rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--green-d)}
+.lede{color:var(--muted);font-size:1.12rem;max-width:56ch}
 .tnum{font-variant-numeric:tabular-nums}
-
-/* header */
-.hdr{background:var(--hdr);color:var(--hdr-ink);position:sticky;top:env(safe-area-inset-top,0px);z-index:30}
-.hdr .row{display:flex;align-items:center;gap:10px;padding-block:8px}
-.logo{display:flex;align-items:center;gap:8px;color:var(--hdr-ink);padding:4px 6px;border:1px solid transparent;border-radius:4px;text-decoration:none!important}
-.logo:hover{border-color:var(--hdr-ink)}
-.logo img{width:36px;height:36px;border-radius:8px;background:#fff;object-fit:contain}
-.logo b{font:800 1.45rem/1 var(--display);letter-spacing:-.01em}
-.logo small{display:block;font-size:.66rem;color:var(--hdr-muted);font-weight:500}
-.hbtn{background:none;border:1px solid transparent;border-radius:4px;color:var(--hdr-ink);padding:4px 8px;cursor:pointer;text-align:left;line-height:1.15;white-space:nowrap}
-.hbtn:hover{border-color:var(--hdr-ink)}
-.hbtn small{display:block;color:var(--hdr-muted);font-size:.75rem}
-.hbtn b{font-size:.9rem}
-.search{flex:1;display:flex;min-width:0;border-radius:8px;overflow:hidden;background:#fff}
-.search select{border:0;background:#E6E9EE;color:#0F1111;padding:0 8px;font-size:.82rem;max-width:130px}
-.search input{flex:1;min-width:0;border:0;padding:10px 12px;color:#0F1111;background:#fff;font-size:.95rem}
-.search input:focus{outline:none}
-.search button{border:0;background:var(--green);color:#fff;width:48px;cursor:pointer;display:grid;place-items:center}
-.search:focus-within{box-shadow:0 0 0 3px #7CC93A}
-.cartlink{display:flex;align-items:flex-end;gap:4px;color:var(--hdr-ink);position:relative;padding:4px 8px;border:1px solid transparent;border-radius:4px;text-decoration:none!important}
-.cartlink:hover{border-color:var(--hdr-ink)}
-.cartlink .n{position:absolute;left:21px;top:0;font-weight:800;color:#9FE06A;font-size:1rem;font-variant-numeric:tabular-nums;min-width:14px;text-align:center}
-.cartlink b{font-size:.9rem;padding-bottom:3px}
-.subnav{background:var(--hdr2)}
-.subnav .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:4px}
-.subnav .wrap::-webkit-scrollbar{display:none}
-.subnav a,.subnav button{color:var(--hdr-ink);white-space:nowrap;padding:6px 9px;border:1px solid transparent;border-radius:4px;font-size:.88rem;background:none;cursor:pointer;text-decoration:none}
-.subnav a:hover,.subnav button:hover{border-color:var(--hdr-ink)}
-.subnav .strong{font-weight:700}
-.m-only{display:none}
-@media (max-width:760px){
-  .hdr .row{flex-wrap:wrap;gap:8px}
-  .search{order:5;flex-basis:100%}
-  .search select{display:none}
-  .d-only{display:none}
-  .m-only{display:flex}
-  .logo{margin-right:auto}
-}
-.shipbar{background:var(--hdr2);color:var(--hdr-ink);font-size:.82rem}
-.shipbar .wrap{padding-block:6px;display:flex;gap:6px;align-items:center}
-.pinpop{position:absolute;z-index:40;top:100%;left:16px;margin-top:6px;width:min(340px,calc(100vw - 32px));background:var(--card);color:var(--ink);border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.25);padding:16px;display:grid;gap:10px}
-.pinpop h3{font-size:1.05rem}
-.pinrow{display:flex;gap:8px}
-.inp{border:1px solid var(--line);border-radius:6px;padding:9px 10px;background:var(--card);width:100%}
-.inp:focus{outline:none;border-color:var(--focus);box-shadow:0 0 0 3px color-mix(in srgb,var(--focus) 25%,transparent)}
+section[id]{scroll-margin-top:calc(var(--hdr-h) + 16px)}
+.sec{padding-block:96px}
+.sec-head{display:grid;gap:14px;margin-bottom:44px;max-width:760px}
+.sec-head h2{font-size:clamp(2.1rem,4.4vw,3.4rem)}
+@media (max-width:700px){.sec{padding-block:64px}.sec-head{margin-bottom:28px}}
 
 /* buttons */
-.btn{border:0;border-radius:999px;padding:9px 16px;cursor:pointer;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none!important;line-height:1.2}
-.btn-add{background:var(--green);color:var(--green-ink)}
-.btn-add:hover{background:var(--green-hover)}
-.btn-buy{background:var(--buy);color:var(--buy-ink)}
-.btn-buy:hover{background:var(--buy-hover)}
-.btn-line{background:var(--card);border:1px solid var(--line);color:var(--ink)}
-.btn-line:hover{background:var(--soft)}
-.btn-block{width:100%}
+.btn{--b:var(--green);--bh:var(--green-d);--bi:#fff;display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;background:var(--b);color:var(--bi);font:650 1rem/1 var(--body);padding:16px 26px;cursor:pointer;text-decoration:none!important;transition:background .2s,transform .2s var(--ease),box-shadow .2s;white-space:nowrap}
+.btn:hover{background:var(--bh);box-shadow:0 8px 22px color-mix(in srgb,var(--b) 35%,transparent)}
+.btn:active{transform:scale(.97)}
+.btn.navy{--b:var(--navy);--bh:var(--ink)}
+.btn.ghost{--b:transparent;--bh:var(--mist);--bi:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line-2)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--navy)}
+.btn.sm{padding:11px 18px;font-size:.92rem}
+.btn.block{width:100%}
+.btn svg{flex:none}
+.arrow{transition:transform .25s var(--ease)}
+.btn:hover .arrow{transform:translateX(4px)}
 
-/* prices */
-.pr{display:inline-flex;align-items:flex-start;color:var(--price);font-weight:500;font-variant-numeric:tabular-nums}
-.pr sup{font-size:.55em;margin-top:.35em;margin-right:1px}
-.pr .whole{font-size:1.75rem;line-height:1}
-.pr.lg .whole{font-size:2.1rem}
-.mrp{color:var(--muted);font-size:.82rem}
-.mrp s{margin-left:2px}
-.off{color:var(--deal);font-weight:400}
-.off.big{font-size:1.75rem;font-weight:300;margin-right:8px}
-.badge{display:inline-block;background:var(--deal);color:#fff;font-size:.75rem;font-weight:700;padding:3px 7px;border-radius:3px}
-.badge.navy{background:var(--navy);color:var(--card)}
-.free{font-size:.85rem}
-.free b{font-weight:700}
+/* announcement + header */
+.announce{background:var(--ink);color:#DDE7FF;font-size:.84rem}
+.announce .wrap{display:flex;gap:28px;justify-content:center;padding-block:9px;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
+.announce .wrap::-webkit-scrollbar{display:none}
+.announce b{color:#fff;font-weight:650}
+.announce span{display:inline-flex;align-items:center;gap:8px}
+.announce i{width:6px;height:6px;border-radius:50%;background:var(--lime);display:inline-block}
+@media (max-width:600px){.announce .wrap{justify-content:flex-start}}
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(250,252,255,.84);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.hdr.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px rgba(10,31,92,.06)}
+.hdr .wrap{display:flex;align-items:center;gap:14px;height:var(--hdr-h)}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none!important;margin-right:auto}
+.brand img{width:40px;height:40px;border-radius:12px;background:#fff;object-fit:contain;box-shadow:var(--sh-1)}
+.brand b{font:800 1.42rem/1 var(--display);letter-spacing:-.02em}
+.nav{display:flex;gap:2px}
+.nav a{color:var(--text);font-weight:600;font-size:.95rem;padding:9px 14px;border-radius:999px;text-decoration:none}
+.nav a:hover{background:var(--mist)}
+.bagbtn{position:relative;display:inline-flex;align-items:center;gap:10px;border:0;background:var(--ink);color:#fff;border-radius:999px;padding:10px 16px 10px 14px;font-weight:650;cursor:pointer;transition:transform .2s var(--ease),background .2s}
+.bagbtn:hover{background:var(--navy)}
+.bagbtn .n{min-width:22px;height:22px;border-radius:999px;background:var(--lime);color:var(--ink);font:700 .8rem/22px var(--body);text-align:center;padding:0 6px;font-variant-numeric:tabular-nums}
+.bagbtn.bump{animation:bump .5s var(--ease)}
+@keyframes bump{30%{transform:scale(1.12)}60%{transform:scale(.96)}}
+.menubtn{display:none;border:0;background:var(--mist);color:var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;place-items:center}
+@media (max-width:900px){.nav{display:none}.menubtn{display:grid}}
+.mnav{position:fixed;inset:0;z-index:60;background:var(--paper);padding:calc(env(safe-area-inset-top,0px) + 14px) 20px calc(24px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:6px;overflow-y:auto}
+.mnav .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.mnav>a{font:750 2rem/1.25 var(--display);color:var(--ink);padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.mnav .foot{margin-top:auto;padding-top:24px;color:var(--muted);font-size:.95rem;display:grid;gap:4px}
+.iconbtn{border:0;background:var(--mist);color:var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;display:grid;place-items:center;flex:none}
+.iconbtn:hover{background:var(--mist-2)}
 
-/* home */
-.banner{position:relative;overflow:hidden;background:linear-gradient(180deg,#DDEBFF 0%,var(--page) 100%)}
-.banner .wrap{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;padding-block:28px 110px}
-.banner h1{font:800 clamp(2rem,4.4vw,3.4rem)/1.05 var(--display);color:#0B2A78}
-.banner h1 em{font-style:normal;color:#4E8E0E}
-.banner p{color:#33415C;font-size:1.05rem;margin-top:10px;max-width:46ch}
-.banner .ctas{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
-.banner img{border-radius:14px;box-shadow:0 20px 50px rgba(11,42,120,.2);aspect-ratio:3/2;object-fit:cover;width:100%;height:auto}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .banner{background:linear-gradient(180deg,#13234A 0%,var(--page) 100%)}:root:not([data-theme="light"]) .banner h1{color:#E8EDF7}:root:not([data-theme="light"]) .banner p{color:var(--muted)}}
-:root[data-theme="dark"] .banner{background:linear-gradient(180deg,#13234A 0%,var(--page) 100%)}
-:root[data-theme="dark"] .banner h1{color:#E8EDF7}
-:root[data-theme="dark"] .banner p{color:var(--muted)}
-@media (max-width:760px){.banner .wrap{grid-template-columns:1fr;padding-block:18px 90px}.banner img{order:-1}}
-.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:-90px;position:relative;z-index:2}
-@media (max-width:1000px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:520px){.tiles{gap:10px}}
-.tile{padding:16px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow)}
-.tile h2{font-size:1.15rem}
-.tile .q{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.tile .q a{color:var(--ink);font-size:.8rem;display:grid;gap:4px}
-.tile .q img{aspect-ratio:1/1;object-fit:contain;background:#fff;border-radius:4px;width:100%}
-.tile .q img.cover{object-fit:cover}
-.tile>a.more{margin-top:auto;font-size:.85rem}
-.tile .one{aspect-ratio:1/1;object-fit:cover;border-radius:4px;width:100%}
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(70% 90% at 78% 40%,#DCE9FF 0%,rgba(220,233,255,0) 70%),linear-gradient(180deg,var(--paper),#F3F7FF)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center;padding-block:64px 88px}
+.hero h1{font-size:clamp(2.7rem,5.2vw,4.6rem);font-weight:800;letter-spacing:-.035em;line-height:.96}
+.hero h1 .g{color:var(--green)}
+@media (min-width:901px){.hero h1 span{white-space:nowrap}}
+.hero .lede{margin-top:22px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.proof{display:flex;flex-wrap:wrap;gap:10px 22px;margin:34px 0 0;padding:0;list-style:none}
+.proof li{display:flex;align-items:center;gap:8px;font-weight:600;font-size:.93rem;color:var(--ink)}
+.proof svg{color:var(--green);flex:none}
+.stage{position:relative;display:grid;justify-items:center;gap:22px}
+.porthole{position:relative;width:min(460px,100%);aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 50% 45%,#fff 62%,#F1F5FE 100%);box-shadow:0 40px 80px -20px rgba(10,31,92,.28),inset 0 -12px 40px rgba(10,31,92,.05),0 0 0 14px rgba(255,255,255,.55);display:grid;place-items:center;overflow:hidden}
+.porthole img{width:78%;height:78%;object-fit:contain;mix-blend-mode:multiply;transition:opacity .35s,transform .6s var(--ease)}
+.porthole img.swap{opacity:0;transform:scale(.94) translateY(8px)}
+.pricetag{position:absolute;right:4%;top:6%;background:var(--ink);color:#fff;border-radius:18px;padding:12px 16px;box-shadow:var(--sh-2);transform:rotate(4deg)}
+.pricetag small{display:block;font:500 .7rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#AFC3F3}
+.pricetag b{font:800 1.7rem/1.1 var(--display)}
+.seg{display:inline-flex;background:#fff;border-radius:999px;padding:5px;gap:4px;box-shadow:var(--sh-1);border:1px solid var(--line);max-width:100%}
+.seg button{border:0;background:transparent;border-radius:999px;padding:10px 16px;font-weight:650;font-size:.93rem;cursor:pointer;display:inline-flex;align-items:center;gap:8px;color:var(--muted);transition:background .2s,color .2s;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.dot{width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1px #C9D5EA;flex:none;display:inline-block}
+.dot.multi{background:conic-gradient(#FFD24D 0 25%,#FF7EB3 0 50%,#8FE36A 0 75%,#7EC8FF 0);box-shadow:none}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;padding-block:32px 64px;gap:28px}.stage{order:-1}.porthole{width:min(330px,82vw)}.pricetag{right:max(0px,calc(50% - 205px));top:0}}
 
-/* listing */
-.listing{display:grid;grid-template-columns:230px 1fr;gap:16px;margin-block:20px}
-@media (max-width:900px){.listing{grid-template-columns:1fr}}
-.filters{padding:16px;align-self:start;display:grid;gap:18px}
-.filters h3{font-size:.95rem;margin-bottom:6px}
-.filters label{display:flex;gap:8px;align-items:center;padding:3px 0;cursor:pointer}
-.filters input{accent-color:var(--green);width:16px;height:16px}
-@media (max-width:900px){.filters{display:flex;flex-wrap:wrap;gap:8px 18px;padding:12px}.filters>div{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}.filters h3{margin:0;width:100%}}
-.resbar{padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
-.resbar b{font-weight:700}
-.resbar select{border:1px solid var(--line);border-radius:6px;padding:6px 8px;background:var(--soft)}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-@media (max-width:1200px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
-.item{padding:0 0 14px;display:flex;flex-direction:column;overflow:hidden}
-.item .ph{background:#fff;aspect-ratio:1/1;display:block;position:relative}
-.item .ph img{width:100%;height:100%;object-fit:contain;padding:10px}
-.item .ph .badge{position:absolute;left:8px;top:8px}
-.item .bd{padding:10px 12px 0;display:flex;flex-direction:column;gap:6px;flex:1}
-.item .t{color:var(--ink);font-size:.92rem;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.item .t:hover{color:var(--link)}
-.item .btn{margin-top:auto;align-self:flex-start}
-.none{padding:30px;text-align:center}
+/* uses marquee */
+.uses{background:var(--ink);color:#fff;overflow:hidden;padding-block:18px}
+.uses .track{display:flex;gap:44px;width:max-content;animation:marq 40s linear infinite}
+.uses span{font:700 1.35rem/1 var(--display);letter-spacing:-.01em;display:inline-flex;align-items:center;gap:44px;white-space:nowrap}
+.uses span::after{content:"";width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#AFC3F3)}
+@keyframes marq{to{transform:translateX(-50%)}}
+.uses:hover .track{animation-play-state:paused}
 
-/* product */
-.crumbs{font-size:.82rem;padding-block:10px;color:var(--muted)}
-.pdp{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) 290px;gap:24px;padding:20px;align-items:start}
-@media (max-width:1100px){.pdp{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.buybox{grid-column:1/-1}}
-@media (max-width:760px){.pdp{grid-template-columns:1fr;padding:12px;gap:16px}}
-.gal{display:grid;grid-template-columns:56px 1fr;gap:10px;position:sticky;top:120px}
-@media (max-width:760px){.gal{position:static;grid-template-columns:1fr}.thumbs{order:2;flex-direction:row!important;overflow-x:auto}}
-.thumbs{display:flex;flex-direction:column;gap:8px}
-.thumbs button{width:52px;height:52px;flex:none;border:1px solid var(--line);border-radius:6px;background:#fff;padding:2px;cursor:pointer}
-.thumbs button[aria-pressed="true"]{border-color:var(--green);box-shadow:0 0 0 2px var(--green)}
-.thumbs img{width:100%;height:100%;object-fit:contain}
-.main-img{background:#fff;aspect-ratio:1/1;overflow:hidden;border-radius:6px;cursor:zoom-in;position:relative}
-.main-img img{width:100%;height:100%;object-fit:contain;transition:transform .15s}
-.hint{font-size:.78rem;color:var(--muted);text-align:center;margin-top:6px}
-.info h1{font-size:1.4rem;font-weight:500;line-height:1.3}
-.store{font-size:.88rem;margin-top:4px;display:inline-block}
-.hr{border:0;border-top:1px solid var(--line);margin:12px 0}
-.pricebox{display:grid;gap:2px}
-.pricebox .row{display:flex;align-items:flex-start}
-.perks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;text-align:center;font-size:.76rem;color:var(--link)}
-.perks div{display:grid;justify-items:center;gap:4px}
-.perks i{width:38px;height:38px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-style:normal;color:var(--navy)}
-.opt h3{font-size:.9rem;font-weight:400;margin-bottom:8px}
-.opt h3 b{font-weight:700}
-.opts{display:flex;flex-wrap:wrap;gap:8px}
-.opts button{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px;cursor:pointer;display:grid;gap:2px;text-align:left;min-width:86px}
-.opts button[aria-pressed="true"]{border-color:var(--green);box-shadow:0 0 0 2px var(--green)}
-.opts button .sw{width:72px;height:72px;background:#fff;border-radius:4px}
-.opts button .sw img{width:100%;height:100%;object-fit:contain}
-.opts button small{font-size:.8rem}
-.opts button .p{font-size:.8rem;color:var(--muted)}
-.about h2{font-size:1.1rem;margin-bottom:8px}
-.about ul{margin:0;padding-left:18px;display:grid;gap:6px}
-.about li b{font-weight:700}
-.buybox{border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:10px;position:sticky;top:120px}
-@media (max-width:1100px){.buybox{position:static}}
-.stock{color:var(--ok);font-size:1.1rem;font-weight:500}
-.buybox select{border:1px solid var(--line);border-radius:8px;padding:7px 10px;background:var(--soft);box-shadow:0 2px 5px rgba(15,17,17,.08)}
-.sold{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:.8rem}
-.sold span:nth-child(odd){color:var(--muted)}
-.secure{font-size:.8rem;color:var(--muted);display:flex;gap:6px;align-items:center}
-.section{padding:20px;margin-top:16px}
-.section h2{font-size:1.3rem;margin-bottom:14px}
-.fbt{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
-.fbt .plus{font-size:1.4rem;color:var(--muted)}
-.fbt .it{width:140px;display:grid;gap:4px;font-size:.8rem}
-.fbt .it img{width:140px;height:140px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:6px}
-.fbt .sum{display:grid;gap:8px;margin-left:10px}
-.tbl-wrap{overflow-x:auto}
-table{border-collapse:collapse;width:100%;font-size:.88rem}
-th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
-th{background:var(--soft);font-weight:600;width:34%}
-.cmp th,.cmp td{text-align:center;width:auto}
-.cmp th:first-child,.cmp td:first-child{text-align:left}
-.cmp img{width:90px;height:90px;object-fit:contain;background:#fff;margin:0 auto;border-radius:6px}
-.cmp .best{background:color-mix(in srgb,var(--green) 12%,var(--card))}
-.rail{display:grid;grid-auto-flow:column;grid-auto-columns:180px;gap:12px;overflow-x:auto;padding-bottom:8px}
-.rail .item{border:1px solid var(--line)}
-.qa details{border-bottom:1px solid var(--line);padding:8px 0}
-.qa summary{cursor:pointer;font-weight:600;padding:4px 0}
-.qa p{color:var(--muted);padding:6px 0 4px}
-.safety{background:color-mix(in srgb,#FFB020 14%,var(--card));border:1px solid color-mix(in srgb,#FFB020 45%,var(--card));border-radius:8px;padding:12px 14px;font-size:.88rem}
-.twocol{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-@media (max-width:900px){.twocol{grid-template-columns:1fr}}
-.howto{margin:0;padding-left:20px;display:grid;gap:6px}
+/* shop */
+.shopbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px;margin-bottom:34px}
+.shopbar .sec-head{margin:0}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media (max-width:1060px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.cards{gap:12px}}
+.card{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);display:flex;flex-direction:column;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--sh-2);border-color:transparent}
+.card .ph{position:relative;display:block;aspect-ratio:1/1;background:#fff;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:contain;padding:18px;transition:transform .6s var(--ease),opacity .4s}
+.card .ph img.alt{position:absolute;inset:0;opacity:0}
+@media (hover:hover){.card:hover .ph img.main{opacity:0}.card:hover .ph img.alt{opacity:1;transform:scale(1.03)}}
+.badge{position:absolute;left:14px;top:14px;z-index:2;font:500 .7rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:7px 10px;border-radius:999px;background:var(--ink);color:#fff}
+.badge.best{background:var(--green)}
+.card .bd{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1;border-top:1px solid var(--line)}
+.card .size{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.card .size b{font:800 2.2rem/1 var(--display);color:var(--ink);letter-spacing:-.03em}
+.card .size a{color:inherit;text-decoration:none}
+.per{font:500 .78rem/1 var(--mono);color:var(--muted);white-space:nowrap}
+.fits{color:var(--muted);font-size:.93rem;line-height:1.45;min-height:2.9em}
+.price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;font-variant-numeric:tabular-nums}
+.price b{font:750 1.45rem/1 var(--display);color:var(--ink)}
+.price s{color:var(--muted);font-size:.95rem}
+.price .off{color:var(--deal);font-weight:650;font-size:.86rem}
+.card .act{margin-top:auto;padding-top:6px}
+.stepper{display:inline-flex;align-items:center;justify-content:space-between;background:var(--ink);color:#fff;border-radius:999px;padding:4px;width:100%}
+.stepper button{border:0;background:rgba(255,255,255,.12);color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.25rem;line-height:1;display:grid;place-items:center;flex:none}
+.stepper button:hover{background:rgba(255,255,255,.22)}
+.stepper span{font-weight:700;font-variant-numeric:tabular-nums;font-size:.95rem;white-space:nowrap}
+.stepper.light{background:var(--mist);color:var(--ink);width:auto;gap:6px}
+.stepper.light button{background:#fff;color:var(--ink);width:34px;height:34px;box-shadow:var(--sh-1)}
+.stepper.light span{min-width:22px;text-align:center}
+@media (max-width:520px){.card{border-radius:20px}.card .bd{padding:12px 12px 14px;gap:8px}.card .size b{font-size:1.6rem}.fits{font-size:.82rem;min-height:3.9em}.price b{font-size:1.15rem}.price s{font-size:.82rem}.card .ph img{padding:8px}.per{font-size:.66rem}.card .btn{padding:13px 10px;font-size:.9rem}.stepper button{width:34px;height:34px}.stepper span{font-size:.82rem}.badge{left:10px;top:10px;font-size:.6rem;padding:6px 8px}}
+.shopnote{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:26px;color:var(--muted);font-size:.93rem}
+.shopnote span{display:inline-flex;align-items:center;gap:8px}
+.shopnote svg{color:var(--green);flex:none}
 
-/* cart + checkout */
-.cartpage{display:grid;grid-template-columns:1fr 300px;gap:16px;margin-block:20px;align-items:start}
-@media (max-width:900px){.cartpage{grid-template-columns:1fr}.cartpage .sidebox{order:-1}}
-.cartmain{padding:20px}
-.cartmain h1{font-size:1.7rem;font-weight:500}
-.cline{display:grid;grid-template-columns:140px 1fr auto;gap:16px;padding-block:16px;border-bottom:1px solid var(--line)}
-@media (max-width:600px){.cline{grid-template-columns:90px 1fr}.cline .lp{grid-column:2}}
-.cline img{width:100%;aspect-ratio:1/1;object-fit:contain;background:#fff;border-radius:6px}
-.cline .t{font-size:1.02rem;color:var(--ink);line-height:1.3}
-.cline .meta{display:grid;gap:3px;font-size:.82rem;margin-top:4px}
-.cline .acts{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:.85rem}
-.qsel{display:inline-flex;align-items:center;border:2px solid var(--green);border-radius:999px;overflow:hidden}
-.qsel button{border:0;background:none;width:32px;height:30px;cursor:pointer;font-size:1.1rem}
-.qsel span{min-width:26px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
-.linkbtn{border:0;background:none;color:var(--link);cursor:pointer;padding:0;font-size:.85rem}
-.lp{font-weight:700;font-size:1.1rem;text-align:right;font-variant-numeric:tabular-nums}
-.sidebox{padding:18px;display:grid;gap:12px;position:sticky;top:120px}
-@media (max-width:900px){.sidebox{position:static}}
-.subtotal{font-size:1.1rem}
-.subtotal b{font-variant-numeric:tabular-nums}
-.okline{color:var(--ok);font-size:.85rem}
-.checkout{display:grid;grid-template-columns:1fr 320px;gap:16px;margin-block:20px;align-items:start}
-@media (max-width:900px){.checkout{grid-template-columns:1fr}}
-.step{padding:18px 20px;display:grid;gap:12px}
-.step+.step{margin-top:12px}
-.step h2{font-size:1.15rem;display:flex;gap:10px;align-items:baseline}
-.step h2 span{color:var(--muted);font-weight:700}
+/* how it works (dark band) */
+.how{background:radial-gradient(60% 80% at 20% 30%,#17409C 0%,rgba(23,64,156,0) 70%),var(--ink);color:#DCE6FF}
+.how h2,.how h3{color:#fff}
+.how .eyebrow{color:var(--lime)}
+.how .lede{color:#B8C8EE}
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media (max-width:900px){.how-grid{grid-template-columns:1fr;gap:36px}}
+.lab{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:28px;display:grid;gap:16px}
+.lab svg{width:100%;height:auto;max-height:300px}
+.lab .status{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.lab .status b{font:750 1.5rem/1.1 var(--display);color:#fff}
+.chip{font:500 .72rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:7px 10px;background:rgba(200,240,158,.16);color:var(--lime)}
+.chip.warn{background:rgba(255,194,102,.16);color:#FFC266}
+.chip.red{background:rgba(255,120,140,.16);color:#FF9AAB}
+.lab p{color:#B8C8EE;min-height:3.2em}
+.range{width:100%;accent-color:var(--lime);height:28px;cursor:pointer}
+.weeks{display:flex;justify-content:space-between;font:500 .72rem/1 var(--mono);color:#8FA6DA;margin-top:-6px}
+.fine{font-size:.82rem;color:#8FA6DA!important;min-height:0!important}
+.steps4{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.steps4{grid-template-columns:1fr}}
+.steps4 li{border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:16px 18px;display:grid;gap:4px}
+.steps4 b{color:#fff;font-family:var(--display);font-size:1.1rem;display:flex;gap:10px;align-items:baseline}
+.steps4 b em{font:500 .78rem/1 var(--mono);color:var(--lime);font-style:normal}
+.steps4 span{color:#B8C8EE;font-size:.93rem}
+
+/* planner */
+.planner{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+@media (max-width:900px){.planner{grid-template-columns:1fr}}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:26px}
+@media (max-width:520px){.panel{padding:16px}}
+.spaces{display:grid;gap:10px}
+.space{display:grid;grid-template-columns:48px 1fr auto;gap:14px;align-items:center;padding:12px 14px;border-radius:var(--r);background:var(--paper);border:1px solid var(--line);transition:border-color .2s,background .2s}
+.space.on{border-color:var(--navy);background:var(--mist)}
+.space .ic{width:48px;height:48px;border-radius:14px;background:#fff;display:grid;place-items:center;color:var(--navy);box-shadow:var(--sh-1)}
+.space b{display:block;font-weight:650;color:var(--ink);line-height:1.3}
+.space small{color:var(--muted);font:500 .76rem/1.3 var(--mono)}
+@media (max-width:520px){.space{grid-template-columns:40px 1fr auto;gap:10px;padding:10px}.space .ic{width:40px;height:40px}.space b{font-size:.92rem}}
+.result{position:sticky;top:calc(var(--hdr-h) + 20px);background:var(--ink);color:#DCE6FF;border-radius:var(--r-lg);padding:28px;display:grid;gap:16px;overflow:hidden}
+.result h3{color:#fff;font-size:1.6rem}
+.result .big{font:800 3.2rem/1 var(--display);color:#fff;letter-spacing:-.03em;margin-top:8px}
+.result .big small{font:500 .9rem/1 var(--mono);color:#AFC3F3;letter-spacing:0;margin-left:6px}
+.result .packs{display:grid;gap:8px}
+.result .pk{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:rgba(255,255,255,.06);border-radius:14px;padding:8px 12px 8px 8px}
+.result .pk img{width:44px;height:44px;border-radius:10px;background:#fff;object-fit:contain}
+.result .pk b{color:#fff}
+.result .sum{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-top:1px solid rgba(255,255,255,.14);padding-top:14px}
+.result .sum b{font:800 1.9rem/1 var(--display);color:#fff}
+.result .empty{color:#B8C8EE}
+.result .seg{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);box-shadow:none;justify-self:start}
+.result .seg button{color:#B8C8EE}
+.result .seg button[aria-pressed="true"]{background:#fff;color:var(--ink)}
+@media (max-width:900px){.result{position:static}}
+
+/* compare + why */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+.tile{border-radius:var(--r-lg);overflow:hidden;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}
+.tile img{width:100%;height:auto;aspect-ratio:16/11;object-fit:cover}
+.tile .tx{padding:24px;display:grid;gap:12px}
+.tile h3{font-size:1.6rem}
+.tile p{color:var(--muted)}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:8px;color:var(--muted)}
+.ticks li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
+.ticks b{color:var(--ink)}
+.ticks svg{color:var(--green);margin-top:4px}
+.why{display:grid;grid-template-columns:.95fr 1.05fr;gap:40px;align-items:stretch}
+@media (max-width:900px){.why{grid-template-columns:1fr}}
+.why .photo{border-radius:var(--r-lg);overflow:hidden;min-height:360px;position:relative;background:#EEF2F8}
+.why .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.why .photo .cap{position:absolute;left:18px;bottom:18px;right:18px;background:rgba(10,31,92,.84);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;border-radius:16px;padding:14px 16px;font-weight:600}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:420px){.facts{grid-template-columns:1fr}}
+.fact{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:6px;align-content:start}
+.fact .k{font:800 2rem/1 var(--display);color:var(--ink);letter-spacing:-.02em}
+.fact .k small{font-size:1rem}
+.fact b{color:var(--ink);font-weight:650}
+.fact span{color:var(--muted);font-size:.93rem}
+
+/* lifestyle */
+.life{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:460px;display:grid;align-items:center;background:#EEF2F8}
+.life img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 40%}
+.life::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,31,92,.9) 0%,rgba(10,31,92,.6) 40%,rgba(10,31,92,0) 72%)}
+.life .tx{position:relative;z-index:1;padding:44px;max-width:540px;display:grid;gap:16px}
+.life h2{color:#fff;font-size:clamp(2rem,4vw,3rem)}
+.life p{color:#DCE6FF}
+@media (max-width:700px){.life{min-height:560px;align-items:end}.life img{object-position:60% 30%}.life::after{background:linear-gradient(0deg,rgba(10,31,92,.94) 0%,rgba(10,31,92,.65) 48%,rgba(10,31,92,0) 78%)}.life .tx{padding:24px}}
+
+/* bulk */
+.bulk{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media (max-width:900px){.bulk{grid-template-columns:1fr}}
+.who{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+@media (max-width:520px){.who{grid-template-columns:1fr}}
+.who div{border:1px solid var(--line);border-radius:var(--r);padding:16px;background:#fff}
+.who b{display:block;color:var(--ink)}
+.who span{color:var(--muted);font-size:.92rem}
+.form{display:grid;gap:14px}
 .f2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media (max-width:560px){.f2{grid-template-columns:1fr}}
-.fld{display:grid;gap:4px}
-.fld label{font-weight:700;font-size:.85rem}
-.err{color:var(--deal);font-size:.85rem;min-height:1.1em}
-.radio{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:8px;padding:12px;cursor:pointer}
-.radio input{accent-color:var(--green);margin-top:3px}
-.mini{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;font-size:.85rem}
-.mini img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:4px;border:1px solid var(--line)}
-.ordersum{display:grid;gap:4px;font-size:.88rem;font-variant-numeric:tabular-nums}
-.ordersum div{display:flex;justify-content:space-between}
-.ordersum .tot{font-size:1.15rem;font-weight:700;color:var(--deal);border-top:1px solid var(--line);padding-top:8px;margin-top:6px}
+@media (max-width:520px){.f2{grid-template-columns:1fr}}
+.fld{display:grid;gap:6px}
+.fld label{font-weight:650;font-size:.88rem;color:var(--ink)}
+.inp{width:100%;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:13px 14px;transition:border-color .2s,box-shadow .2s;color:var(--text)}
+.inp:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 4px rgba(31,95,214,.14)}
+.inp.bad{border-color:var(--deal);box-shadow:0 0 0 4px rgba(217,52,79,.1)}
+textarea.inp{min-height:96px;resize:vertical}
+.err{color:var(--deal);font-size:.88rem;font-weight:600;min-height:1.2em}
+.hint{color:var(--muted);font-size:.85rem}
 
-/* info pages */
-.page{padding:24px;margin-block:20px;display:grid;gap:18px}
-.page h1{font-size:1.7rem;font-weight:500}
-.contactgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-@media (max-width:900px){.contactgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:480px){.contactgrid{grid-template-columns:1fr}}
-.cbox{border:1px solid var(--line);border-radius:8px;padding:14px;display:grid;gap:4px}
-.cbox small{text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-size:.72rem;font-weight:700}
-.cbox b{font-size:1rem}
-.copy{border:1px solid var(--line);background:var(--card);color:var(--link);border-radius:999px;padding:3px 10px;font-size:.75rem;cursor:pointer;justify-self:start}
-.who{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-@media (max-width:560px){.who{grid-template-columns:1fr}}
-.who div{border:1px solid var(--line);border-radius:8px;padding:12px}
-.who b{display:block}
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px}
+@media (max-width:900px){.faq{grid-template-columns:1fr;gap:24px}}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;padding:20px 44px 20px 0;position:relative;font:650 1.08rem/1.35 var(--body);color:var(--ink)}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"";position:absolute;right:6px;top:50%;width:26px;height:26px;margin-top:-13px;border-radius:50%;background:var(--mist) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 1v10M1 6h10' stroke='%230A1F5C' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") center/12px no-repeat;transition:transform .3s var(--ease)}
+.acc details[open] summary::after{transform:rotate(45deg)}
+.acc .ans{padding:0 0 20px;color:var(--muted);max-width:68ch}
+.acc .ans ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.acc .ans b{color:var(--ink)}
+.contact{display:grid;gap:12px;margin-top:22px}
+.contact .row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.contact small{display:block;font:500 .7rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.contact b{color:var(--ink);font-size:1.05rem}
+.copy{border:1px solid var(--line);background:var(--paper);color:var(--blue);border-radius:999px;padding:6px 12px;font-weight:650;font-size:.8rem;cursor:pointer;flex:none}
 
 /* footer */
-.totop{display:block;width:100%;border:0;background:#1F3E8F;color:#fff;padding:14px;cursor:pointer;font-size:.85rem;margin-top:30px}
-.totop:hover{background:#274BA5}
-.ftr{background:var(--hdr);color:var(--hdr-ink)}
-.ftr .cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding-block:32px;max-width:1000px}
-@media (max-width:700px){.ftr .cols{grid-template-columns:1fr 1fr}}
-.ftr h3{font-size:1rem;margin-bottom:10px}
-.ftr a,.ftr span{display:block;color:var(--hdr-muted);font-size:.86rem;padding:3px 0}
-.ftr a:hover{color:var(--hdr-ink)}
-.ftr .legal{border-top:1px solid rgba(255,255,255,.12);padding-block:16px;font-size:.8rem;color:var(--hdr-muted);text-align:center}
-.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--card);color:var(--ink);padding:12px 16px;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:60;display:flex;gap:12px;align-items:center;border-left:4px solid var(--green);max-width:calc(100vw - 32px)}
-.toast .okline{font-weight:700;font-size:.95rem}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.ftr{background:var(--ink);color:#B8C8EE;padding-block:64px 28px}
+.ftr .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+@media (max-width:900px){.ftr .top{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.ftr .top{grid-template-columns:1fr}}
+.ftr h4{color:#fff;font-size:1.05rem;margin-bottom:12px;letter-spacing:0}
+.ftr a,.ftr .top span{display:block;color:#B8C8EE;padding:3px 0;font-size:.93rem}
+.ftr a:hover{color:#fff}
+.ftr .big{font:800 clamp(3.2rem,11vw,8.5rem)/.9 var(--display);color:#fff;letter-spacing:-.045em;margin-top:48px}
+.ftr .big em{font-style:normal;color:var(--lime)}
+.ftr .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:28px;padding-top:18px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:.84rem}
+
+/* product page */
+.pdp{padding-block:24px 80px}
+.crumbs{font-size:.88rem;color:var(--muted);display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+.crumbs a{color:var(--ink);font-weight:650;display:inline-flex;align-items:center;gap:6px}
+.pgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+@media (max-width:900px){.pgrid{grid-template-columns:1fr;gap:24px}}
+.gallery{position:sticky;top:calc(var(--hdr-h) + 16px);display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px}
+@media (max-width:900px){.gallery{position:static;grid-template-columns:minmax(0,1fr)}.thumbs{order:2;flex-direction:row!important;overflow-x:auto;padding-bottom:4px}}
+.thumbs{display:flex;flex-direction:column;gap:10px}
+.thumbs button{width:72px;height:72px;flex:none;border-radius:14px;border:1.5px solid var(--line);background:#fff;padding:4px;cursor:pointer;transition:border-color .2s}
+.thumbs button[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+.thumbs img{width:100%;height:100%;object-fit:contain;border-radius:10px}
+.mainimg{position:relative;aspect-ratio:1/1;background:#fff;border-radius:var(--r-lg);border:1px solid var(--line);overflow:hidden;cursor:zoom-in}
+.mainimg img{width:100%;height:100%;object-fit:contain;transition:transform .2s}
+.mainimg.cover img{object-fit:cover}
+.pinfo{display:grid;gap:20px;min-width:0}
+.pinfo h1{font-size:clamp(2rem,4vw,3rem)}
+.pinfo .sub{color:var(--muted)}
+.pprice{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.pprice b{font:800 2.6rem/1 var(--display);color:var(--ink);letter-spacing:-.03em}
+.pprice s{color:var(--muted);font-size:1.1rem}
+.pprice .off{background:#FDE8EC;color:var(--deal);font-weight:700;border-radius:999px;padding:5px 10px;font-size:.85rem}
+.tax{color:var(--muted);font-size:.86rem}
+.opt{display:grid;gap:10px}
+.opt h3{font:650 .95rem/1 var(--body);color:var(--ink);letter-spacing:0}
+.opt h3 span{color:var(--muted);font-weight:500;margin-left:6px}
+.swatches{display:flex;gap:10px;flex-wrap:wrap}
+.swatches button{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px 8px 8px;cursor:pointer;font-weight:650;color:var(--ink)}
+.swatches button[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+.swatches .dot{width:26px;height:26px}
+.sizes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding-top:6px}
+.sizes button{border:1.5px solid var(--line);background:#fff;border-radius:16px;padding:14px 6px 12px;cursor:pointer;display:grid;gap:4px;text-align:center;position:relative;color:var(--text)}
+.sizes button b{font:750 1.25rem/1 var(--display);color:var(--ink)}
+.sizes button span{font-size:.85rem;font-variant-numeric:tabular-nums}
+.sizes button small{font:500 .66rem/1 var(--mono);color:var(--muted)}
+.sizes button[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink);background:var(--mist)}
+.sizes .flag{position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font:500 .58rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:4px 6px;border-radius:999px;white-space:nowrap}
+.buyrow{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center}
+.deliver{background:var(--mist);border-radius:var(--r);padding:16px;display:grid;gap:10px}
+.deliver .pin{display:flex;gap:8px}
+.deliver .pin .inp{background:#fff;min-width:0}
+.ok{color:var(--green-d);font-weight:650}
+.perks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.perks div{border:1px solid var(--line);background:#fff;border-radius:16px;padding:12px;display:grid;gap:4px;justify-items:start;font-size:.84rem;color:var(--muted)}
+.perks b{color:var(--ink);font-size:.92rem}
+.perks svg{color:var(--green)}
+.pacc{border-top:1px solid var(--line)}
+.spec{width:100%;border-collapse:collapse;font-size:.93rem}
+.spec th,.spec td{text-align:left;padding:10px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--text)}
+.spec th{color:var(--muted);font-weight:500;width:42%;padding-right:12px}
+.safety{background:var(--warn-bg);color:var(--warn);border-radius:var(--r);padding:14px 16px;font-size:.92rem}
+.safety b{color:inherit}
+.cmpwrap{overflow-x:auto;margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg)}
+.cmp{width:100%;min-width:600px;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.cmp th,.cmp td{padding:14px 12px;text-align:center;border-bottom:1px solid var(--line)}
+.cmp tr:last-child td{border-bottom:0}
+.cmp th:first-child,.cmp td:first-child{text-align:left;color:var(--muted);font-weight:500;padding-left:20px}
+.cmp img{width:84px;height:84px;object-fit:contain;margin:0 auto;border-radius:12px;background:#fff}
+.cmp .hl{background:var(--mist)}
+.cmp a{color:var(--ink)}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,250px);gap:16px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory}
+.rail .card{scroll-snap-align:start}
+.mbar{display:none}
+@media (max-width:900px){.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:35;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));gap:12px;align-items:center}.mbar .p{display:grid;line-height:1.2;min-width:0}.mbar .p b{font:800 1.3rem/1 var(--display);color:var(--ink)}.mbar .p small{color:var(--muted);font-size:.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mbar .btn{flex:1;max-width:260px;margin-left:auto}}
+
+/* bag drawer */
+.scrim{position:fixed;inset:0;background:rgba(10,31,92,.38);z-index:70;opacity:0;transition:opacity .3s}
+.scrim.on{opacity:1}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:var(--paper);z-index:71;display:flex;flex-direction:column;transform:translateX(102%);visibility:hidden;transition:transform .4s var(--ease),visibility 0s linear .4s;box-shadow:-20px 0 60px rgba(10,31,92,.2);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.drawer.on{transform:none;visibility:visible;transition:transform .4s var(--ease),visibility 0s}
+.dhead{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line);gap:10px}
+.dhead h3{font-size:1.5rem}
+.dbody{flex:1;overflow-y:auto;padding:16px 20px;display:grid;gap:14px;align-content:start}
+.dfoot{border-top:1px solid var(--line);padding:16px 20px;display:grid;gap:12px;background:#fff}
+.line{display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:10px}
+.line img{width:72px;height:72px;object-fit:contain;border-radius:12px;background:#fff}
+.line .nm{font-weight:650;color:var(--ink);line-height:1.3}
+.line .nm a{color:inherit}
+.line .sub{font-size:.84rem;color:var(--muted)}
+.line .rt{display:grid;justify-items:end;gap:8px;align-self:stretch;align-content:space-between}
+.line .amt{font-weight:750;color:var(--ink);font-variant-numeric:tabular-nums}
+.rm{border:0;background:none;color:var(--muted);font-size:.8rem;cursor:pointer;text-decoration:underline;padding:0}
+.upsell{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;border:1.5px dashed var(--line-2);border-radius:var(--r);padding:10px 12px}
+.upsell img{width:52px;height:52px;object-fit:contain;background:#fff;border-radius:10px}
+.upsell b{color:var(--ink);font-size:.93rem}
+.upsell span{display:block;color:var(--muted);font-size:.82rem}
+.totals{display:grid;gap:6px;font-variant-numeric:tabular-nums}
+.totals div{display:flex;justify-content:space-between;color:var(--muted)}
+.totals .g{color:var(--ink);font-weight:750;font-size:1.2rem}
+.totals .sv{color:var(--green-d);font-weight:650}
+.emptybag{text-align:center;padding:40px 10px;display:grid;gap:14px;justify-items:center;color:var(--muted)}
+.emptybag .ball{width:84px;height:84px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 20%,#EEF3FB 45%,#C9D6EE)}
+.progress{display:flex;gap:8px;align-items:center;font:500 .72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.progress i{flex:1;height:3px;border-radius:3px;background:var(--line)}
+.progress i.on{background:var(--ink)}
+.progress .on-t{color:var(--ink)}
+.radio{display:flex;gap:12px;align-items:flex-start;border:1.5px solid var(--ink);background:var(--mist);border-radius:14px;padding:12px 14px}
+.radio input{accent-color:var(--ink);margin-top:4px}
+.mini{display:flex;justify-content:space-between;gap:10px;font-size:.9rem;color:var(--muted)}
+.mini b{color:var(--ink);font-weight:600}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;visibility:hidden;z-index:80;background:var(--ink);color:#fff;border-radius:18px;padding:10px 10px 10px 12px;display:flex;align-items:center;gap:12px;box-shadow:var(--sh-2);transition:transform .35s var(--ease),opacity .35s,visibility 0s linear .35s;width:max-content;max-width:calc(100vw - 32px)}
+.toast.on{transform:translate(-50%,0);opacity:1;visibility:visible;transition:transform .35s var(--ease),opacity .35s,visibility 0s}
+.toast img{width:42px;height:42px;border-radius:10px;background:#fff;object-fit:contain;flex:none}
+.toast b{display:block;font-size:.92rem}
+.toast small{color:#AFC3F3;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:40vw}
+.toast .btn{padding:10px 14px;font-size:.85rem;--b:#fff;--bh:#E6EEFF;--bi:var(--ink)}
+@media (max-width:900px){.toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<header class="hdr" id="top">
-  <div class="wrap row">
-    <a class="logo" href="#home" data-f="" aria-label="NaphClean home"><img src="images/logo.webp" alt="" width="36" height="36"><span><b>NaphClean</b><small>Pure protection. Lasting freshness.</small></span></a>
-    <button class="hbtn d-only" type="button" id="pinBtn"><small>Deliver to</small><b id="pinLabel">Enter PIN code</b></button>
-    <form class="search" id="searchForm" role="search">
-      <select id="searchCat" aria-label="Search in"><option value="all">All</option><option value="white">Classic White</option><option value="multi">Multicolour</option></select>
-      <input id="q" type="search" placeholder="Search NaphClean, e.g. 400g multicolour" aria-label="Search products" autocomplete="off">
-      <button type="submit" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
-    </form>
-    <a class="hbtn d-only" href="#help"><small>Hello, need help?</small><b>Help &amp; Contact</b></a>
-    <a class="cartlink" href="#cart" aria-label="Cart"><svg width="34" height="30" viewBox="0 0 34 30" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 3h5l4 17h17l4-12H9"/><circle cx="13" cy="26" r="2"/><circle cx="25" cy="26" r="2"/></svg><span class="n" id="cartN">0</span><b>Cart</b></a>
-  </div>
-  <div class="shipbar m-only"><div class="wrap"><button class="hbtn" type="button" id="pinBtnM" style="padding:0"><span id="pinLabelM">Deliver to: enter PIN code</span></button></div></div>
-  <nav class="subnav" aria-label="Categories"><div class="wrap">
-    <a class="strong" href="#home" data-f="">All products</a>
-    <a href="#home" data-f="c:white">Classic White</a>
-    <a href="#home" data-f="c:multi">Multicolour</a>
-    <a href="#home" data-f="s:50">50g</a><a href="#home" data-f="s:100">100g</a><a href="#home" data-f="s:200">200g</a><a href="#home" data-f="s:400">400g</a>
-    <a href="#bulk">Bulk orders</a>
-    <a href="#help">Customer service</a>
-    <a href="https://www.amazon.in/s?k=NaphClean+naphthalene+balls" target="_blank" rel="noopener">Also on Amazon.in</a>
-  </div></nav>
-  <div class="pinpop" id="pinPop" hidden>
-    <h3>Choose your delivery location</h3>
-    <p class="muted">We deliver across India. Enter a PIN code to see your delivery date.</p>
-    <div class="pinrow"><input class="inp" id="pinIn" inputmode="numeric" maxlength="6" placeholder="6-digit PIN code" aria-label="PIN code"><button class="btn btn-add" type="button" id="pinApply">Apply</button></div>
-    <p class="err" id="pinErr"></p>
+<div class="announce" role="region" aria-label="Store benefits"><div class="wrap">
+  <span><i></i><b>Free delivery</b> across India</span>
+  <span><i></i><b>7-day</b> damage replacement</span>
+  <span><i></i>Order help <b>+91 62894 79696</b></span>
+</div></div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="NaphClean home"><img src="images/logo.webp" alt="" width="40" height="40"><b>NaphClean</b></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#shop">Shop</a><a href="#how">How it works</a><a href="#planner">Pack planner</a><a href="#bulk">Bulk orders</a><a href="#faq">Help</a>
+    </nav>
+    <button class="bagbtn" id="bagBtn" type="button" aria-label="Open bag"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Bag <span class="n" id="bagN">0</span></button>
+    <button class="menubtn" id="menuBtn" type="button" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
   </div>
 </header>
 
-<main id="app"></main>
+<div class="mnav" id="mnav" hidden role="dialog" aria-label="Menu">
+  <div class="top"><span class="brand" style="margin:0"><img src="images/logo.webp" alt="" width="40" height="40"><b>NaphClean</b></span><button class="iconbtn" type="button" data-close aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <a href="#shop" data-close>Shop</a><a href="#how" data-close>How it works</a><a href="#planner" data-close>Pack planner</a><a href="#bulk" data-close>Bulk orders</a><a href="#faq" data-close>Help</a>
+  <div class="foot"><span>+91 62894 79696</span><span>care@naphclean.com</span><span>Mon to Sat, 9 AM to 6 PM IST</span></div>
+</div>
 
-<button class="totop" type="button" id="toTop">Back to top</button>
+<main id="landing">
+  <section class="hero" id="top" aria-label="NaphClean">
+    <canvas id="orbs" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Pure protection. Lasting freshness.</p>
+        <h1 style="margin-top:18px"><span style="display:block">Keep moths out.</span><span class="g" style="display:block">Keep fresh in.</span></h1>
+        <p class="lede">Lab-tested, 99.5%+ pure naphthalene balls for wardrobes, cupboards and storage boxes. One pouch protects a closed space for 6 to 8 weeks.</p>
+        <div class="ctas">
+          <a class="btn" href="#shop">Shop packs from <span id="heroFrom">₹40</span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn ghost" href="#planner">Find my pack size</a>
+        </div>
+        <ul class="proof">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>99.5%+ pure</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Every batch lab tested</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Resealable zip pouch</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Made in Kolkata</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="porthole"><img id="heroImg" src="images/w400.webp" alt="NaphClean Classic White naphthalene balls, 400g pouch" width="800" height="800"></div>
+        <div class="pricetag" aria-hidden="true"><small>400g pack</small><b id="heroPrice">₹179</b></div>
+        <div class="seg" role="group" aria-label="Colour">
+          <button type="button" data-hero="white" aria-pressed="true"><i class="dot"></i>Classic White</button>
+          <button type="button" data-hero="multi" aria-pressed="false"><i class="dot multi"></i>Multicolour</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="uses" aria-label="Where to use NaphClean"><div class="track" id="usesTrack">
+    <span>Wardrobes</span><span>Cupboards</span><span>Bookshelves</span><span>Storage boxes</span><span>Suitcases</span><span>Shoe racks</span><span>Washroom drains</span><span>Seasonal storage</span>
+  </div></div>
+
+  <section class="sec" id="shop">
+    <div class="wrap">
+      <div class="shopbar">
+        <div class="sec-head">
+          <p class="eyebrow">Shop</p>
+          <h2>Pick a colour. Pick your space.</h2>
+          <p class="lede">Same 99.5%+ pure formula in both. Classic White is the traditional choice; Multicolour brightens a drawer or washroom.</p>
+        </div>
+        <div class="seg" role="group" aria-label="Colour">
+          <button type="button" data-shop="white" aria-pressed="true"><i class="dot"></i>Classic White</button>
+          <button type="button" data-shop="multi" aria-pressed="false"><i class="dot multi"></i>Multicolour</button>
+        </div>
+      </div>
+      <div class="cards" id="cards"></div>
+      <div class="shopnote">
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>Free delivery on every order</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v4h4"/></svg>Damaged pack? Free replacement within 7 days</span>
+        <span>Prices include GST. Also on&nbsp;<a href="https://www.amazon.in/s?k=NaphClean+naphthalene+balls" target="_blank" rel="noopener">Amazon.in</a></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec how" id="how">
+    <div class="wrap how-grid">
+      <div>
+        <div class="sec-head" style="margin-bottom:0">
+          <p class="eyebrow">How it works</p>
+          <h2>It protects by slowly disappearing.</h2>
+          <p class="lede">Naphthalene turns straight from solid to vapour. In a closed wardrobe that vapour keeps moths, silverfish and musty smells away. As it works the balls get smaller, which tells you when to top up.</p>
+        </div>
+        <ol class="steps4">
+          <li><b><em>01</em>Pouch them</b><span>4 to 6 balls in a small mesh or cloth pouch.</span></li>
+          <li><b><em>02</em>Hang high</b><span>Hang the pouch near the top of the wardrobe. Never on the clothes.</span></li>
+          <li><b><em>03</em>Keep it closed</b><span>A closed door holds the vapour where it is needed.</span></li>
+          <li><b><em>04</em>Top up on time</b><span>Every 6 to 8 weeks, or when the balls look small.</span></li>
+        </ol>
+      </div>
+      <div class="lab">
+        <svg viewBox="0 0 400 280" role="img" aria-labelledby="labT"><title id="labT">A naphthalene ball shrinking over the weeks</title>
+          <defs>
+            <radialGradient id="ballG" cx="36%" cy="30%" r="75%"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#EEF3FB"/><stop offset="1" stop-color="#A9BCE6"/></radialGradient>
+            <radialGradient id="glowG" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#C8F09E" stop-opacity=".25"/><stop offset="1" stop-color="#C8F09E" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle cx="200" cy="140" r="130" fill="url(#glowG)" id="glow"/>
+          <circle cx="200" cy="140" r="96" fill="none" stroke="rgba(255,255,255,.22)" stroke-dasharray="3 7"/>
+          <g id="vapour" fill="#DCE6FF"></g>
+          <circle id="ball" cx="200" cy="140" r="96" fill="url(#ballG)"/>
+          <text x="200" y="268" text-anchor="middle" fill="#8FA6DA" font-family="DM Mono, monospace" font-size="12" id="sizeLbl">Full size</text>
+        </svg>
+        <div class="status"><b id="wkT">Week 0</b><span class="chip" id="wkChip">Fresh pack</span></div>
+        <p id="wkP">Full strength. Put the pouch in and close the door.</p>
+        <input class="range" id="wk" type="range" min="0" max="10" step="1" value="0" aria-label="Weeks since the pouch went in">
+        <div class="weeks" aria-hidden="true"><span>0</span><span>2</span><span>4</span><span>6</span><span>8</span><span>10 wks</span></div>
+        <p class="fine">Drag to see the weeks pass. Illustration only: the pace depends on room temperature and how well the space stays closed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="planner">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Pack planner</p>
+        <h2>How much do you need?</h2>
+        <p class="lede">Tell us what you want to protect. We work out the cheapest mix of packs for one refill, from our size guide.</p>
+      </div>
+      <div class="planner">
+        <div class="panel"><div class="spaces" id="spaces"></div></div>
+        <aside class="result" id="result" aria-live="polite"></aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0" aria-label="Choosing a pack">
+    <div class="wrap">
+      <div class="split">
+        <article class="tile">
+          <img src="images/hero2.webp" alt="Classic White and Multicolour NaphClean packs side by side" loading="lazy" width="1600" height="1067">
+          <div class="tx"><h3>Classic White or Multicolour?</h3>
+            <ul class="ticks">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Same formula,</b> same protection, same pack sizes.</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>White</b> is non-staining. The safe pick for linen and delicate fabric.</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Multicolour</b> looks cheerful in drawers and washrooms. Keep it off fabric.</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="tile">
+          <img src="images/life1.webp" alt="NaphClean 100g pouch on a shelf beside folded linen" loading="lazy" width="1000" height="894">
+          <div class="tx"><h3>The pouch keeps them potent</h3>
+            <p>An airtight, resealable zip pouch keeps unused balls at full strength until you need them. Best before 36 months from packing, so stocking up is safe.</p>
+            <p><a href="#p-white-200">See the 200g pack</a></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0" aria-label="Why NaphClean">
+    <div class="wrap why">
+      <div class="photo"><img src="images/balls.webp" alt="Close-up of white NaphClean naphthalene balls" loading="lazy" width="1447" height="965"><div class="cap">Pressed from 99.5%+ pure naphthalene. No PDCB, no fillers.</div></div>
+      <div>
+        <div class="sec-head" style="margin-bottom:24px">
+          <p class="eyebrow">Why NaphClean</p>
+          <h2>Small balls. Serious standards.</h2>
+        </div>
+        <div class="facts">
+          <div class="fact"><span class="k">99.5<small>%+</small></span><b>Pure naphthalene</b><span>No PDCB substitutes or fillers.</span></div>
+          <div class="fact"><span class="k">Every</span><b>Batch lab tested</b><span>Checked before it is packed.</span></div>
+          <div class="fact"><span class="k">6 to 8</span><b>Weeks per placement</b><span>In a closed wardrobe or cupboard.</span></div>
+          <div class="fact"><span class="k">36</span><b>Months shelf life</b><span>Sealed, from the date of packing.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0" aria-label="In your home">
+    <div class="wrap">
+      <div class="life">
+        <img src="images/wardrobe.webp" alt="A woman placing a NaphClean pouch in her wardrobe" loading="lazy" width="875" height="621">
+        <div class="tx">
+          <p class="eyebrow" style="color:var(--lime)">Two minutes every two months</p>
+          <h2>Hang it high. Close the door. Forget about it.</h2>
+          <p>Woollens, silks and seasonal clothes come out smelling clean, not musty. No sprays, no plug-ins, no wiring.</p>
+          <div><a class="btn" href="#shop">Shop now<svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="bulk" style="background:var(--mist)">
+    <div class="wrap bulk">
+      <div>
+        <div class="sec-head" style="margin-bottom:0">
+          <p class="eyebrow">Bulk and business</p>
+          <h2>Buying for a building, not a bedroom?</h2>
+          <p class="lede">Trade prices direct from our Kolkata team. Tell us what you need and we reply with a quote on WhatsApp, usually the same working day.</p>
+        </div>
+        <div class="who">
+          <div><b>Hotels and guest houses</b><span>Linen stores, room wardrobes, washrooms</span></div>
+          <div><b>Housekeeping teams</b><span>Offices, hostels and hospitals on a refill schedule</span></div>
+          <div><b>Retailers and distributors</b><span>Retail-ready pouches for your shelves</span></div>
+          <div><b>Corporate gifting</b><span>Staff kits and festive hampers</span></div>
+        </div>
+      </div>
+      <form class="panel form" id="bulkForm" novalidate>
+        <h3 style="font-size:1.5rem">Get a bulk quote</h3>
+        <div class="f2">
+          <div class="fld"><label for="bName">Your name</label><input class="inp" id="bName" autocomplete="name"></div>
+          <div class="fld"><label for="bPhone">Phone or WhatsApp</label><input class="inp" id="bPhone" inputmode="tel" autocomplete="tel"></div>
+          <div class="fld"><label for="bBiz">Business name</label><input class="inp" id="bBiz" autocomplete="organization"></div>
+          <div class="fld"><label for="bCity">City</label><input class="inp" id="bCity" autocomplete="address-level2"></div>
+        </div>
+        <div class="fld"><label for="bType">I am a</label><select class="inp" id="bType"><option>Hotel or guest house</option><option>Housekeeping or facility team</option><option>Retailer or distributor</option><option>Corporate gifting</option><option>Other</option></select></div>
+        <div class="fld"><label for="bNeed">What do you need?</label><textarea class="inp" id="bNeed" placeholder="For example: 200 packs of 400g Classic White every month"></textarea></div>
+        <p class="err" id="bErr" role="alert"></p>
+        <button class="btn navy block" type="submit">Send enquiry on WhatsApp</button>
+        <p class="hint">Prefer email? Write to care@naphclean.com</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="sec" id="faq">
+    <div class="wrap faq">
+      <div>
+        <div class="sec-head" style="margin-bottom:0">
+          <p class="eyebrow">Help</p>
+          <h2>Questions, answered.</h2>
+          <p class="lede">Still stuck? Talk to a person, Monday to Saturday, 9 AM to 6 PM IST.</p>
+        </div>
+        <div class="contact">
+          <div class="row"><div><small>Phone and WhatsApp</small><b>+91 62894 79696</b></div><button class="copy" type="button" data-copy="+91 6289479696">Copy</button></div>
+          <div class="row"><div><small>Email</small><b>care@naphclean.com</b></div><button class="copy" type="button" data-copy="care@naphclean.com">Copy</button></div>
+          <div class="row"><div><small>Address</small><b>16 Golaghata Road, Kolkata 700048</b></div></div>
+        </div>
+      </div>
+      <div class="acc">
+        <details open><summary>Which size should I buy?</summary><div class="ans"><ul><li><b>50g:</b> one drawer, a suitcase or a shoe rack</li><li><b>100g:</b> a standard cupboard or a bathroom corner</li><li><b>200g:</b> a full wardrobe or a storage trunk</li><li><b>400g:</b> a bedroom wardrobe plus seasonal storage</li></ul><p style="margin-top:10px">Not sure? The <a href="#planner">pack planner</a> works it out for you.</p></div></details>
+        <details><summary>How do I order and pay?</summary><div class="ans">Add packs to your bag and tap Checkout. Fill in your address and tap Place order. WhatsApp opens with your order written out. Send it, and we confirm stock and share UPI payment details in the same chat. Nothing is charged before that.</div></details>
+        <details><summary>How long does a pack last?</summary><div class="ans">One placement protects a closed space for 6 to 8 weeks. A sealed pack keeps for 36 months from packing, so bigger packs are fine to stock up on.</div></details>
+        <details><summary>Will it stain my clothes?</summary><div class="ans">Classic White is non-staining. Multicolour balls can transfer colour if they touch fabric, so keep them in a pouch or a corner.</div></details>
+        <details><summary>Is it safe? Can I use it in the kitchen?</summary><div class="ans">Keep naphthalene away from children, pets and food. It is for wardrobes, cupboards, storage and washrooms only, never kitchens. Do not ingest. If swallowed, seek medical advice.</div></details>
+        <details><summary>Shipping and delivery</summary><div class="ans">Delivery is free on every order across India. We dispatch on working days and share tracking on WhatsApp once your parcel leaves Kolkata.</div></details>
+        <details><summary>Damaged pack, returns and refunds</summary><div class="ans">If a pack arrives damaged, send a photo on WhatsApp or email within 7 days of delivery. We send a free replacement or refund you.</div></details>
+        <details><summary>Privacy</summary><div class="ans">We use your name, phone and address only to deliver your order and reply to you. We never sell or share your details. This site runs no ads and no tracking cookies.</div></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main id="pdpView" hidden></main>
+
 <footer class="ftr">
-  <div class="wrap cols">
-    <div><h3>Get to know us</h3><a href="#help">About NaphClean</a><a href="#help">How to use</a><a href="#bulk">Bulk and business</a></div>
-    <div><h3>Shop</h3><a href="#home" data-f="c:white">Classic White</a><a href="#home" data-f="c:multi">Multicolour</a><a href="#home" data-f="s:400">Best value 400g</a></div>
-    <div><h3>Let us help you</h3><a href="#cart">Your cart</a><a href="#help">Shipping and delivery</a><a href="#help">Returns and replacements</a><a href="#help">FAQ</a></div>
-    <div><h3>Contact</h3><span>+91 62894 79696</span><span>care@naphclean.com</span><span>Mon to Sat, 9 AM to 6 PM IST</span><span>16 Golaghata Road, Kolkata 700048</span></div>
+  <div class="wrap">
+    <div class="top">
+      <div><h4>NaphClean</h4><span>Premium naphthalene balls for wardrobes, cupboards and storage. Packed and marketed by Lumisha India Private Limited, Kolkata.</span></div>
+      <div><h4>Shop</h4><a href="#p-white-50">Classic White</a><a href="#p-multi-50">Multicolour</a><a href="#p-white-400">Best value 400g</a><a href="#planner">Pack planner</a></div>
+      <div><h4>Help</h4><a href="#faq">FAQ</a><a href="#faq">Shipping and delivery</a><a href="#faq">Returns</a><a href="#bulk">Bulk orders</a></div>
+      <div><h4>Contact</h4><span>+91 62894 79696</span><span>care@naphclean.com</span><span>Mon to Sat, 9 AM to 6 PM IST</span></div>
+    </div>
+    <div class="big" aria-hidden="true">Naph<em>Clean</em>.</div>
+    <div class="legal"><span>© 2026 Lumisha India Private Limited. NaphClean is a brand of Lumisha India.</span><span>Made in India</span></div>
   </div>
-  <div class="legal">© 2026 Lumisha India Private Limited. NaphClean is a brand of Lumisha India.</div>
 </footer>
-<div class="toast" id="toast" hidden></div>
+
+<div class="mbar" id="mbar" hidden></div>
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Your bag" aria-hidden="true">
+  <div class="dhead"><h3 id="dTitle">Your bag</h3><button class="iconbtn" id="dClose" type="button" aria-label="Close bag"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="dbody" id="dBody"></div>
+  <div class="dfoot" id="dFoot"></div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 (function(){
-  /* ---------- settings you may edit ---------- */
-  var WA = "916289479696";            // WhatsApp number that receives orders
-  var DELIVERY_DAYS = [3, 6];         // delivery window shown to customers (days from today)
-  var AMAZON = "https://www.amazon.in/s?k=NaphClean+naphthalene+balls";
+  "use strict";
+  /* ---------------- settings ---------------- */
+  var WA = "916289479696";
+  var DELIVERY_DAYS = [3, 6];
 
-  /* ---------- catalogue ---------- */
-  var SIZE = {
-    50:{fits:"one drawer, a suitcase or a shoe rack"},
-    100:{fits:"a standard cupboard or a bathroom corner"},
-    200:{fits:"a full wardrobe or a storage trunk", tag:"Popular"},
-    400:{fits:"a bedroom wardrobe plus seasonal storage", tag:"Best value"}
-  };
+  /* ---------------- catalogue ---------------- */
+  var SIZES = [50,100,200,400];
+  var FITS = {50:"One drawer, a suitcase or a shoe rack",100:"A standard cupboard or a bathroom corner",200:"A full wardrobe or a storage trunk",400:"A bedroom wardrobe plus seasonal storage"};
+  var TAG = {200:"Popular",400:"Best value"};
   var COL = {
-    white:{name:"Classic White", short:"White", sku:"NC-{g}G-1", price:{50:40,100:74,200:109,400:179}, mrp:{50:49,100:89,200:129,400:209}, p:"w"},
-    multi:{name:"Multicolour", short:"Multicolour", sku:"NC-{g}G-MC-1", price:{50:49,100:99,200:149,400:199}, mrp:{50:59,100:119,200:179,400:239}, p:"m"}
+    white:{name:"Classic White", sku:"NC-{g}G-1", p:"w", price:{50:40,100:74,200:109,400:179}, mrp:{50:49,100:89,200:129,400:209}},
+    multi:{name:"Multicolour", sku:"NC-{g}G-MC-1", p:"m", price:{50:49,100:99,200:149,400:199}, mrp:{50:59,100:119,200:179,400:239}}
   };
-  var P = [];
-  ["white","multi"].forEach(function(c){ [50,100,200,400].forEach(function(g){
+  var P = {};
+  ["white","multi"].forEach(function(c){ SIZES.forEach(function(g){
     var C=COL[c];
-    P.push({id:c+"-"+g, c:c, g:g, price:C.price[g], mrp:C.mrp[g], sku:C.sku.replace("{g}",g),
-      title:"NaphClean Premium Naphthalene Balls, "+C.name+", "+g+"g | Moth and Insect Repellent for Wardrobes, Cupboards and Storage | Lab Tested 99.5%+ Pure | Resealable Zip Pouch",
-      short:"NaphClean "+C.name+" Naphthalene Balls, "+g+"g",
-      imgs:[C.p+g, C.p+g+"b", "life4", "hero2", "life1"]});
+    P[c+"-"+g] = {id:c+"-"+g, c:c, g:g, price:C.price[g], mrp:C.mrp[g], sku:C.sku.replace("{g}",g),
+      name:C.name+" "+g+"g", title:"NaphClean "+C.name+" Naphthalene Balls, "+g+"g",
+      imgs:[C.p+g, C.p+g+"b", "hero2", "life1", "wardrobe"]};
   }); });
-  var byId = {}; P.forEach(function(p){byId[p.id]=p});
 
-  /* ---------- state ---------- */
-  function ls(k,v){ try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k,v); }catch(e){ return null; } }
-  var cart = {}; try{ cart = JSON.parse(ls("nc2_cart")||"{}")||{}; }catch(e){}
-  Object.keys(cart).forEach(function(k){ if(!byId[k]) delete cart[k]; });
-  var pin = ls("nc2_pin") || "";
-  var F = {c:{}, s:{}, sort:"featured", q:""};
-  var buyNow = null;
-
+  /* ---------------- helpers ---------------- */
   var $ = function(id){ return document.getElementById(id); };
-  var app = $("app");
   function img(n){ return "images/"+n+".webp"; }
-  function inr(n){ return "₹"+n.toLocaleString("en-IN"); }
-  function esc(s){ return String(s).replace(/[&<>"]/g,function(ch){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch];}); }
+  function inr(n){ return "₹"+Math.round(n).toLocaleString("en-IN"); }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
   function pct(p){ return Math.round((p.mrp-p.price)/p.mrp*100); }
   function per100(p){ return Math.round(p.price/p.g*100); }
-  function priceHTML(n,big){ return '<span class="pr'+(big?' lg':'')+'"><sup>₹</sup><span class="whole">'+n.toLocaleString("en-IN")+'</span></span>'; }
-  function fmtDate(d){ return d.toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"}); }
-  function deliveryText(){
-    var a=new Date(), b=new Date(); a.setDate(a.getDate()+DELIVERY_DAYS[0]); b.setDate(b.getDate()+DELIVERY_DAYS[1]);
-    return fmtDate(a)+" to "+fmtDate(b);
-  }
-  function pinText(){ return pin ? "Deliver to "+pin : "Enter PIN code"; }
+  function ls(k,v){ try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k,v); }catch(e){ return null; } }
+  function dText(){ var a=new Date(),b=new Date(); a.setDate(a.getDate()+DELIVERY_DAYS[0]); b.setDate(b.getDate()+DELIVERY_DAYS[1]);
+    var f=function(d){return d.toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"})}; return f(a)+" to "+f(b); }
+  var reduce = !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+  var ICON = {
+    check:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+    arrow:'<svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+    back:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
+    wa:'<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.2 1.4z"/></svg>'
+  };
 
-  /* ---------- header ---------- */
-  function paintHeader(){
-    var n=0; Object.keys(cart).forEach(function(k){ n+=cart[k]; });
-    $("cartN").textContent=n;
-    $("pinLabel").textContent = pin ? pin : "Enter PIN code";
-    $("pinLabelM").textContent = pin ? "Deliver to "+pin : "Deliver to: enter PIN code";
+  /* ---------------- state ---------------- */
+  var bag = {}; try{ bag = JSON.parse(ls("nc3_bag")||"{}")||{}; }catch(e){ bag={}; }
+  Object.keys(bag).forEach(function(k){ if(!P[k]||!(bag[k]>0)) delete bag[k]; });
+  var shopC = ls("nc3_col")==="multi" ? "multi" : "white";
+  var pin = ls("nc3_pin") || "";
+  var draft = {};
+  var step = "bag";
+
+  function saveBag(){ ls("nc3_bag",JSON.stringify(bag)); paintBag(); }
+  function qty(id){ return bag[id]||0; }
+  function setQty(id,q){ if(q<=0) delete bag[id]; else bag[id]=Math.min(q,99); saveBag(); }
+  function lines(){ return Object.keys(bag).map(function(k){ return {p:P[k],q:bag[k]}; }); }
+  function totals(L){ var t={n:0,sum:0,mrp:0}; L.forEach(function(l){t.n+=l.q;t.sum+=l.q*l.p.price;t.mrp+=l.q*l.p.mrp;}); return t; }
+
+  /* ---------------- header + menu ---------------- */
+  var hdr=$("hdr");
+  function onScroll(){ hdr.classList.toggle("scrolled", window.scrollY>8); }
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  function lock(on){ document.documentElement.style.overflow = on ? "hidden" : ""; }
+  $("menuBtn").addEventListener("click",function(){ $("mnav").hidden=false; lock(true); });
+  $("mnav").addEventListener("click",function(e){ if(e.target.closest("[data-close]")){ $("mnav").hidden=true; lock(false); } });
+
+  /* ---------------- hero orbs: balls drift up and shrink, like naphthalene subliming ---------------- */
+  var heroC = "white";
+  var PAL = {white:[["#FFFFFF","#EEF3FB","#B9C9E8"]], multi:[["#FFF6CF","#FFD24D","#D9A400"],["#FFE3EF","#FF7EB3","#D24A82"],["#E8FFD9","#8FE36A","#4FA52C"],["#E2F3FF","#7EC8FF","#3A8DD0"],["#FFFFFF","#EEF3FB","#B9C9E8"]]};
+  var cv=$("orbs"), cx=cv.getContext("2d"), W=0,H=0,DPR=1, orbs=[], running=false, visible=true, mx=0,my=0, Z={x0:0,x1:0,y1:0};
+  function sizeCanvas(){ var r=cv.getBoundingClientRect(); DPR=Math.min(window.devicePixelRatio||1,2); W=r.width; H=r.height; cv.width=Math.round(W*DPR); cv.height=Math.round(H*DPR); cx.setTransform(DPR,0,0,DPR,0,0);
+    var st=document.querySelector('.stage').getBoundingClientRect();
+    if(W>900){ Z={x0:W*0.5, x1:W, y1:H}; } else { Z={x0:0, x1:W, y1:Math.min(H, st.bottom - r.top + 10)}; } }
+  function pickCol(){ var pal=PAL[heroC]; return pal[Math.floor(Math.random()*pal.length)]; }
+  function spawn(o,fresh){
+    var small = W<700;
+    o.r0 = (small?9:13) + Math.random()*(small?20:32);
+    o.x = Z.x0 + Math.random()*(Z.x1-Z.x0); o.y = fresh ? Math.random()*Z.y1 : Z.y1 + o.r0 + Math.random()*60;
+    o.vx = (Math.random()-.5)*.18; o.vy = -(.12+Math.random()*.28);
+    o.life = fresh ? Math.random()*600 : 0; o.span = 900+Math.random()*1400; o.z = .5+Math.random()*.9;
+    o.col = pickCol(); return o;
   }
-  function togglePin(){ var p=$("pinPop"); p.hidden=!p.hidden; if(!p.hidden){ $("pinIn").value=pin; $("pinIn").focus(); } }
-  $("pinBtn").addEventListener("click",togglePin);
-  $("pinBtnM").addEventListener("click",togglePin);
-  $("pinApply").addEventListener("click",function(){
-    var v=$("pinIn").value.trim();
-    if(!/^[1-9]\d{5}$/.test(v)){ $("pinErr").textContent="Enter a valid 6-digit PIN code."; return; }
-    pin=v; ls("nc2_pin",v); $("pinErr").textContent=""; $("pinPop").hidden=true; paintHeader(); render();
-  });
-  $("pinIn").addEventListener("keydown",function(e){ if(e.key==="Enter") $("pinApply").click(); });
-  document.addEventListener("click",function(e){
-    if(!$("pinPop").hidden && !e.target.closest("#pinPop,#pinBtn,#pinBtnM")) $("pinPop").hidden=true;
-    var f=e.target.closest("[data-f]");
-    if(f){ F.c={}; F.s={}; F.q=""; $("q").value="";
-      var v=f.dataset.f; if(v){ var kv=v.split(":"); F[kv[0]][kv[1]]=true; }
-      if(location.hash==="#home"){ e.preventDefault(); render(); scrollToResults(); } else { pendingScroll=true; }
+  function initOrbs(){ sizeCanvas(); var n = W<700 ? 10 : 16; orbs=[]; for(var i=0;i<n;i++) orbs.push(spawn({},true)); draw(); }
+  function ball(x,y,r,col,a){
+    if(r<=0.5) return;
+    var g=cx.createRadialGradient(x-r*.35,y-r*.4,r*.05,x,y,r);
+    g.addColorStop(0,col[0]); g.addColorStop(.5,col[1]); g.addColorStop(1,col[2]);
+    cx.globalAlpha=a; cx.fillStyle=g; cx.beginPath(); cx.arc(x,y,r,0,Math.PI*2); cx.fill();
+    cx.globalAlpha=a*.55; cx.fillStyle="#fff"; cx.beginPath(); cx.arc(x-r*.38,y-r*.42,r*.16,0,Math.PI*2); cx.fill();
+    cx.globalAlpha=1;
+  }
+  function draw(){
+    cx.clearRect(0,0,W,H); cx.save(); cx.beginPath(); cx.rect(Z.x0-40,0,Z.x1-Z.x0+40,Z.y1); cx.clip();
+    for(var i=0;i<orbs.length;i++){
+      var o=orbs[i], t=Math.min(1,o.life/o.span);
+      var r=o.r0*(1-t*.75), a= t<.08 ? t/.08 : (t>.85 ? Math.max(0,(1-t)/.15) : 1);
+      ball(o.x + mx*14*o.z, o.y + my*10*o.z, r, o.col, a*.9);
     }
-  });
-  var pendingScroll=false;
-  function scrollToResults(){ var r=$("results"); if(r) r.scrollIntoView({behavior:"smooth",block:"start"}); }
-  $("searchForm").addEventListener("submit",function(e){
-    e.preventDefault(); F.q=$("q").value.trim(); F.c={}; F.s={};
-    var cat=$("searchCat").value; if(cat!=="all") F.c[cat]=true;
-    pendingScroll=true;
-    if(location.hash!=="#home") location.hash="home"; else { render(); scrollToResults(); pendingScroll=false; }
-  });
-  $("toTop").addEventListener("click",function(){ window.scrollTo({top:0,behavior:"smooth"}); });
+    cx.restore();
+  }
+  function tick(){
+    if(!running) return;
+    for(var i=0;i<orbs.length;i++){ var o=orbs[i]; o.x+=o.vx*o.z; o.y+=o.vy*o.z; o.life++; if(o.life>o.span||o.y<-80) spawn(o,false); }
+    draw(); requestAnimationFrame(tick);
+  }
+  function play(){ var on = visible && !document.hidden && !reduce; if(on&&!running){ running=true; requestAnimationFrame(tick); } else if(!on){ running=false; } }
+  initOrbs();
+  if("IntersectionObserver" in window){ new IntersectionObserver(function(es){ visible=es[0].isIntersecting; play(); }).observe(cv); }
+  play();
+  document.addEventListener("visibilitychange",play);
+  var rT; window.addEventListener("resize",function(){ clearTimeout(rT); rT=setTimeout(initOrbs,150); });
+  $("top").addEventListener("pointermove",function(e){ if(e.pointerType!=="mouse") return; mx=(e.clientX/window.innerWidth-.5); my=(e.clientY/window.innerHeight-.5); if(!running) draw(); });
 
-  /* ---------- cart ops ---------- */
-  function save(){ ls("nc2_cart",JSON.stringify(cart)); paintHeader(); }
-  function add(id,q){ cart[id]=(cart[id]||0)+(q||1); save(); var p=byId[id];
-    toast('<img src="'+img(p.imgs[0])+'" alt="" style="width:44px;height:44px;object-fit:contain;background:#fff;border-radius:4px"><div><div class="okline">Added to cart</div><div class="muted" style="font-size:.82rem">'+esc(p.short)+'</div></div><a class="btn btn-line" href="#cart">Go to cart</a>'); }
-  function lines(){ return Object.keys(cart).filter(function(k){return cart[k]>0}).map(function(k){ return {p:byId[k], q:cart[k]}; }); }
-  function totals(L){ var t={n:0,sum:0,mrp:0}; L.forEach(function(l){ t.n+=l.q; t.sum+=l.q*l.p.price; t.mrp+=l.q*l.p.mrp; }); return t; }
-  var tt; function toast(h){ var el=$("toast"); el.innerHTML=h; el.hidden=false; clearTimeout(tt); tt=setTimeout(function(){el.hidden=true},3200); }
+  function setHero(c){
+    if(c===heroC) return; heroC=c;
+    document.querySelectorAll("[data-hero]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.hero===c)); });
+    var im=$("heroImg"); im.classList.add("swap");
+    setTimeout(function(){ im.src=img(COL[c].p+"400"); im.alt="NaphClean "+COL[c].name+" naphthalene balls, 400g pouch"; setTimeout(function(){ im.classList.remove("swap"); },120); },220);
+    $("heroPrice").textContent=inr(COL[c].price[400]); $("heroFrom").textContent=inr(COL[c].price[50]);
+    orbs.forEach(function(o){ o.col=pickCol(); }); if(!running) draw();
+  }
+  document.querySelectorAll("[data-hero]").forEach(function(b){ b.addEventListener("click",function(){ setHero(b.dataset.hero); setShop(b.dataset.hero); }); });
+  var tr=$("usesTrack"); tr.innerHTML += tr.innerHTML.replace(/<span>/g,'<span aria-hidden="true">');
 
-  /* ---------- views ---------- */
-  function card(p){
-    return '<article class="item card"><a class="ph" href="#p-'+p.id+'">'+
-      (SIZE[p.g].tag?'<span class="badge'+(p.g===400?'':' navy')+'">'+SIZE[p.g].tag+'</span>':'')+
-      '<img src="'+img(p.imgs[0])+'" alt="'+esc(p.short)+'" loading="lazy" width="800" height="800"></a>'+
-      '<div class="bd"><a class="t" href="#p-'+p.id+'">'+esc(p.title)+'</a>'+
-      '<div>'+priceHTML(p.price)+' <span class="mrp">M.R.P: <s>'+inr(p.mrp)+'</s></span> <span class="off">('+pct(p)+'% off)</span></div>'+
-      '<div class="muted tnum" style="font-size:.78rem">('+inr(per100(p))+'/100 g)</div>'+
-      '<div class="free">FREE delivery <b>'+deliveryText()+'</b></div>'+
-      '<button class="btn btn-add" type="button" data-add="'+p.id+'">Add to cart</button></div></article>';
+  /* ---------------- product cards ---------------- */
+  function actHTML(p){
+    var q=qty(p.id);
+    return q ? '<div class="stepper" role="group" aria-label="Quantity of '+esc(p.name)+'"><button type="button" data-dec="'+p.id+'" aria-label="Remove one">−</button><span>'+q+' in bag</span><button type="button" data-inc="'+p.id+'" aria-label="Add one">+</button></div>'
+             : '<button class="btn block" type="button" data-add="'+p.id+'">Add to bag</button>';
+  }
+  function cardHTML(p){
+    return '<article class="card">'+
+      (TAG[p.g]?'<span class="badge'+(p.g===400?' best':'')+'">'+TAG[p.g]+'</span>':'')+
+      '<a class="ph" href="#p-'+p.id+'" aria-label="View '+esc(p.title)+'"><img class="main" src="'+img(p.imgs[0])+'" alt="'+esc(p.title)+'" loading="lazy" width="800" height="800"><img class="alt" src="'+img(p.imgs[1])+'" alt="" loading="lazy" width="800" height="800"></a>'+
+      '<div class="bd"><div class="size"><a href="#p-'+p.id+'"><b>'+p.g+'g</b></a><span class="per">'+inr(per100(p))+'/100g</span></div>'+
+      '<p class="fits">'+FITS[p.g]+'</p>'+
+      '<div class="price"><b>'+inr(p.price)+'</b><s>'+inr(p.mrp)+'</s><span class="off">'+pct(p)+'% off</span></div>'+
+      '<div class="act" data-act="'+p.id+'">'+actHTML(p)+'</div></div></article>';
+  }
+  function renderCards(){ $("cards").innerHTML = SIZES.map(function(g){ return cardHTML(P[shopC+"-"+g]); }).join(""); }
+  function setShop(c){ shopC=c; ls("nc3_col",c); document.querySelectorAll("[data-shop]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.shop===c)); }); renderCards(); }
+  document.querySelectorAll("[data-shop]").forEach(function(b){ b.addEventListener("click",function(){ setShop(b.dataset.shop); setHero(b.dataset.shop); }); });
+  function refreshActs(){ document.querySelectorAll("[data-act]").forEach(function(el){ el.innerHTML=actHTML(P[el.dataset.act]); }); }
+
+  document.addEventListener("click",function(e){
+    var a=e.target.closest("[data-add]"), i=e.target.closest("[data-inc]"), d=e.target.closest("[data-dec]");
+    if(a){ var id=a.dataset.add; setQty(id,qty(id)+1); toast(P[id],1); }
+    else if(i){ setQty(i.dataset.inc,qty(i.dataset.inc)+1); }
+    else if(d){ setQty(d.dataset.dec,qty(d.dataset.dec)-1); }
+    if(e.target.closest("[data-open-bag]")) openBag();
+  });
+
+  /* ---------------- sublimation lab ---------------- */
+  var STAGES=[
+    {max:1, chip:"Fresh pack", cls:"", p:"Full strength. Put the pouch in and close the door."},
+    {max:5, chip:"Working", cls:"", p:"The balls are turning to vapour. Moths and musty smells stay out."},
+    {max:8, chip:"Top up soon", cls:"warn", p:"The balls look noticeably smaller. Add a fresh handful this week."},
+    {max:10,chip:"Replace", cls:"red", p:"Most of the naphthalene has turned to vapour. Time for a new pouch."}
+  ];
+  function lab(){
+    var w=+$("wk").value, s=STAGES.filter(function(x){return w<=x.max})[0];
+    var r=96*Math.max(.22,1-w*.078);
+    $("ball").setAttribute("r",r.toFixed(1)); $("glow").setAttribute("r",(r+34).toFixed(1));
+    $("wkT").textContent = "Week "+w;
+    $("wkChip").textContent=s.chip; $("wkChip").className="chip "+s.cls; $("wkP").textContent=s.p;
+    $("sizeLbl").textContent = w===0 ? "Full size" : "About "+Math.round(r/96*100)+"% of the original size";
+    var v="", n = w===0?0:Math.min(12,3+w);
+    for(var k=0;k<n;k++){ var ang=(k/n)*Math.PI*2+w*.6, rr=r+14+((k*37)%34); v+='<circle cx="'+(200+Math.cos(ang)*rr).toFixed(1)+'" cy="'+(140+Math.sin(ang)*rr*.8-6).toFixed(1)+'" r="'+(1.5+(k%3)).toFixed(1)+'" opacity="'+(.25+(k%4)*.12).toFixed(2)+'"/>'; }
+    $("vapour").innerHTML=v;
+  }
+  $("wk").addEventListener("input",lab); lab();
+
+  /* ---------------- planner ---------------- */
+  var SPACES=[
+    {k:"drawer", g:50, t:"Drawers, suitcases, shoe racks", s:"50g each", ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 12h18M10 8.5h4M10 15.5h4"/></svg>'},
+    {k:"cupboard", g:100, t:"Cupboards and bookshelves", s:"100g each", ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 3v18M10 12h.01M14 12h.01"/></svg>'},
+    {k:"bath", g:100, t:"Bathroom corners", s:"100g each", ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2zM6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/></svg>'},
+    {k:"wardrobe", g:200, t:"Full wardrobes and trunks", s:"200g each", ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="17" rx="2"/><path d="M12 3v17M9.5 10v3M14.5 10v3M5 20v1.5M19 20v1.5"/></svg>'},
+    {k:"bedroom", g:400, t:"Bedroom wardrobe with seasonal storage", s:"400g each", ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="13" height="17" rx="2"/><path d="M8.5 3v17M15 11h7v9h-7M18.5 14v3"/></svg>'}
+  ];
+  var plan={drawer:2,cupboard:1,bath:0,wardrobe:1,bedroom:0}, planC="white", planPick=null;
+  function best(need,c){
+    if(need<=0) return null;
+    var price=COL[c].price, top=need+400, cost=[0], cnt=[0], pick=[0];
+    for(var x=50;x<=top;x+=50){ var b=Infinity,bn=Infinity,bp=0;
+      SIZES.forEach(function(g){ var j=(x-g)/50; if(j>=0 && cost[j]<Infinity){ var v=cost[j]+price[g], n=cnt[j]+1; if(v<b || (v===b && n<bn)){b=v;bn=n;bp=g;} } });
+      cost[x/50]=b; cnt[x/50]=bn; pick[x/50]=bp; }
+    var bi=-1,bv=Infinity; for(var y=need;y<=top;y+=50){ if(cost[y/50]<bv){bv=cost[y/50];bi=y;} }
+    var counts={}, z=bi; while(z>0){ var g=pick[z/50]; counts[g]=(counts[g]||0)+1; z-=g; }
+    return {grams:bi, cost:bv, counts:counts};
+  }
+  function renderSpaces(){
+    $("spaces").innerHTML = SPACES.map(function(s){ var n=plan[s.k];
+      return '<div class="space'+(n?' on':'')+'"><span class="ic">'+s.ic+'</span><div><b>'+s.t+'</b><small>'+s.s+'</small></div>'+
+        '<div class="stepper light" role="group" aria-label="'+esc(s.t)+'"><button type="button" data-sp="'+s.k+'" data-d="-1" aria-label="One less">−</button><span class="tnum">'+n+'</span><button type="button" data-sp="'+s.k+'" data-d="1" aria-label="One more">+</button></div></div>'; }).join("");
+  }
+  function renderPlan(){
+    var need=0; SPACES.forEach(function(s){ need+=plan[s.k]*s.g; });
+    var r=best(need,planC), h='<div class="seg" role="group" aria-label="Colour"><button type="button" data-pc="white" aria-pressed="'+(planC==="white")+'"><i class="dot"></i>White</button><button type="button" data-pc="multi" aria-pressed="'+(planC==="multi")+'"><i class="dot multi"></i>Multicolour</button></div>';
+    planPick=r;
+    if(!r){ $("result").innerHTML = h+'<h3>Add a space to start</h3><p class="empty">Use the + buttons to tell us what you want to protect.</p>'; return; }
+    var packs=Object.keys(r.counts).map(Number).sort(function(a,b){return b-a}), mrp=0;
+    packs.forEach(function(g){ mrp+=COL[planC].mrp[g]*r.counts[g]; });
+    h += '<div><p class="eyebrow" style="color:#AFC3F3">You need per refill</p><div class="big tnum">'+need+'<small>grams</small></div></div>'+
+      '<div class="packs">'+packs.map(function(g){ var p=P[planC+"-"+g]; return '<div class="pk"><img src="'+img(p.imgs[0])+'" alt=""><span><b>'+r.counts[g]+' × '+g+'g</b> '+COL[planC].name+'</span><span class="tnum">'+inr(p.price*r.counts[g])+'</span></div>'; }).join("")+'</div>'+
+      '<div class="sum"><span>Cheapest mix'+(r.grams>need?', with '+(r.grams-need)+'g spare':'')+'</span><b class="tnum">'+inr(r.cost)+'</b></div>'+
+      '<p style="font-size:.88rem;color:#AFC3F3;margin-top:-6px">You save '+inr(mrp-r.cost)+' on M.R.P. One refill lasts 6 to 8 weeks.</p>'+
+      '<button class="btn block" type="button" id="addPlan">Add this plan to bag'+ICON.arrow+'</button>';
+    $("result").innerHTML=h;
+  }
+  $("spaces").addEventListener("click",function(e){ var b=e.target.closest("[data-sp]"); if(!b) return; plan[b.dataset.sp]=Math.max(0,Math.min(20,plan[b.dataset.sp]+(+b.dataset.d))); renderSpaces(); renderPlan(); });
+  $("result").addEventListener("click",function(e){
+    var pc=e.target.closest("[data-pc]"); if(pc){ planC=pc.dataset.pc; renderPlan(); return; }
+    if(e.target.closest("#addPlan") && planPick){ Object.keys(planPick.counts).forEach(function(g){ var id=planC+"-"+g; bag[id]=(bag[id]||0)+planPick.counts[g]; }); saveBag(); openBag(); }
+  });
+  renderSpaces(); renderPlan();
+
+  /* ---------------- bag drawer ---------------- */
+  var drawer=$("drawer"), scrim=$("scrim"), lastFocus=null;
+  function isOpen(){ return drawer.classList.contains("on"); }
+  function openBag(s){ step = s||"bag"; paintDrawer(); lastFocus=document.activeElement; scrim.hidden=false; void scrim.offsetWidth; scrim.classList.add("on"); drawer.classList.add("on"); drawer.setAttribute("aria-hidden","false"); lock(true); hideToast(); setTimeout(function(){ $("dClose").focus({preventScroll:true}); },60); }
+  function closeBag(){ scrim.classList.remove("on"); drawer.classList.remove("on"); drawer.setAttribute("aria-hidden","true"); lock(false); setTimeout(function(){ if(!isOpen()) scrim.hidden=true; },300); if(lastFocus&&lastFocus.focus) lastFocus.focus({preventScroll:true}); if(location.hash==="#cart") history.replaceState(null,"",location.pathname+location.search); }
+  $("bagBtn").addEventListener("click",function(){ openBag(); });
+  $("dClose").addEventListener("click",closeBag); scrim.addEventListener("click",closeBag);
+  document.addEventListener("keydown",function(e){ if(e.key!=="Escape") return; if(isOpen()) closeBag(); if(!$("mnav").hidden){ $("mnav").hidden=true; lock(false); } });
+
+  function paintBag(){
+    var t=totals(lines()); $("bagN").textContent=t.n;
+    var b=$("bagBtn"); b.classList.remove("bump"); void b.offsetWidth; b.classList.add("bump");
+    refreshActs(); paintMbar(); if(isOpen()) paintDrawer();
+  }
+  function progress(){
+    var co=step==="checkout";
+    return '<div class="progress" aria-hidden="true"><span class="on-t">Bag</span><i class="on"></i><span class="'+(co?'on-t':'')+'">Address</span><i class="'+(co?'on':'')+'"></i><span>WhatsApp</span></div>';
+  }
+  function paintDrawer(){
+    var L=lines(), t=totals(L), body=$("dBody"), foot=$("dFoot");
+    if(!L.length) step="bag";
+    $("dTitle").textContent = step==="checkout" ? "Checkout" : "Your bag"+(t.n?" ("+t.n+")":"");
+    if(!L.length){
+      body.innerHTML='<div class="emptybag"><span class="ball" aria-hidden="true"></span><b style="color:var(--ink);font-size:1.1rem">Your bag is empty</b><span>Pick a colour and size, or let the planner choose for you.</span></div>';
+      foot.innerHTML='<a class="btn block" href="#shop" data-shut>Shop naphthalene balls</a><a class="btn ghost block" href="#planner" data-shut>Use the pack planner</a>'; return;
+    }
+    if(step==="bag"){
+      var ups=null; ["white-50","multi-50","white-100"].some(function(k){ if(!bag[k]){ ups=P[k]; return true; } return false; });
+      body.innerHTML = progress() + L.map(function(l){ var p=l.p; return '<div class="line"><a href="#p-'+p.id+'" data-shut><img src="'+img(p.imgs[0])+'" alt="'+esc(p.name)+'"></a><div><div class="nm"><a href="#p-'+p.id+'" data-shut>'+esc(p.name)+'</a></div><div class="sub tnum">'+inr(p.price)+' each <s>'+inr(p.mrp)+'</s></div>'+
+        '<div class="stepper light" style="margin-top:8px"><button type="button" data-dec="'+p.id+'" aria-label="Remove one">−</button><span class="tnum">'+l.q+'</span><button type="button" data-inc="'+p.id+'" aria-label="Add one">+</button></div></div>'+
+        '<div class="rt"><span class="amt">'+inr(l.q*p.price)+'</span><button class="rm" type="button" data-rm="'+p.id+'">Remove</button></div></div>'; }).join("") +
+        (ups?'<div class="upsell"><img src="'+img(ups.imgs[0])+'" alt=""><div><b>Add '+esc(ups.name)+'</b><span>'+inr(ups.price)+', handy for drawers and suitcases</span></div><button class="btn sm navy" type="button" data-add="'+ups.id+'">Add</button></div>':"");
+      foot.innerHTML='<div class="totals"><div><span>Items ('+t.n+')</span><span>'+inr(t.mrp)+'</span></div><div class="sv"><span>You save</span><span>−'+inr(t.mrp-t.sum)+'</span></div><div><span>Delivery</span><span class="ok">FREE</span></div><div class="g"><span>Total</span><span>'+inr(t.sum)+'</span></div></div>'+
+        '<button class="btn block" type="button" id="toCheckout">Checkout'+ICON.arrow+'</button><p class="hint" style="text-align:center">Arrives '+dText()+'</p>';
+    } else {
+      var d=draft; if(!d.pin&&pin) d.pin=pin;
+      var f=function(id,label,attrs,full){ return '<div class="fld"'+(full?' style="grid-column:1/-1"':'')+'><label for="c_'+id+'">'+label+'</label><input class="inp" id="c_'+id+'" data-k="'+id+'" value="'+esc(d[id]||"")+'" '+(attrs||"")+'></div>'; };
+      body.innerHTML = progress() + '<form class="form" id="coForm" novalidate><div class="f2">'+
+        f("name","Full name",'autocomplete="name"')+f("phone","Mobile number",'inputmode="tel" autocomplete="tel"')+
+        f("addr","House, building, street",'autocomplete="address-line1"',true)+f("area","Area and landmark (optional)",'autocomplete="address-line2"',true)+
+        f("pin","PIN code",'inputmode="numeric" maxlength="6" autocomplete="postal-code"')+f("city","Town or city",'autocomplete="address-level2"')+
+        f("state","State",'autocomplete="address-level1"',true)+'</div>'+
+        '<label class="radio"><input type="radio" checked name="pay"><span><b style="color:var(--ink)">Pay by UPI after we confirm</b><br><span class="hint">We reply on WhatsApp with your UPI details. Nothing is charged before that.</span></span></label>'+
+        '<div style="display:grid;gap:6px">'+L.map(function(l){ return '<div class="mini"><span>'+l.q+' × '+esc(l.p.name)+'</span><b class="tnum">'+inr(l.q*l.p.price)+'</b></div>'; }).join("")+'</div></form>';
+      foot.innerHTML='<div class="totals"><div class="g"><span>Total, free delivery</span><span>'+inr(t.sum)+'</span></div></div><p class="err" id="coErr" role="alert"></p>'+
+        '<button class="btn block" type="button" id="placeBtn">'+ICON.wa+'Place order on WhatsApp</button>'+
+        '<button class="btn ghost block" type="button" id="backBag">'+ICON.back+'Back to bag</button>';
+      body.querySelectorAll("[data-k]").forEach(function(i){ i.addEventListener("input",function(){ d[i.dataset.k]=i.value; i.classList.remove("bad"); }); });
+      $("coForm").addEventListener("submit",function(e){ e.preventDefault(); placeOrder(); });
+    }
+  }
+  drawer.addEventListener("click",function(e){
+    if(e.target.closest("[data-shut]")){ closeBag(); return; }
+    var rm=e.target.closest("[data-rm]"); if(rm){ setQty(rm.dataset.rm,0); return; }
+    if(e.target.closest("#toCheckout")){ step="checkout"; paintDrawer(); var f=$("c_name"); if(f) f.focus(); return; }
+    if(e.target.closest("#backBag")){ step="bag"; paintDrawer(); return; }
+    if(e.target.closest("#placeBtn")) placeOrder();
+  });
+  function placeOrder(){
+    var d=draft, v=function(k){ return (d[k]||"").trim(); }, ph=v("phone").replace(/\D/g,"").slice(-10);
+    var chk=[["name",!v("name"),"Enter your full name."],["phone",ph.length<10,"Enter a 10-digit mobile number."],["addr",!v("addr"),"Enter your house and street."],
+      ["pin",!/^[1-9]\d{5}$/.test(v("pin")),"Enter a valid 6-digit PIN code."],["city",!v("city"),"Enter your town or city."],["state",!v("state"),"Enter your state."]];
+    var bad=chk.filter(function(c){return c[1]});
+    document.querySelectorAll("#coForm .inp").forEach(function(i){ i.classList.remove("bad"); });
+    if(bad.length){ $("coErr").textContent=bad[0][2]; bad.forEach(function(c){ var el=$("c_"+c[0]); if(el) el.classList.add("bad"); }); var f=$("c_"+bad[0][0]); if(f) f.focus(); return; }
+    $("coErr").textContent="";
+    pin=v("pin"); ls("nc3_pin",pin);
+    var L=lines(), t=totals(L), msg="Hello NaphClean, I would like to place an order.\n";
+    L.forEach(function(l){ msg+="\n"+l.q+" x "+l.p.title+" ("+l.p.sku+"), "+inr(l.q*l.p.price); });
+    msg+="\n\nOrder total: "+inr(t.sum)+" (free delivery)\nPayment: UPI\n\nName: "+v("name")+"\nMobile: "+ph+"\nAddress: "+v("addr")+(v("area")?", "+v("area"):"")+", "+v("city")+", "+v("state")+" "+pin;
+    openWA(msg);
+  }
+  function openWA(msg){
+    /* A real link click opens WhatsApp (app on phones, new tab on desktop) and never navigates the store away. */
+    var a=document.createElement("a"); a.href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg); a.target="_blank"; a.rel="noopener";
+    document.body.appendChild(a); a.click(); a.remove();
   }
 
-  function home(){
-    var list=P.filter(function(p){
-      var cs=Object.keys(F.c), ss=Object.keys(F.s);
-      if(cs.length && !F.c[p.c]) return false;
-      if(ss.length && !F.s[p.g]) return false;
-      if(F.q){ var hay=(p.g+"g "+(p.c==="white"?"classic white":"multicolour multicolor multi colour color colourful colorful rangeen")+" naphthalene naphthelene naphtalene balls goli moth insect wardrobe cupboard nc "+p.sku).toLowerCase();
-        var ok=F.q.toLowerCase().replace(/(\d+)\s*(grams?|gms?|g)\b/g,"$1g").split(/\s+/).filter(Boolean).every(function(w){
-          if(/^\d+$/.test(w)) w+="g";
-          return hay.indexOf(w)>-1; }); if(!ok) return false; }
-      return true;
-    });
-    if(F.sort==="low") list.sort(function(a,b){return a.price-b.price});
-    if(F.sort==="high") list.sort(function(a,b){return b.price-a.price});
-    if(F.sort==="value") list.sort(function(a,b){return per100(a)-per100(b)});
-    if(F.sort==="off") list.sort(function(a,b){return pct(b)-pct(a)});
-    var label = F.q ? 'results for <b>"'+esc(F.q)+'"</b>' : (Object.keys(F.c).length||Object.keys(F.s).length ? "results in your filters" : "products");
-    function chk(k,v,t){ return '<label><input type="checkbox" data-chk="'+k+':'+v+'"'+(F[k][v]?' checked':'')+'> '+t+'</label>'; }
-    app.innerHTML =
-    '<section class="banner"><div class="wrap"><div>'+
-      '<h1>Pure protection.<br><em>Lasting freshness.</em></h1>'+
-      '<p>Lab-tested, 99.5%+ pure naphthalene balls for wardrobes, cupboards and storage. Free delivery across India.</p>'+
-      '<div class="ctas"><a class="btn btn-add" href="#p-white-200">Shop best sellers</a><a class="btn btn-line" href="#bulk">Bulk orders</a></div>'+
-    '</div><img src="images/hero1.webp" alt="NaphClean 400g multicolour pouch" width="1600" height="1067"></div></section>'+
-    '<div class="wrap">'+
-      '<div class="tiles">'+
-        '<div class="tile card"><h2>Pick your size</h2><div class="q">'+
-          [50,100,200,400].map(function(g){ return '<a href="#p-white-'+g+'"><img src="'+img("w"+g)+'" alt="" loading="lazy">'+g+'g</a>'; }).join("")+
-        '</div><a class="more" href="#home" data-f="">See all sizes</a></div>'+
-        '<div class="tile card"><h2>White or Multicolour?</h2><div class="q">'+
-          '<a href="#home" data-f="c:white"><img src="'+img("w100")+'" alt="" loading="lazy">Classic White</a>'+
-          '<a href="#home" data-f="c:multi"><img src="'+img("m100")+'" alt="" loading="lazy">Multicolour</a>'+
-        '</div><p class="muted" style="font-size:.85rem">Same formula. Multicolour brightens up drawers and washrooms.</p></div>'+
-        '<div class="tile card"><h2>Best value: 400g</h2><a href="#p-white-400"><img class="one" src="'+img("w400")+'" alt="NaphClean 400g pouch" loading="lazy" style="object-fit:contain;background:#fff"></a>'+
-          '<div>'+priceHTML(179)+' <span class="off">'+inr(Math.round(179/4))+'/100 g</span></div></div>'+
-        '<div class="tile card"><h2>Buying in bulk?</h2><a href="#bulk"><img class="one" src="'+img("life1")+'" alt="" loading="lazy"></a>'+
-          '<a class="more" href="#bulk">Hotels, retailers and gifting: get a quote</a></div>'+
-      '</div>'+
-      '<div class="listing" id="results">'+
-        '<aside class="filters card" aria-label="Filters">'+
-          '<div><h3>Colour</h3>'+chk("c","white","Classic White")+chk("c","multi","Multicolour")+'</div>'+
-          '<div><h3>Pack size</h3>'+chk("s",50,"50g")+chk("s",100,"100g")+chk("s",200,"200g")+chk("s",400,"400g")+'</div>'+
-          '<div><h3>Delivery</h3><label><input type="checkbox" checked disabled> Free delivery</label></div>'+
-        '</aside>'+
-        '<div><div class="resbar card"><span><b>'+list.length+'</b> '+label+'</span>'+
-          '<label class="muted">Sort by <select id="sort">'+
-            [["featured","Featured"],["low","Price: low to high"],["high","Price: high to low"],["value","Best value per 100g"],["off","Biggest discount"]].map(function(o){return '<option value="'+o[0]+'"'+(F.sort===o[0]?' selected':'')+'>'+o[1]+'</option>'}).join("")+
-          '</select></label></div>'+
-          (list.length? '<div class="grid">'+list.map(card).join("")+'</div>' :
-            '<div class="card none"><b>No products match.</b><p class="muted" style="margin-top:6px">Try "white", "multicolour" or a size like "200g". <a href="#home" data-f="">Clear filters</a></p></div>')+
+  /* ---------------- mobile bars ---------------- */
+  var pdpBar=null;
+  function paintMbar(){
+    var m=$("mbar"), t=totals(lines());
+    if(pdpBar){ m.hidden=false; m.innerHTML=pdpBar(); }
+    else if(!t.n){ m.hidden=true; m.innerHTML=""; }
+    else { m.hidden=false; m.innerHTML='<div class="p"><b class="tnum">'+inr(t.sum)+'</b><small>'+t.n+' item'+(t.n>1?"s":"")+', free delivery</small></div><button class="btn" type="button" data-open-bag>View bag'+ICON.arrow+'</button>'; }
+    document.body.style.paddingBottom = (!m.hidden && window.innerWidth<=900) ? "78px" : "";
+  }
+
+  /* ---------------- toast ---------------- */
+  var tt;
+  function toast(p,n){
+    var el=$("toast"); el.innerHTML='<img src="'+img(p.imgs[0])+'" alt=""><div><b>Added to bag</b><small>'+(n>1?n+" × ":"")+esc(p.name)+'</small></div><button class="btn" type="button" data-open-bag>View bag</button>';
+    el.classList.add("on"); clearTimeout(tt); tt=setTimeout(hideToast,3200);
+  }
+  function hideToast(){ $("toast").classList.remove("on"); }
+
+  /* ---------------- product page ---------------- */
+  function pdp(id){
+    var p=P[id]; if(!p) return false;
+    var C=COL[p.c], v=$("pdpView"), q=1;
+    v.innerHTML='<div class="wrap pdp">'+
+      '<nav class="crumbs" aria-label="Breadcrumb"><a href="#shop">'+ICON.back+'All packs</a><span>/</span><span>'+C.name+'</span><span>/</span><span>'+p.g+'g</span></nav>'+
+      '<div class="pgrid">'+
+        '<div class="gallery"><div class="thumbs" id="thumbs">'+p.imgs.map(function(s,i){return '<button type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'" aria-label="Photo '+(i+1)+'"><img src="'+img(s)+'" alt=""></button>'}).join("")+'</div>'+
+          '<div class="mainimg" id="mainImg"><img id="mainPic" src="'+img(p.imgs[0])+'" alt="'+esc(p.title)+'"></div></div>'+
+        '<div class="pinfo">'+
+          '<div><p class="eyebrow">'+C.name+(TAG[p.g]?' · '+TAG[p.g]:'')+'</p><h1 style="margin-top:12px">'+C.name+' Naphthalene Balls, '+p.g+'g</h1><p class="sub" style="margin-top:10px">'+FITS[p.g]+'. Lab-tested, 99.5%+ pure.</p></div>'+
+          '<div><div class="pprice"><b class="tnum">'+inr(p.price)+'</b><s>'+inr(p.mrp)+'</s><span class="off">'+pct(p)+'% off</span></div><p class="tax tnum" style="margin-top:8px">'+inr(per100(p))+' per 100g. Inclusive of all taxes.</p></div>'+
+          '<div class="opt"><h3>Colour<span>'+C.name+'</span></h3><div class="swatches">'+["white","multi"].map(function(c){ return '<button type="button" data-go="'+c+"-"+p.g+'" aria-pressed="'+(c===p.c)+'"><i class="dot'+(c==="multi"?" multi":"")+'"></i>'+COL[c].name+'</button>'; }).join("")+'</div></div>'+
+          '<div class="opt"><h3>Size<span>'+p.g+'g</span></h3><div class="sizes">'+SIZES.map(function(g){ var o=P[p.c+"-"+g]; return '<button type="button" data-go="'+o.id+'" aria-pressed="'+(g===p.g)+'">'+(TAG[g]?'<span class="flag">'+TAG[g]+'</span>':'')+'<b>'+g+'g</b><span>'+inr(o.price)+'</span><small>'+inr(per100(o))+'/100g</small></button>'; }).join("")+'</div></div>'+
+          '<div class="buyrow"><div class="stepper light" role="group" aria-label="Quantity"><button type="button" id="qm" aria-label="One less">−</button><span id="qv" class="tnum">1</span><button type="button" id="qp" aria-label="One more">+</button></div>'+
+            '<button class="btn block" type="button" id="pAdd">Add to bag · <span id="qAmt">'+inr(p.price)+'</span></button></div>'+
+          '<button class="btn navy block" type="button" id="pBuy">Buy now</button>'+
+          '<div class="deliver"><b style="color:var(--ink)">Free delivery</b><div class="pin"><input class="inp" id="pinIn" inputmode="numeric" maxlength="6" placeholder="Enter PIN code" value="'+esc(pin)+'" aria-label="PIN code"><button class="btn sm navy" type="button" id="pinGo">Check</button></div><div id="pinOut" class="hint">'+(pin?'<span class="ok">Delivers to '+esc(pin)+' by '+dText()+'</span>':'Usually arrives in '+DELIVERY_DAYS[0]+' to '+DELIVERY_DAYS[1]+' days')+'</div></div>'+
+          '<div class="perks"><div>'+ICON.check+'<b>99.5%+ pure</b>Lab tested</div><div>'+ICON.check+'<b>7-day</b>Damage replacement</div><div>'+ICON.check+'<b>UPI</b>Pay after we confirm</div></div>'+
+          '<div class="acc pacc">'+
+            '<details open><summary>About this pack</summary><div class="ans"><ul><li>Protects clothes from moths, silverfish and fabric-damaging insects.</li><li>Helps prevent mildew and musty smells in closed spaces.</li><li>'+(p.c==="white"?"Non-staining on clothes, linen and delicate fabric when kept in a pouch.":"Colourful mix for drawers and washrooms. Keep off fabric to avoid colour transfer.")+'</li><li>Airtight, resealable zip pouch keeps unused balls at full strength.</li></ul></div></details>'+
+            '<details><summary>How to use</summary><div class="ans"><ul><li>Put 4 to 6 balls in a small mesh or cloth pouch.</li><li>Hang it high in the wardrobe, not on the clothes.</li><li>Keep the door closed.</li><li>Top up every 6 to 8 weeks, or when the balls look small.</li></ul></div></details>'+
+            '<details><summary>Specifications</summary><div class="ans"><table class="spec"><tbody>'+
+              '<tr><th>Brand</th><td>NaphClean</td></tr><tr><th>Colour</th><td>'+C.name+'</td></tr><tr><th>Net weight</th><td>'+p.g+' g</td></tr><tr><th>Purity</th><td>99.5%+ naphthalene</td></tr><tr><th>Pack</th><td>Resealable zip pouch</td></tr><tr><th>SKU</th><td>'+p.sku+'</td></tr>'+
+              '<tr><th>Shelf life</th><td>Best before 36 months from packing</td></tr><tr><th>Manufactured by</th><td>Calcutta Chemical Products, Kolkata 700001</td></tr><tr><th>Packed and marketed by</th><td>Lumisha India Private Limited, 16 Golaghata Road, Kolkata 700048</td></tr><tr><th>Country of origin</th><td>India</td></tr><tr><th>Customer care</th><td>+91 62894 79696, care@naphclean.com</td></tr>'+
+            '</tbody></table></div></details>'+
+            '<details><summary>Safety</summary><div class="ans"><p class="safety"><b>Keep away from children and pets.</b> Do not ingest. If swallowed, seek medical advice. Not for kitchens or anywhere near food. For enclosed storage spaces only. Store in a cool, dry place away from heat and flame.</p></div></details>'+
+          '</div>'+
         '</div>'+
       '</div>'+
+      '<section style="margin-top:72px"><div class="sec-head" style="margin-bottom:10px"><p class="eyebrow">Compare</p><h2 style="font-size:clamp(1.8rem,3.4vw,2.5rem)">Every size in '+C.name+'</h2></div><div class="cmpwrap"><table class="cmp"><thead><tr><th></th>'+
+        SIZES.map(function(g){ var o=P[p.c+"-"+g]; return '<th class="'+(g===p.g?'hl':'')+'"><a href="#p-'+o.id+'"><img src="'+img(o.imgs[0])+'" alt="'+g+'g pack" loading="lazy"></a><div style="margin-top:6px"><a href="#p-'+o.id+'"><b>'+g+'g</b></a></div></th>'; }).join("")+'</tr></thead><tbody>'+
+        '<tr><td>Price</td>'+SIZES.map(function(g){var o=P[p.c+"-"+g];return '<td class="'+(g===p.g?'hl':'')+'"><b>'+inr(o.price)+'</b></td>'}).join("")+'</tr>'+
+        '<tr><td>Per 100g</td>'+SIZES.map(function(g){var o=P[p.c+"-"+g];return '<td class="'+(g===p.g?'hl':'')+'">'+inr(per100(o))+'</td>'}).join("")+'</tr>'+
+        '<tr><td>Best for</td>'+SIZES.map(function(g){return '<td class="'+(g===p.g?'hl':'')+'" style="font-size:.85rem">'+FITS[g]+'</td>'}).join("")+'</tr>'+
+        '<tr><td></td>'+SIZES.map(function(g){var o=P[p.c+"-"+g];return '<td class="'+(g===p.g?'hl':'')+'"><button class="btn sm" type="button" data-add="'+o.id+'">Add</button></td>'}).join("")+'</tr>'+
+      '</tbody></table></div></section>'+
+      '<section style="margin-top:64px"><div class="sec-head" style="margin-bottom:18px"><p class="eyebrow">More from NaphClean</p><h2 style="font-size:clamp(1.8rem,3.4vw,2.5rem)">You may also like</h2></div><div class="rail">'+
+        Object.keys(P).filter(function(k){return k!==p.id}).sort(function(a,b){ return (P[a].c===p.c?1:0)-(P[b].c===p.c?1:0); }).map(function(k){return cardHTML(P[k])}).join("")+'</div></section>'+
     '</div>';
-    app.querySelectorAll("[data-chk]").forEach(function(b){ b.addEventListener("change",function(){
-      var kv=b.dataset.chk.split(":"); if(b.checked) F[kv[0]][kv[1]]=true; else delete F[kv[0]][kv[1]]; render(); }); });
-    $("sort").addEventListener("change",function(){ F.sort=this.value; render(); });
-    document.title="NaphClean Store";
-  }
-
-  function pdp(id){
-    var p=byId[id]; if(!p){ location.hash="home"; return; }
-    var C=COL[p.c], other=p.c==="white"?"multi":"white";
-    var fb1 = byId[p.c+"-"+(p.g===50?100:50)], fb2 = byId[other+"-50"];
-    var about=[
-      ["99.5%+ pure naphthalene","no PDCB substitutes or fillers, and every batch is lab tested."],
-      ["Protects clothes","keeps moths and fabric-damaging insects away and helps prevent mildew and musty smells in closed spaces."],
-      ["Right size for "+SIZE[p.g].fits,"see the size guide below to pick the pack that fits your space."],
-      ["Many uses","wardrobes, cupboards, bookshelves, storage boxes, suitcases, shoe racks, and near washroom drains and basins."],
-      [p.c==="white"?"Non-staining":"Bright and cheerful", p.c==="white"?"classic white balls are safe on clothes, linen and delicate fabric when kept in a pouch.":"a colourful mix that looks good in drawers and washrooms. Keep them off fabric to avoid colour transfer."],
-      ["Resealable zip pouch","the airtight pack keeps the balls potent until the last one."],
-      ["Easy to use","put 4 to 6 balls in a mesh pouch, hang it high, keep the door closed, and replace every 6 to 8 weeks."]
-    ];
-    var qty = '<select id="qty" aria-label="Quantity">'+[1,2,3,4,5,6,8,10,12,15,20].map(function(n){return '<option value="'+n+'">Quantity: '+n+'</option>'}).join("")+'</select>';
-    app.innerHTML =
-    '<div class="wrap"><div class="crumbs"><a href="#home" data-f="">Home care</a> › <a href="#home" data-f="">Naphthalene balls</a> › <a href="#home" data-f="c:'+p.c+'">'+C.name+'</a></div>'+
-    '<div class="pdp card">'+
-      '<div class="gal"><div class="thumbs" id="thumbs">'+p.imgs.map(function(s,i){return '<button type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'" aria-label="Photo '+(i+1)+'"><img src="'+img(s)+'" alt=""></button>'}).join("")+'</div>'+
-        '<div><div class="main-img" id="mainImg"><img id="mainPic" src="'+img(p.imgs[0])+'" alt="'+esc(p.short)+'"></div><p class="hint" id="zoomHint">Roll over image to zoom in</p></div></div>'+
-      '<div class="info">'+
-        '<h1>'+esc(p.title)+'</h1>'+
-        '<a class="store" href="#home" data-f="">Visit the NaphClean Store</a>'+
-        '<hr class="hr">'+
-        (SIZE[p.g].tag?'<span class="badge'+(p.g===400?'':' navy')+'" style="margin-bottom:8px">'+SIZE[p.g].tag+'</span>':'')+
-        '<div class="pricebox"><div class="row"><span class="off big">-'+pct(p)+'%</span>'+priceHTML(p.price,true)+'</div>'+
-          '<span class="mrp">M.R.P.: <s>'+inr(p.mrp)+'</s> <span class="tnum">('+inr(per100(p))+' / 100 g)</span></span>'+
-          '<span style="font-size:.85rem">Inclusive of all taxes</span></div>'+
-        '<hr class="hr">'+
-        '<div class="perks"><div><i>🚚</i>Free delivery</div><div><i>↺</i>7-day replacement</div><div><i>✓</i>Lab tested</div><div><i>🔒</i>Secure UPI payment</div></div>'+
-        '<hr class="hr">'+
-        '<div class="opt"><h3>Colour: <b>'+C.name+'</b></h3><div class="opts">'+
-          ["white","multi"].map(function(c){ var q=byId[c+"-"+p.g]; return '<button type="button" data-go="'+q.id+'" aria-pressed="'+(c===p.c)+'"><span class="sw"><img src="'+img(q.imgs[0])+'" alt=""></span><small>'+COL[c].name+'</small><span class="p">'+inr(q.price)+'</span></button>'; }).join("")+
-        '</div></div>'+
-        '<div class="opt" style="margin-top:14px"><h3>Size: <b>'+p.g+'g</b></h3><div class="opts">'+
-          [50,100,200,400].map(function(g){ var q=byId[p.c+"-"+g]; return '<button type="button" data-go="'+q.id+'" aria-pressed="'+(g===p.g)+'"><small><b>'+g+'g</b></small><span class="p">'+inr(q.price)+'</span><span class="p tnum" style="font-size:.72rem">'+inr(per100(q))+'/100 g</span></button>'; }).join("")+
-        '</div></div>'+
-        '<hr class="hr">'+
-        '<div class="tbl-wrap"><table><tbody>'+
-          '<tr><th>Brand</th><td>NaphClean</td></tr><tr><th>Colour</th><td>'+C.name+'</td></tr><tr><th>Net quantity</th><td>'+p.g+' g</td></tr>'+
-          '<tr><th>Form</th><td>Balls</td></tr><tr><th>Country of origin</th><td>India</td></tr><tr><th>Purity</th><td>99.5%+ naphthalene</td></tr><tr><th>Best for</th><td>'+SIZE[p.g].fits.charAt(0).toUpperCase()+SIZE[p.g].fits.slice(1)+'</td></tr>'+
-        '</tbody></table></div>'+
-        '<hr class="hr">'+
-        '<div class="about"><h2>About this item</h2><ul>'+about.map(function(a){return '<li><b>'+a[0]+':</b> '+a[1]+'</li>'}).join("")+'</ul></div>'+
-      '</div>'+
-      '<aside class="buybox" aria-label="Buy">'+
-        '<div>'+priceHTML(p.price,true)+'</div>'+
-        '<div class="free">FREE delivery <b>'+deliveryText()+'</b>. '+(pin?'<span class="muted">Deliver to '+pin+'</span>':'<button class="linkbtn" type="button" id="pinHere">Enter your PIN code</button>')+'</div>'+
-        '<div class="stock">In stock</div>'+
-        qty+
-        '<button class="btn btn-add btn-block" type="button" id="addBtn">Add to cart</button>'+
-        '<button class="btn btn-buy btn-block" type="button" id="buyBtn">Buy now</button>'+
-        '<div class="secure">🔒 Secure transaction. You confirm and pay only after we reply.</div>'+
-        '<div class="sold"><span>Ships from</span><span>NaphClean, Kolkata</span><span>Sold by</span><span>Lumisha India Private Limited</span><span>Payment</span><span>UPI, confirmed on WhatsApp</span><span>Returns</span><span>Damaged pack replaced or refunded within 7 days</span></div>'+
-        '<hr class="hr" style="margin:4px 0">'+
-        '<a href="#bulk" style="font-size:.85rem">Need 20+ packs? Get a bulk quote</a>'+
-      '</aside>'+
-    '</div>'+
-
-    '<section class="section card"><h2>Frequently bought together</h2><div class="fbt">'+
-      [p,fb1,fb2].map(function(q,i){ return (i?'<span class="plus">+</span>':'')+'<a class="it" href="#p-'+q.id+'"><img src="'+img(q.imgs[0])+'" alt="" loading="lazy"><span style="color:var(--ink)">'+esc(q.short)+'</span><b class="tnum">'+inr(q.price)+'</b></a>'; }).join("")+
-      '<div class="sum"><div>Total price: <b class="tnum" style="font-size:1.15rem">'+inr(p.price+fb1.price+fb2.price)+'</b></div><button class="btn btn-add" type="button" id="addAll">Add all 3 to cart</button></div>'+
-    '</div></section>'+
-
-    '<section class="section card"><h2>Compare pack sizes</h2><div class="tbl-wrap"><table class="cmp"><thead><tr><th></th>'+
-      [50,100,200,400].map(function(g){ var q=byId[p.c+"-"+g]; return '<th class="'+(g===400?'best':'')+'"><a href="#p-'+q.id+'"><img src="'+img(q.imgs[0])+'" alt="" loading="lazy"></a><div style="margin-top:6px"><a href="#p-'+q.id+'">'+g+'g</a></div></th>'; }).join("")+
-      '</tr></thead><tbody>'+
-      '<tr><td>Price</td>'+[50,100,200,400].map(function(g){var q=byId[p.c+"-"+g];return '<td class="tnum '+(g===400?'best':'')+'"><b>'+inr(q.price)+'</b></td>'}).join("")+'</tr>'+
-      '<tr><td>Per 100 g</td>'+[50,100,200,400].map(function(g){var q=byId[p.c+"-"+g];return '<td class="tnum '+(g===400?'best':'')+'">'+inr(per100(q))+'</td>'}).join("")+'</tr>'+
-      '<tr><td>Best for</td>'+[50,100,200,400].map(function(g){return '<td class="'+(g===400?'best':'')+'" style="font-size:.8rem">'+SIZE[g].fits+'</td>'}).join("")+'</tr>'+
-      '<tr><td></td>'+[50,100,200,400].map(function(g){var q=byId[p.c+"-"+g];return '<td class="'+(g===400?'best':'')+'"><button class="btn btn-add" type="button" data-add="'+q.id+'">Add</button></td>'}).join("")+'</tr>'+
-    '</tbody></table></div></section>'+
-
-    '<section class="section card twocol"><div><h2>How to use</h2><ol class="howto"><li>Put 4 to 6 balls in a small mesh or perforated pouch.</li><li>Hang it at the top of the wardrobe, not on the clothes.</li><li>Keep the door closed so the vapour stays inside.</li><li>Replace every 6 to 8 weeks, or when the balls get small.</li></ol>'+
-      '<p class="safety" style="margin-top:14px"><b>Safety:</b> Keep away from children and pets. Do not ingest. Not for kitchens or near food. For enclosed storage spaces only. Store in a cool, dry place.</p></div>'+
-      '<div><h2>Product details</h2><div class="tbl-wrap"><table><tbody>'+
-        '<tr><th>Item</th><td>Naphthalene balls</td></tr><tr><th>Net quantity</th><td>'+p.g+' g</td></tr><tr><th>Pack</th><td>Resealable zip pouch</td></tr>'+
-        '<tr><th>SKU</th><td>'+p.sku+'</td></tr>'+
-        '<tr><th>Manufactured by</th><td>Calcutta Chemical Products, Kolkata 700001</td></tr>'+
-        '<tr><th>Packed and marketed by</th><td>Lumisha India Private Limited, 16 Golaghata Road, Ground Floor, Kolkata 700048, West Bengal</td></tr>'+
-        '<tr><th>Country of origin</th><td>India</td></tr>'+
-        '<tr><th>Shelf life</th><td>Best before 36 months from the date of packaging</td></tr>'+
-        '<tr><th>Customer care</th><td>+91 62894 79696, care@naphclean.com</td></tr>'+
-      '</tbody></table></div></div></section>'+
-
-    '<section class="section card"><h2>Customers also viewed</h2><div class="rail">'+P.filter(function(q){return q.id!==p.id}).map(card).join("")+'</div></section>'+
-
-    '<section class="section card qa"><h2>Questions and answers</h2>'+
-      '<details><summary>How long does one pack last?</summary><p>Usually 6 to 8 weeks per placement, depending on how well the space is closed. Bigger packs let you refill several times.</p></details>'+
-      '<details><summary>Will it stain my clothes?</summary><p>White balls are non-staining. Multicolour balls can transfer colour if they sit on fabric, so keep them in a pouch or a corner.</p></details>'+
-      '<details><summary>Can I use it in the kitchen?</summary><p>No. It is for clothing, textile and storage spaces only. Keep it away from food, kitchens and pet areas.</p></details>'+
-      '<details><summary>What if my pack arrives damaged?</summary><p>Send a photo on WhatsApp or email within 7 days of delivery and we will replace it free or refund you.</p></details>'+
-      '<p style="margin-top:12px"><a href="#help">See all questions</a></p>'+
-    '</section></div>';
-
-    var pics=p.imgs, main=$("mainImg"), pic=$("mainPic");
-    $("thumbs").addEventListener("click",function(e){ var b=e.target.closest("button"); if(!b) return; show(+b.dataset.i); });
-    $("thumbs").addEventListener("mouseover",function(e){ var b=e.target.closest("button"); if(b) show(+b.dataset.i); });
-    function show(i){ pic.src=img(pics[i]); app.querySelectorAll("#thumbs button").forEach(function(b,j){b.setAttribute("aria-pressed",i===j)}); }
-    var fine = window.matchMedia && matchMedia("(hover:hover) and (pointer:fine)").matches;
-    if(fine){
-      main.addEventListener("mousemove",function(e){ var r=main.getBoundingClientRect(); pic.style.transformOrigin=((e.clientX-r.left)/r.width*100)+"% "+((e.clientY-r.top)/r.height*100)+"%"; pic.style.transform="scale(2.2)"; });
-      main.addEventListener("mouseleave",function(){ pic.style.transform=""; });
-    } else { $("zoomHint").textContent="Tap a thumbnail to see more photos"; }
-    app.querySelectorAll("[data-go]").forEach(function(b){ b.addEventListener("click",function(){ location.hash="p-"+b.dataset.go; }); });
-    $("addBtn").addEventListener("click",function(){ add(p.id,+$("qty").value); });
-    $("buyBtn").addEventListener("click",function(){ buyNow={id:p.id,q:+$("qty").value}; location.hash="checkout"; });
-    $("addAll").addEventListener("click",function(){ cart[p.id]=(cart[p.id]||0)+1; cart[fb1.id]=(cart[fb1.id]||0)+1; add(fb2.id,1); });
-    var ph=$("pinHere"); if(ph) ph.addEventListener("click",function(e){ e.stopPropagation(); window.scrollTo({top:0,behavior:"smooth"}); togglePin(); });
-    document.title=p.short+" | NaphClean";
-  }
-
-  function cartView(){
-    var L=lines(), t=totals(L);
-    if(!L.length){
-      app.innerHTML='<div class="wrap"><div class="cartpage"><div class="cartmain card"><h1>Your NaphClean cart is empty</h1><p class="muted" style="margin-top:8px">Pick a colour and size to get started.</p><p style="margin-top:16px"><a class="btn btn-add" href="#home" data-f="">Shop naphthalene balls</a></p></div>'+
-      '<div class="sidebox card"><b>Popular right now</b>'+[byId["white-200"],byId["multi-100"]].map(function(q){return '<div class="mini"><img src="'+img(q.imgs[0])+'" alt=""><a href="#p-'+q.id+'">'+esc(q.short)+'</a><b class="tnum">'+inr(q.price)+'</b></div>'}).join("")+'</div></div></div>';
-      document.title="Cart | NaphClean"; return;
+    var pic=$("mainPic"), mi=$("mainImg");
+    function show(i){ pic.src=img(p.imgs[i]); pic.style.transform=""; mi.classList.toggle("cover", i>=2); v.querySelectorAll("#thumbs button").forEach(function(b,j){ b.setAttribute("aria-pressed", String(i===j)); }); }
+    $("thumbs").addEventListener("click",function(e){ var b=e.target.closest("button"); if(b) show(+b.dataset.i); });
+    if(window.matchMedia && matchMedia("(hover:hover) and (pointer:fine)").matches){
+      mi.addEventListener("mousemove",function(e){ var r=mi.getBoundingClientRect(); pic.style.transformOrigin=((e.clientX-r.left)/r.width*100)+"% "+((e.clientY-r.top)/r.height*100)+"%"; pic.style.transform="scale(2)"; });
+      mi.addEventListener("mouseleave",function(){ pic.style.transform=""; });
     }
-    app.innerHTML='<div class="wrap"><div class="cartpage"><div class="cartmain card"><h1>Shopping Cart</h1><div class="muted" style="text-align:right;font-size:.85rem;border-bottom:1px solid var(--line);padding-bottom:6px">Price</div>'+
-      L.map(function(l){ var p=l.p; return '<div class="cline"><a href="#p-'+p.id+'"><img src="'+img(p.imgs[0])+'" alt=""></a><div>'+
-        '<a class="t" href="#p-'+p.id+'">'+esc(p.title)+'</a><div class="meta"><span class="okline">In stock</span><span class="muted">Eligible for FREE delivery</span><span><b>Colour:</b> '+COL[p.c].name+' &nbsp; <b>Size:</b> '+p.g+'g</span></div>'+
-        '<div class="acts"><span class="qsel"><button type="button" data-dec="'+p.id+'" aria-label="Remove one">'+(l.q===1?'🗑':'−')+'</button><span>'+l.q+'</span><button type="button" data-inc="'+p.id+'" aria-label="Add one">+</button></span>'+
-        '<span class="muted">|</span><button class="linkbtn" type="button" data-del="'+p.id+'">Delete</button></div></div>'+
-        '<div class="lp">'+inr(l.q*p.price)+'<div class="mrp" style="font-weight:400"><s>'+inr(l.q*p.mrp)+'</s></div></div></div>'; }).join("")+
-      '<div class="subtotal" style="text-align:right;padding-top:12px">Subtotal ('+t.n+' item'+(t.n>1?'s':'')+'): <b>'+inr(t.sum)+'</b></div></div>'+
-      '<div class="sidebox card"><div class="okline">✓ Your order qualifies for FREE delivery.</div><div class="subtotal">Subtotal ('+t.n+' item'+(t.n>1?'s':'')+'): <b>'+inr(t.sum)+'</b></div>'+
-      '<div class="muted" style="font-size:.85rem">You save '+inr(t.mrp-t.sum)+' on M.R.P.</div>'+
-      '<a class="btn btn-add btn-block" href="#checkout">Proceed to buy</a></div></div></div>';
-    app.querySelectorAll("[data-inc]").forEach(function(b){b.onclick=function(){cart[b.dataset.inc]++;save();render();}});
-    app.querySelectorAll("[data-dec]").forEach(function(b){b.onclick=function(){var k=b.dataset.dec;cart[k]--;if(cart[k]<=0)delete cart[k];save();render();}});
-    app.querySelectorAll("[data-del]").forEach(function(b){b.onclick=function(){delete cart[b.dataset.del];save();render();}});
-    document.title="Cart | NaphClean";
+    v.querySelectorAll("[data-go]").forEach(function(b){ b.addEventListener("click",function(){ location.hash="p-"+b.dataset.go; }); });
+    function setQ(n){ q=Math.max(1,Math.min(20,n)); $("qv").textContent=q; $("qAmt").textContent=inr(q*p.price); paintMbar(); }
+    $("qm").addEventListener("click",function(){ setQ(q-1); }); $("qp").addEventListener("click",function(){ setQ(q+1); });
+    function add(){ setQty(p.id,qty(p.id)+q); toast(p,q); }
+    $("pAdd").addEventListener("click",add);
+    $("pBuy").addEventListener("click",function(){ setQty(p.id,qty(p.id)+q); openBag("checkout"); });
+    $("pinGo").addEventListener("click",function(){ var val=$("pinIn").value.trim();
+      if(!/^[1-9]\d{5}$/.test(val)){ $("pinOut").innerHTML='<span style="color:var(--deal);font-weight:650">Enter a valid 6-digit PIN code.</span>'; return; }
+      pin=val; ls("nc3_pin",pin); draft.pin=pin; $("pinOut").innerHTML='<span class="ok">Delivers to '+esc(pin)+' by '+dText()+'</span>'; });
+    $("pinIn").addEventListener("keydown",function(e){ if(e.key==="Enter") $("pinGo").click(); });
+    pdpBar=function(){ return '<div class="p"><b class="tnum">'+inr(q*p.price)+'</b><small>'+(q>1?q+" × ":"")+esc(p.name)+'</small></div><button class="btn" type="button" id="mAdd">Add to bag</button>'; };
+    paintMbar();
+    $("mbar").onclick=function(e){ if(e.target.closest("#mAdd")) add(); };
+    document.title=p.title+" | NaphClean";
+    return true;
   }
 
-  var draft={};
-  function checkout(){
-    var L = buyNow ? [{p:byId[buyNow.id],q:buyNow.q}] : lines();
-    if(!L.length){ location.hash="cart"; return; }
-    var t=totals(L), d=draft;
-    if(!d.pin && pin) d.pin=pin;
-    function fld(id,label,attrs,full){ return '<div class="fld"'+(full?' style="grid-column:1/-1"':'')+'><label for="'+id+'">'+label+'</label><input class="inp" id="'+id+'" value="'+esc(d[id.slice(2).toLowerCase()]||"")+'" '+(attrs||"")+'></div>'; }
-    app.innerHTML='<div class="wrap"><div class="checkout"><div>'+
-      '<form class="step card" id="coForm" novalidate><h2><span>1</span>Delivery address</h2><div class="f2">'+
-        fld("coName","Full name",'autocomplete="name"')+fld("coPhone","Mobile number",'inputmode="tel" autocomplete="tel"')+
-        fld("coAddr","Flat, house, building, street",'autocomplete="address-line1"',true)+
-        fld("coArea","Area, landmark",'autocomplete="address-line2"',true)+
-        fld("coPin","PIN code",'inputmode="numeric" maxlength="6" autocomplete="postal-code"')+fld("coCity","Town or city",'autocomplete="address-level2"')+
-        fld("coState","State",'autocomplete="address-level1"')+
-      '</div></form>'+
-      '<div class="step card"><h2><span>2</span>Payment method</h2>'+
-        '<label class="radio"><input type="radio" name="pay" checked> <span><b>UPI</b> (Google Pay, PhonePe, Paytm and others)<br><span class="muted" style="font-size:.85rem">We confirm your order on WhatsApp and send the UPI details there. You pay only after we confirm.</span></span></label></div>'+
-      '<div class="step card"><h2><span>3</span>Review items and delivery</h2><div class="free">FREE delivery <b>'+deliveryText()+'</b></div>'+
-        L.map(function(l){ return '<div class="mini"><img src="'+img(l.p.imgs[0])+'" alt=""><span>'+esc(l.p.short)+' <span class="muted">× '+l.q+'</span></span><b class="tnum">'+inr(l.q*l.p.price)+'</b></div>'; }).join("")+
-        (buyNow?'<p class="muted" style="font-size:.82rem">Buying this item now. Your cart is unchanged.</p>':'')+
-      '</div></div>'+
-      '<aside class="sidebox card"><button class="btn btn-add btn-block" type="button" id="placeBtn">Place your order</button>'+
-        '<p class="muted" style="font-size:.78rem;text-align:center">Opens WhatsApp with your order filled in. Send it to confirm.</p><p class="err" id="coErr" role="alert"></p>'+
-        '<div class="ordersum"><b style="font-size:1rem;margin-bottom:4px">Order summary</b><div><span>Items ('+t.n+'):</span><span>'+inr(t.mrp)+'</span></div><div><span>Discount:</span><span style="color:var(--ok)">−'+inr(t.mrp-t.sum)+'</span></div><div><span>Delivery:</span><span>FREE</span></div><div class="tot"><span>Order total:</span><span>'+inr(t.sum)+'</span></div></div>'+
-      '</aside></div></div>';
-    app.querySelectorAll("#coForm input").forEach(function(i){ i.addEventListener("input",function(){ d[i.id.slice(2).toLowerCase()]=i.value; }); });
-    $("placeBtn").addEventListener("click",function(){
-      var v=function(id){return $(id).value.trim()};
-      var ph=v("coPhone").replace(/\D/g,"").slice(-10);
-      var err=!v("coName")?"Enter your full name.":ph.length<10?"Enter a 10-digit mobile number.":!v("coAddr")?"Enter your address.":!/^[1-9]\d{5}$/.test(v("coPin"))?"Enter a valid 6-digit PIN code.":!v("coCity")?"Enter your town or city.":!v("coState")?"Enter your state.":"";
-      $("coErr").textContent=err; if(err) return;
-      if(!pin){ pin=v("coPin"); ls("nc2_pin",pin); paintHeader(); }
-      var msg="Hello NaphClean, I would like to place an order.\n";
-      L.forEach(function(l){ msg+="\n"+l.q+" x "+l.p.short+" ("+l.p.sku+"), "+inr(l.q*l.p.price); });
-      msg+="\n\nOrder total: "+inr(t.sum)+" (free delivery)\nPayment: UPI\n\nName: "+v("coName")+"\nMobile: "+ph+"\nAddress: "+v("coAddr")+(v("coArea")?", "+v("coArea"):"")+", "+v("coCity")+", "+v("coState")+" "+v("coPin");
-      var url="https://wa.me/"+WA+"?text="+encodeURIComponent(msg), w=null;
-      try{ w=window.open(url,"_blank","noopener"); }catch(e){}
-      if(!w) location.href=url;
-    });
-    document.title="Checkout | NaphClean";
+  /* ---------------- router ---------------- */
+  function showLanding(){ pdpBar=null; $("mbar").onclick=null; $("pdpView").hidden=true; $("pdpView").innerHTML=""; $("landing").hidden=false; document.title="NaphClean Store"; paintMbar(); }
+  function route(first){
+    var h=(location.hash||"").slice(1);
+    if(h.indexOf("p-")===0 && P[h.slice(2)]){ $("landing").hidden=true; $("pdpView").hidden=false; pdp(h.slice(2)); window.scrollTo(0,0); visible=false; play(); return; }
+    var wasPdp = !$("pdpView").hidden; showLanding();
+    if(wasPdp){ initOrbs(); }
+    if(h==="cart"){ openBag(); return; }
+    var id={help:"faq",home:"top"}[h]||h, el = id ? document.getElementById(id) : null;
+    if(el && el.closest("#landing")){ if(wasPdp||first){ setTimeout(function(){ el.scrollIntoView({behavior:"auto"}); }, first?80:0); } }
+    else if(wasPdp){ window.scrollTo(0,0); }
   }
+  window.addEventListener("hashchange",function(){ route(false); });
 
-  function bulk(){
-    app.innerHTML='<div class="wrap"><div class="page card"><h1>Bulk and business orders</h1>'+
-      '<p class="muted" style="max-width:70ch">We supply NaphClean in bulk at trade prices, direct from Kolkata. Tell us what you need and we reply with a quote on WhatsApp, usually the same working day.</p>'+
-      '<div class="who"><div><b>Hotels and guest houses</b><span class="muted">Linen stores, room wardrobes and washrooms</span></div><div><b>Housekeeping and facility teams</b><span class="muted">Offices, hostels and hospitals on a refill schedule</span></div><div><b>Retailers and distributors</b><span class="muted">Retail-ready pouches for your shelves</span></div><div><b>Corporate and festive gifting</b><span class="muted">Staff kits and seasonal hampers</span></div></div>'+
-      '<form id="bulkForm" novalidate style="display:grid;gap:12px;max-width:720px"><div class="f2">'+
-        '<div class="fld"><label for="bName">Your name</label><input class="inp" id="bName" autocomplete="name"></div>'+
-        '<div class="fld"><label for="bPhone">Phone or WhatsApp</label><input class="inp" id="bPhone" inputmode="tel" autocomplete="tel"></div>'+
-        '<div class="fld"><label for="bBiz">Business name</label><input class="inp" id="bBiz" autocomplete="organization"></div>'+
-        '<div class="fld"><label for="bCity">City</label><input class="inp" id="bCity" autocomplete="address-level2"></div></div>'+
-        '<div class="fld"><label for="bType">I am a</label><select class="inp" id="bType"><option>Hotel or guest house</option><option>Housekeeping or facility team</option><option>Retailer or distributor</option><option>Corporate gifting</option><option>Other</option></select></div>'+
-        '<div class="fld"><label for="bNeed">What do you need?</label><textarea class="inp" id="bNeed" rows="3" placeholder="For example: 200 packs of 400g Classic White every month"></textarea></div>'+
-        '<p class="err" id="bErr" role="alert"></p><button class="btn btn-add" type="submit" style="justify-self:start">Send enquiry on WhatsApp</button></form></div></div>';
-    $("bulkForm").addEventListener("submit",function(e){
-      e.preventDefault(); var n=$("bName").value.trim(), ph=$("bPhone").value.replace(/\D/g,""), c=$("bCity").value.trim();
-      var err=!n?"Enter your name.":ph.length<10?"Enter a phone number we can reach you on.":!c?"Enter your city.":"";
-      $("bErr").textContent=err; if(err) return;
-      var msg="Hello NaphClean, bulk enquiry.\n\nName: "+n+"\nBusiness: "+($("bBiz").value.trim()||"-")+"\nType: "+$("bType").value+"\nCity: "+c+"\nPhone: "+ph+"\n\nNeed: "+($("bNeed").value.trim()||"-");
-      var url="https://wa.me/"+WA+"?text="+encodeURIComponent(msg), w=null; try{ w=window.open(url,"_blank","noopener"); }catch(x){} if(!w) location.href=url;
-    });
-    document.title="Bulk orders | NaphClean";
-  }
-
-  function help(){
-    app.innerHTML='<div class="wrap"><div class="page card"><h1>Customer service</h1>'+
-      '<div class="contactgrid">'+
-        '<div class="cbox"><small>Helpline and WhatsApp</small><b><a href="https://wa.me/'+WA+'" target="_blank" rel="noopener">+91 62894 79696</a></b><button class="copy" type="button" data-copy="+91 6289479696">Copy</button></div>'+
-        '<div class="cbox"><small>Email</small><b>care@naphclean.com</b><button class="copy" type="button" data-copy="care@naphclean.com">Copy</button></div>'+
-        '<div class="cbox"><small>Hours</small><b>Mon to Sat</b><span class="muted">9 AM to 6 PM IST</span></div>'+
-        '<div class="cbox"><small>Address</small><b>16 Golaghata Road</b><span class="muted">Kolkata 700048</span></div>'+
-      '</div>'+
-      '<div class="twocol"><div><h2 style="font-size:1.2rem;margin-bottom:8px">About NaphClean</h2><p class="muted">NaphClean makes premium naphthalene balls that keep wardrobes, cupboards and storage fresh and free of moths. Every batch is lab tested for 99.5%+ purity and packed in a resealable zip pouch. NaphClean is a brand of Lumisha India Private Limited, Kolkata.</p>'+
-        '<h2 style="font-size:1.2rem;margin:18px 0 8px">Which size should I buy?</h2><div class="tbl-wrap"><table><tbody>'+[50,100,200,400].map(function(g){return '<tr><th>'+g+'g</th><td>'+SIZE[g].fits.charAt(0).toUpperCase()+SIZE[g].fits.slice(1)+'</td></tr>'}).join("")+'</tbody></table></div></div>'+
-      '<div class="qa">'+
-        '<details open><summary>How do I order and pay?</summary><p>Add packs to your cart, fill in your address at checkout and tap Place your order. WhatsApp opens with your order filled in. Send it, and we confirm stock and share UPI payment details in the same chat.</p></details>'+
-        '<details><summary>Shipping and delivery</summary><p>Delivery is free on every order across India. We dispatch on working days and share tracking on WhatsApp once your parcel leaves our warehouse.</p></details>'+
-        '<details><summary>Returns and replacements</summary><p>If a pack arrives damaged, send a photo on WhatsApp or email within 7 days of delivery and we will send a free replacement or refund you.</p></details>'+
-        '<details><summary>How long does a pack last?</summary><p>Usually 6 to 8 weeks per placement, depending on how well the space is closed and ventilated.</p></details>'+
-        '<details><summary>Will it stain my clothes?</summary><p>White balls are non-staining. Multicolour balls can transfer colour if they sit on fabric, so keep them in a pouch or a corner.</p></details>'+
-        '<details><summary>Can I use it in the kitchen?</summary><p>No. Naphthalene is for clothing, textile and storage spaces only. Keep it away from food, kitchens and pet areas.</p></details>'+
-        '<details><summary>Can I buy on Amazon?</summary><p>Yes. <a href="'+AMAZON+'" target="_blank" rel="noopener">Find NaphClean on Amazon.in</a>.</p></details>'+
-        '<details><summary>Privacy</summary><p>We use your name, phone and address only to deliver your order and reply to you. We never sell or share your details. This site has no ads and no tracking cookies.</p></details>'+
-      '</div></div></div></div>';
-    app.querySelectorAll("[data-copy]").forEach(function(b){ b.addEventListener("click",function(){
-      var tx=b.dataset.copy; function ok(){ b.textContent="Copied"; setTimeout(function(){b.textContent="Copy"},1500); }
-      try{ navigator.clipboard.writeText(tx).then(ok,function(){ toast("<b>"+esc(tx)+"</b>"); }); }catch(e){ toast("<b>"+esc(tx)+"</b>"); }
-    }); });
-    document.title="Customer service | NaphClean";
-  }
-
-  /* ---------- router ---------- */
-  var lastRoute="";
-  function render(){
-    var h=(location.hash||"#home").slice(1) || "home";
-    if(h!=="checkout") buyNow = (lastRoute==="checkout"||h.indexOf("p-")===0) ? null : buyNow;
-    if(h.indexOf("p-")===0) pdp(h.slice(2));
-    else if(h==="cart") cartView();
-    else if(h==="checkout") checkout();
-    else if(h==="bulk") bulk();
-    else if(h==="help") help();
-    else home();
-    lastRoute=h;
-  }
-  document.addEventListener("click",function(e){ var a=e.target.closest("[data-add]"); if(a){ add(a.dataset.add,1); if(location.hash==="#cart") render(); } });
-  window.addEventListener("hashchange",function(){
-    render();
-    if(pendingScroll && location.hash==="#home"){ pendingScroll=false; setTimeout(scrollToResults,30); }
-    else window.scrollTo(0,0);
+  /* ---------------- bulk form ---------------- */
+  $("bulkForm").addEventListener("submit",function(e){
+    e.preventDefault(); var n=$("bName").value.trim(), ph=$("bPhone").value.replace(/\D/g,""), c=$("bCity").value.trim();
+    var err=!n?["bName","Enter your name."]:ph.length<10?["bPhone","Enter a phone number we can reach you on."]:!c?["bCity","Enter your city."]:null;
+    ["bName","bPhone","bCity"].forEach(function(k){ $(k).classList.remove("bad"); });
+    if(err){ $("bErr").textContent=err[1]; $(err[0]).classList.add("bad"); $(err[0]).focus(); return; }
+    $("bErr").textContent="";
+    openWA("Hello NaphClean, bulk enquiry.\n\nName: "+n+"\nBusiness: "+($("bBiz").value.trim()||"-")+"\nType: "+$("bType").value+"\nCity: "+c+"\nPhone: "+ph+"\n\nNeed: "+($("bNeed").value.trim()||"-"));
   });
-  document.addEventListener("keydown",function(e){ if(e.key==="Escape") $("pinPop").hidden=true; });
-  paintHeader(); render();
+
+  /* ---------------- copy buttons ---------------- */
+  document.querySelectorAll("[data-copy]").forEach(function(b){ b.addEventListener("click",function(){
+    var tx=b.dataset.copy; function ok(){ b.textContent="Copied"; setTimeout(function(){ b.textContent="Copy"; },1500); }
+    try{ navigator.clipboard.writeText(tx).then(ok,function(){ b.textContent=tx; }); }catch(e){ b.textContent=tx; }
+  }); });
+
+  setShop(shopC); setHero(shopC);
+  paintBag(); route(true);
 })();
 </script>
 </body>
