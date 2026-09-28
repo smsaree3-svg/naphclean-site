@@ -1,0 +1,1 @@
+window.NC_CONFIG = {"supabaseUrl": "https://typojmscypenggunosnd.supabase.co", "supabaseKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR5cG9qbXNjeXBlbmdndW5vc25kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA2MTMxNjgsImV4cCI6MjEwNjE4OTE2OH0.AzIMy6v5OHRSYU_iYUJ1ptQfzOdc3C0wI2as0x0srZY"};

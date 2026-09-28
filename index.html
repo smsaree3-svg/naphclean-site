@@ -273,7 +273,7 @@ section[id]{scroll-margin-top:calc(var(--hdr-h) + 16px)}
 .form{display:grid;gap:14px}
 .f2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media (max-width:520px){.f2{grid-template-columns:1fr}}
-.fld{display:grid;gap:6px}
+.fld{display:grid;gap:6px;align-content:start}
 .fld label{font-weight:650;font-size:.88rem;color:var(--ink)}
 .inp{width:100%;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:13px 14px;transition:border-color .2s,box-shadow .2s;color:var(--text)}
 .inp:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 4px rgba(31,95,214,.14)}
@@ -419,20 +419,112 @@ textarea.inp{min-height:96px;resize:vertical}
 .toast .btn{padding:10px 14px;font-size:.85rem;--b:#fff;--bh:#E6EEFF;--bi:var(--ink)}
 @media (max-width:900px){.toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* stock + notices */
+.stk{font:500 .74rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:6px 9px;justify-self:start;align-self:flex-start}
+.stk.low{background:#FFF1DB;color:#8A5300}
+.stk.out{background:#FDE8EC;color:var(--deal)}
+.sizes button.so{opacity:.55}
+.btn[disabled]{opacity:.6;cursor:not-allowed;box-shadow:none}
+.demo-note{background:#FFF6E3;color:#8A5300;border:1px solid #F6DFAE;border-radius:14px;padding:10px 14px;font-size:.9rem;margin-bottom:18px}
+.flash{background:#FDE8EC;color:#9E1F36;border-radius:14px;padding:12px 14px;font-weight:600;margin:0 0 18px}
+
+/* checkout */
+.co{padding-block:24px 96px}
+.co-h{font-size:clamp(2.2rem,4.4vw,3.2rem);margin:6px 0 24px}
+.co-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:960px){.co-grid{grid-template-columns:1fr}}
+.co-main{display:grid;gap:18px}
+.co-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;display:grid;gap:16px;min-width:0}
+@media (max-width:520px){.co-card{padding:16px;border-radius:20px}}
+.co-card h2{font:750 1.3rem/1.2 var(--display);display:flex;gap:12px;align-items:center;letter-spacing:-.01em}
+.co-card h2 span{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font:600 .9rem/30px var(--body);text-align:center;flex:none}
+.fld.full{grid-column:1/-1}
+select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230A1F5C' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;padding-right:38px}
+.co-eta{margin-top:-4px}
+.paylist{display:grid;gap:10px}
+.paym{display:grid;grid-template-columns:auto 40px 1fr;gap:12px;align-items:center;border:1.5px solid var(--line);border-radius:18px;padding:14px 16px;cursor:pointer;transition:border-color .2s,background .2s}
+.paym:hover{border-color:var(--line-2)}
+.paym.on{border-color:var(--ink);background:var(--mist);box-shadow:0 0 0 1px var(--ink)}
+.paym input{accent-color:var(--ink);width:18px;height:18px;margin:0}
+.paym .pic{width:40px;height:40px;border-radius:12px;background:#fff;display:grid;place-items:center;color:var(--navy);box-shadow:var(--sh-1)}
+.paym b{display:block;color:var(--ink)}
+.paym small{display:block;color:var(--muted);font-size:.86rem;line-height:1.4}
+.co-side{position:sticky;top:calc(var(--hdr-h) + 16px)}
+@media (max-width:960px){.co-side{position:static}}
+.sum h2{font:750 1.3rem/1.2 var(--display);letter-spacing:-.01em}
+.sumlines{display:grid;gap:12px}
+.sl{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center}
+.sl .im{position:relative;width:56px;height:56px;border-radius:12px;border:1px solid var(--line);background:#fff}
+.sl .im img{width:100%;height:100%;object-fit:contain;border-radius:12px}
+.sl .im i{position:absolute;top:-7px;right:-7px;min-width:22px;height:22px;border-radius:999px;background:var(--ink);color:#fff;font:700 .74rem/22px var(--body);text-align:center;font-style:normal;padding:0 5px}
+.sl .nm{color:var(--ink);font-weight:600;font-size:.94rem;line-height:1.3;display:grid;gap:6px;justify-items:start}
+.mini-st{padding:2px!important;gap:4px!important}
+.mini-st button{width:26px!important;height:26px!important;font-size:1rem!important}
+.mini-st span{font-size:.82rem;min-width:18px!important}
+.disc{display:flex;gap:8px}
+.disc .inp{text-transform:uppercase}
+.dmsg{font-size:.88rem;font-weight:600;margin-top:-6px}
+.dmsg.ok{color:var(--green-d)}
+.dmsg.bad{color:var(--deal)}
+.btn.big{padding:19px 26px;font-size:1.05rem}
+.co-empty{padding-block:80px}
+
+/* order confirmation + tracking */
+.ord{padding-block:28px 96px}
+.ord.narrow{max-width:640px}
+.ord-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:26px}
+.ord-head h1{font-size:clamp(2.2rem,4.6vw,3.4rem);margin:8px 0 10px}
+.okball{width:56px;height:56px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;flex:none;box-shadow:0 10px 24px rgba(95,168,20,.35)}
+.okball svg{width:26px;height:26px}
+.ord-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:900px){.ord-grid{grid-template-columns:1fr}}
+.paybox{background:var(--ink);color:#DCE6FF;border-radius:var(--r-lg);padding:26px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center}
+.paybox.single{grid-template-columns:1fr;gap:12px}
+@media (max-width:620px){.paybox{grid-template-columns:1fr}}
+.paybox h3{color:#fff;font-size:1.6rem}
+.paybox p{color:#B8C8EE}
+.paybox .qr{background:#fff;border-radius:20px;padding:12px;width:220px;max-width:100%;justify-self:center}
+.paybox .qr svg{width:100%;height:auto;display:block}
+.payinfo{display:grid;gap:14px}
+.upiid{display:flex;justify-content:space-between;align-items:center;gap:10px;background:rgba(255,255,255,.08);border-radius:14px;padding:10px 12px;font-size:.92rem}
+.upiid b{color:#fff;word-break:break-all}
+.utr{display:grid;gap:8px}
+.utr label{font-size:.86rem;color:#B8C8EE}
+.utr .inp{background:#fff}
+.pinrow{display:flex;gap:8px}
+.paidok{display:flex;gap:10px;align-items:center;color:#fff;font:750 1.3rem/1.2 var(--display)}
+.paidok svg{background:var(--green);border-radius:50%;padding:4px;width:30px;height:30px}
+.tl{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;position:relative}
+.tl li{display:grid;justify-items:center;gap:8px;text-align:center;font-size:.8rem;color:var(--muted);position:relative}
+.tl li::before{content:"";position:absolute;top:9px;left:-50%;width:100%;height:3px;background:var(--line);z-index:0}
+.tl li:first-child::before{display:none}
+.tl li.done::before{background:var(--green)}
+.tl i{width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--line);position:relative;z-index:1}
+.tl li.done i{background:var(--green);border-color:var(--green)}
+.tl li.cur i{box-shadow:0 0 0 5px rgba(95,168,20,.2)}
+.tl li.done span{color:var(--ink);font-weight:600}
+.cancelled{background:#FDE8EC;color:#9E1F36;border-radius:14px;padding:12px 14px;font-weight:650}
+.addr{display:grid;gap:2px;background:var(--mist);border-radius:16px;padding:14px 16px;font-size:.92rem}
+.addr small{font:500 .7rem/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.addr b{color:var(--ink)}
+.trk{display:grid;gap:2px;background:var(--mist);border-radius:14px;padding:12px 14px}
+.trk small{font:500 .7rem/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.trk b{color:var(--ink)}
 </style>
 </head>
 <body>
 <div class="announce" role="region" aria-label="Store benefits"><div class="wrap">
-  <span><i></i><b>Free delivery</b> across India</span>
+  <span><i></i><b id="annA">Free delivery across India</b></span>
   <span><i></i><b>7-day</b> damage replacement</span>
-  <span><i></i>Order help <b>+91 62894 79696</b></span>
+  <span><i></i>Order help <b data-wa-num>+91 62894 79696</b></span><span><i></i><a href="#track" style="color:#fff">Track your order</a></span>
 </div></div>
 
 <header class="hdr" id="hdr">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="NaphClean home"><img src="images/logo.webp" alt="" width="40" height="40"><b>NaphClean</b></a>
     <nav class="nav" aria-label="Main">
-      <a href="#shop">Shop</a><a href="#how">How it works</a><a href="#planner">Pack planner</a><a href="#bulk">Bulk orders</a><a href="#faq">Help</a>
+      <a href="#shop">Shop</a><a href="#how">How it works</a><a href="#planner">Pack planner</a><a href="#bulk">Bulk orders</a><a href="#track">Track order</a><a href="#faq">Help</a>
     </nav>
     <button class="bagbtn" id="bagBtn" type="button" aria-label="Open bag"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Bag <span class="n" id="bagN">0</span></button>
     <button class="menubtn" id="menuBtn" type="button" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
@@ -441,7 +533,7 @@ textarea.inp{min-height:96px;resize:vertical}
 
 <div class="mnav" id="mnav" hidden role="dialog" aria-label="Menu">
   <div class="top"><span class="brand" style="margin:0"><img src="images/logo.webp" alt="" width="40" height="40"><b>NaphClean</b></span><button class="iconbtn" type="button" data-close aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-  <a href="#shop" data-close>Shop</a><a href="#how" data-close>How it works</a><a href="#planner" data-close>Pack planner</a><a href="#bulk" data-close>Bulk orders</a><a href="#faq" data-close>Help</a>
+  <a href="#shop" data-close>Shop</a><a href="#how" data-close>How it works</a><a href="#planner" data-close>Pack planner</a><a href="#bulk" data-close>Bulk orders</a><a href="#track" data-close>Track order</a><a href="#faq" data-close>Help</a>
   <div class="foot"><span>+91 62894 79696</span><span>care@naphclean.com</span><span>Mon to Sat, 9 AM to 6 PM IST</span></div>
 </div>
 
@@ -466,11 +558,8 @@ textarea.inp{min-height:96px;resize:vertical}
       </div>
       <div class="stage">
         <div class="porthole"><img id="heroImg" src="images/w400.webp" alt="NaphClean Classic White naphthalene balls, 400g pouch" width="800" height="800"></div>
-        <div class="pricetag" aria-hidden="true"><small>400g pack</small><b id="heroPrice">₹179</b></div>
-        <div class="seg" role="group" aria-label="Colour">
-          <button type="button" data-hero="white" aria-pressed="true"><i class="dot"></i>Classic White</button>
-          <button type="button" data-hero="multi" aria-pressed="false"><i class="dot multi"></i>Multicolour</button>
-        </div>
+        <div class="pricetag" aria-hidden="true"><small id="heroTagSize">400g pack</small><b id="heroPrice">₹179</b></div>
+        <div class="seg" role="group" aria-label="Colour" id="heroSeg"></div>
       </div>
     </div>
   </section>
@@ -487,10 +576,7 @@ textarea.inp{min-height:96px;resize:vertical}
           <h2>Pick a colour. Pick your space.</h2>
           <p class="lede">Same 99.5%+ pure formula in both. Classic White is the traditional choice; Multicolour brightens a drawer or washroom.</p>
         </div>
-        <div class="seg" role="group" aria-label="Colour">
-          <button type="button" data-shop="white" aria-pressed="true"><i class="dot"></i>Classic White</button>
-          <button type="button" data-shop="multi" aria-pressed="false"><i class="dot multi"></i>Multicolour</button>
-        </div>
+        <div class="seg" role="group" aria-label="Colour" id="shopSeg"></div>
       </div>
       <div class="cards" id="cards"></div>
       <div class="shopnote">
@@ -655,7 +741,7 @@ textarea.inp{min-height:96px;resize:vertical}
       </div>
       <div class="acc">
         <details open><summary>Which size should I buy?</summary><div class="ans"><ul><li><b>50g:</b> one drawer, a suitcase or a shoe rack</li><li><b>100g:</b> a standard cupboard or a bathroom corner</li><li><b>200g:</b> a full wardrobe or a storage trunk</li><li><b>400g:</b> a bedroom wardrobe plus seasonal storage</li></ul><p style="margin-top:10px">Not sure? The <a href="#planner">pack planner</a> works it out for you.</p></div></details>
-        <details><summary>How do I order and pay?</summary><div class="ans">Add packs to your bag and tap Checkout. Fill in your address and tap Place order. WhatsApp opens with your order written out. Send it, and we confirm stock and share UPI payment details in the same chat. Nothing is charged before that.</div></details>
+        <details><summary>How do I order and pay?</summary><div class="ans">Add packs to your bag and tap Checkout. Enter your address and choose how to pay: online through Razorpay (UPI, cards, netbanking), UPI straight to us with a QR code, or on WhatsApp. You get an order number you can use to <a href="#track">track your order</a>.</div></details>
         <details><summary>How long does a pack last?</summary><div class="ans">One placement protects a closed space for 6 to 8 weeks. A sealed pack keeps for 36 months from packing, so bigger packs are fine to stock up on.</div></details>
         <details><summary>Will it stain my clothes?</summary><div class="ans">Classic White is non-staining. Multicolour balls can transfer colour if they touch fabric, so keep them in a pouch or a corner.</div></details>
         <details><summary>Is it safe? Can I use it in the kitchen?</summary><div class="ans">Keep naphthalene away from children, pets and food. It is for wardrobes, cupboards, storage and washrooms only, never kitchens. Do not ingest. If swallowed, seek medical advice.</div></details>
@@ -668,13 +754,15 @@ textarea.inp{min-height:96px;resize:vertical}
 </main>
 
 <main id="pdpView" hidden></main>
+<main id="coView" hidden></main>
+<main id="orderView" hidden></main>
 
 <footer class="ftr">
   <div class="wrap">
     <div class="top">
       <div><h4>NaphClean</h4><span>Premium naphthalene balls for wardrobes, cupboards and storage. Packed and marketed by Lumisha India Private Limited, Kolkata.</span></div>
-      <div><h4>Shop</h4><a href="#p-white-50">Classic White</a><a href="#p-multi-50">Multicolour</a><a href="#p-white-400">Best value 400g</a><a href="#planner">Pack planner</a></div>
-      <div><h4>Help</h4><a href="#faq">FAQ</a><a href="#faq">Shipping and delivery</a><a href="#faq">Returns</a><a href="#bulk">Bulk orders</a></div>
+      <div><h4>Shop</h4><a href="#shop">All packs</a><a href="#planner">Pack planner</a><a href="#bulk">Bulk orders</a><a href="#checkout">Checkout</a></div>
+      <div><h4>Help</h4><a href="#track">Track your order</a><a href="#faq">FAQ</a><a href="#faq">Shipping and returns</a><a href="#faq">Privacy</a></div>
       <div><h4>Contact</h4><span>+91 62894 79696</span><span>care@naphclean.com</span><span>Mon to Sat, 9 AM to 6 PM IST</span></div>
     </div>
     <div class="big" aria-hidden="true">Naph<em>Clean</em>.</div>
@@ -691,62 +779,59 @@ textarea.inp{min-height:96px;resize:vertical}
 </aside>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="config.js"></script>
+<script src="vendor/supabase.js"></script>
+<script src="vendor/qrcode.js"></script>
+<script src="assets/nc.js"></script>
 <script>
 (function(){
   "use strict";
-  /* ---------------- settings ---------------- */
-  var WA = "916289479696";
-  var DELIVERY_DAYS = [3, 6];
-
-  /* ---------------- catalogue ---------------- */
-  var SIZES = [50,100,200,400];
-  var FITS = {50:"One drawer, a suitcase or a shoe rack",100:"A standard cupboard or a bathroom corner",200:"A full wardrobe or a storage trunk",400:"A bedroom wardrobe plus seasonal storage"};
-  var TAG = {200:"Popular",400:"Best value"};
-  var COL = {
-    white:{name:"Classic White", sku:"NC-{g}G-1", p:"w", price:{50:40,100:74,200:109,400:179}, mrp:{50:49,100:89,200:129,400:209}},
-    multi:{name:"Multicolour", sku:"NC-{g}G-MC-1", p:"m", price:{50:49,100:99,200:149,400:199}, mrp:{50:59,100:119,200:179,400:239}}
-  };
-  var P = {};
-  ["white","multi"].forEach(function(c){ SIZES.forEach(function(g){
-    var C=COL[c];
-    P[c+"-"+g] = {id:c+"-"+g, c:c, g:g, price:C.price[g], mrp:C.mrp[g], sku:C.sku.replace("{g}",g),
-      name:C.name+" "+g+"g", title:"NaphClean "+C.name+" Naphthalene Balls, "+g+"g",
-      imgs:[C.p+g, C.p+g+"b", "hero2", "life1", "wardrobe"]};
-  }); });
-
-  /* ---------------- helpers ---------------- */
+  var NC = window.NC, inr = NC.inr, esc = NC.esc, ls = NC.ls;
   var $ = function(id){ return document.getElementById(id); };
-  function img(n){ return "images/"+n+".webp"; }
-  function inr(n){ return "₹"+Math.round(n).toLocaleString("en-IN"); }
-  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
-  function pct(p){ return Math.round((p.mrp-p.price)/p.mrp*100); }
-  function per100(p){ return Math.round(p.price/p.g*100); }
-  function ls(k,v){ try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k,v); }catch(e){ return null; } }
-  function dText(){ var a=new Date(),b=new Date(); a.setDate(a.getDate()+DELIVERY_DAYS[0]); b.setDate(b.getDate()+DELIVERY_DAYS[1]);
-    var f=function(d){return d.toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"})}; return f(a)+" to "+f(b); }
+  function img(p){ return NC.img(p, ""); }
   var reduce = !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
   var ICON = {
     check:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
     arrow:'<svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
     back:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
+    lock:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>',
     wa:'<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.2 1.4z"/></svg>'
   };
 
-  /* ---------------- state ---------------- */
-  var bag = {}; try{ bag = JSON.parse(ls("nc3_bag")||"{}")||{}; }catch(e){ bag={}; }
-  Object.keys(bag).forEach(function(k){ if(!P[k]||!(bag[k]>0)) delete bag[k]; });
-  var shopC = ls("nc3_col")==="multi" ? "multi" : "white";
-  var pin = ls("nc3_pin") || "";
-  var draft = {};
-  var step = "bag";
+  /* ================= catalogue (live from the database, cached for speed) ================= */
+  var S, PRODUCTS, P, COLS;
+  function apply(c){
+    S = c.settings; PRODUCTS = c.products.filter(function(p){ return p.active!==false; }).sort(function(a,b){ return (a.sort||0)-(b.sort||0); });
+    P = {}; PRODUCTS.forEach(function(p){ P[p.id]=p; });
+    COLS = []; PRODUCTS.forEach(function(p){ if(COLS.indexOf(p.collection)<0) COLS.push(p.collection); });
+    Object.keys(bag).forEach(function(k){ if(!P[k]) delete bag[k]; });
+    var a=$("annA"); if(a && S.announcement) a.textContent=S.announcement;
+    document.querySelectorAll("[data-wa-num]").forEach(function(el){ el.textContent=fmtPhone(S.whatsapp); });
+  }
+  function fmtPhone(n){ var d=String(n||"").replace(/\D/g,""); if(d.length===12 && d.slice(0,2)==="91") return "+91 "+d.slice(2,7)+" "+d.slice(7); return "+"+d; }
+  function colOf(p){ return p.collection; }
+  function inCol(c){ return PRODUCTS.filter(function(p){ return p.collection===c; }).sort(function(a,b){ return (a.size_g||0)-(b.size_g||0) || a.sort-b.sort; }); }
+  function isMulti(c){ return /multi|colou?r/i.test(c) && !/white/i.test(c); }
+  function dotHTML(c){ return '<i class="dot'+(isMulti(c)?' multi':'')+'"></i>'; }
+  function per100(p){ return p.size_g ? Math.round(p.price/p.size_g*100) : null; }
+  function pct(p){ return p.mrp>p.price ? Math.round((p.mrp-p.price)/p.mrp*100) : 0; }
+  function dText(){ var a=new Date(),b=new Date(); a.setDate(a.getDate()+(S.delivery_min||3)); b.setDate(b.getDate()+(S.delivery_max||6));
+    var f=function(d){ return d.toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"}); }; return f(a)+" to "+f(b); }
+  function shipFor(sub){ return (S.shipping_fee>0 && (!S.free_shipping_over || sub<S.free_shipping_over)) ? S.shipping_fee : 0; }
+  function stockNote(p){ if(p.stock==null) return ""; if(p.stock<=0) return '<span class="stk out">Out of stock</span>'; if(p.stock<=5) return '<span class="stk low">Only '+p.stock+' left</span>'; return ""; }
+  function soldOut(p){ return p.stock!=null && p.stock<=0; }
 
+  /* ================= bag ================= */
+  var bag = {}; try{ bag = JSON.parse(ls("nc3_bag")||"{}")||{}; }catch(e){ bag={}; }
+  apply(NC.cachedCatalogue());
+  var shopC = COLS.indexOf(ls("nc3_col"))>-1 ? ls("nc3_col") : COLS[0];
   function saveBag(){ ls("nc3_bag",JSON.stringify(bag)); paintBag(); }
   function qty(id){ return bag[id]||0; }
-  function setQty(id,q){ if(q<=0) delete bag[id]; else bag[id]=Math.min(q,99); saveBag(); }
-  function lines(){ return Object.keys(bag).map(function(k){ return {p:P[k],q:bag[k]}; }); }
-  function totals(L){ var t={n:0,sum:0,mrp:0}; L.forEach(function(l){t.n+=l.q;t.sum+=l.q*l.p.price;t.mrp+=l.q*l.p.mrp;}); return t; }
+  function setQty(id,q){ var p=P[id]; if(!p) return; if(p.stock!=null) q=Math.min(q,p.stock); if(q<=0) delete bag[id]; else bag[id]=Math.min(q,99); saveBag(); }
+  function lines(){ return Object.keys(bag).filter(function(k){ return P[k]; }).map(function(k){ return {p:P[k],q:bag[k]}; }); }
+  function totals(L){ var t={n:0,sum:0,mrp:0}; L.forEach(function(l){ t.n+=l.q; t.sum+=l.q*l.p.price; t.mrp+=l.q*Math.max(l.p.mrp,l.p.price); }); return t; }
 
-  /* ---------------- header + menu ---------------- */
+  /* ================= header + menu ================= */
   var hdr=$("hdr");
   function onScroll(){ hdr.classList.toggle("scrolled", window.scrollY>8); }
   window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
@@ -754,349 +839,463 @@ textarea.inp{min-height:96px;resize:vertical}
   $("menuBtn").addEventListener("click",function(){ $("mnav").hidden=false; lock(true); });
   $("mnav").addEventListener("click",function(e){ if(e.target.closest("[data-close]")){ $("mnav").hidden=true; lock(false); } });
 
-  /* ---------------- hero orbs: balls drift up and shrink, like naphthalene subliming ---------------- */
-  var heroC = "white";
+  /* ================= hero orbs ================= */
+  var heroC = shopC;
   var PAL = {white:[["#FFFFFF","#EEF3FB","#B9C9E8"]], multi:[["#FFF6CF","#FFD24D","#D9A400"],["#FFE3EF","#FF7EB3","#D24A82"],["#E8FFD9","#8FE36A","#4FA52C"],["#E2F3FF","#7EC8FF","#3A8DD0"],["#FFFFFF","#EEF3FB","#B9C9E8"]]};
   var cv=$("orbs"), cx=cv.getContext("2d"), W=0,H=0,DPR=1, orbs=[], running=false, visible=true, mx=0,my=0, Z={x0:0,x1:0,y1:0};
   function sizeCanvas(){ var r=cv.getBoundingClientRect(); DPR=Math.min(window.devicePixelRatio||1,2); W=r.width; H=r.height; cv.width=Math.round(W*DPR); cv.height=Math.round(H*DPR); cx.setTransform(DPR,0,0,DPR,0,0);
     var st=document.querySelector('.stage').getBoundingClientRect();
-    if(W>900){ Z={x0:W*0.5, x1:W, y1:H}; } else { Z={x0:0, x1:W, y1:Math.min(H, st.bottom - r.top + 10)}; } }
-  function pickCol(){ var pal=PAL[heroC]; return pal[Math.floor(Math.random()*pal.length)]; }
-  function spawn(o,fresh){
-    var small = W<700;
-    o.r0 = (small?9:13) + Math.random()*(small?20:32);
-    o.x = Z.x0 + Math.random()*(Z.x1-Z.x0); o.y = fresh ? Math.random()*Z.y1 : Z.y1 + o.r0 + Math.random()*60;
-    o.vx = (Math.random()-.5)*.18; o.vy = -(.12+Math.random()*.28);
-    o.life = fresh ? Math.random()*600 : 0; o.span = 900+Math.random()*1400; o.z = .5+Math.random()*.9;
-    o.col = pickCol(); return o;
-  }
-  function initOrbs(){ sizeCanvas(); var n = W<700 ? 10 : 16; orbs=[]; for(var i=0;i<n;i++) orbs.push(spawn({},true)); draw(); }
-  function ball(x,y,r,col,a){
-    if(r<=0.5) return;
-    var g=cx.createRadialGradient(x-r*.35,y-r*.4,r*.05,x,y,r);
+    Z = W>900 ? {x0:W*0.5, x1:W, y1:H} : {x0:0, x1:W, y1:Math.min(H, st.bottom - r.top + 10)}; }
+  function pickCol(){ var pal=PAL[isMulti(heroC)?"multi":"white"]; return pal[Math.floor(Math.random()*pal.length)]; }
+  function spawn(o,fresh){ var small=W<700; o.r0=(small?9:13)+Math.random()*(small?20:32);
+    o.x=Z.x0+Math.random()*(Z.x1-Z.x0); o.y=fresh?Math.random()*Z.y1:Z.y1+o.r0+Math.random()*60;
+    o.vx=(Math.random()-.5)*.18; o.vy=-(.12+Math.random()*.28); o.life=fresh?Math.random()*600:0; o.span=900+Math.random()*1400; o.z=.5+Math.random()*.9; o.col=pickCol(); return o; }
+  function initOrbs(){ if($("landing").hidden) return; sizeCanvas(); var n=W<700?10:16; orbs=[]; for(var i=0;i<n;i++) orbs.push(spawn({},true)); draw(); }
+  function ball(x,y,r,col,a){ if(r<=0.5) return; var g=cx.createRadialGradient(x-r*.35,y-r*.4,r*.05,x,y,r);
     g.addColorStop(0,col[0]); g.addColorStop(.5,col[1]); g.addColorStop(1,col[2]);
     cx.globalAlpha=a; cx.fillStyle=g; cx.beginPath(); cx.arc(x,y,r,0,Math.PI*2); cx.fill();
-    cx.globalAlpha=a*.55; cx.fillStyle="#fff"; cx.beginPath(); cx.arc(x-r*.38,y-r*.42,r*.16,0,Math.PI*2); cx.fill();
-    cx.globalAlpha=1;
-  }
-  function draw(){
-    cx.clearRect(0,0,W,H); cx.save(); cx.beginPath(); cx.rect(Z.x0-40,0,Z.x1-Z.x0+40,Z.y1); cx.clip();
-    for(var i=0;i<orbs.length;i++){
-      var o=orbs[i], t=Math.min(1,o.life/o.span);
-      var r=o.r0*(1-t*.75), a= t<.08 ? t/.08 : (t>.85 ? Math.max(0,(1-t)/.15) : 1);
-      ball(o.x + mx*14*o.z, o.y + my*10*o.z, r, o.col, a*.9);
-    }
-    cx.restore();
-  }
-  function tick(){
-    if(!running) return;
-    for(var i=0;i<orbs.length;i++){ var o=orbs[i]; o.x+=o.vx*o.z; o.y+=o.vy*o.z; o.life++; if(o.life>o.span||o.y<-80) spawn(o,false); }
-    draw(); requestAnimationFrame(tick);
-  }
-  function play(){ var on = visible && !document.hidden && !reduce; if(on&&!running){ running=true; requestAnimationFrame(tick); } else if(!on){ running=false; } }
-  initOrbs();
+    cx.globalAlpha=a*.55; cx.fillStyle="#fff"; cx.beginPath(); cx.arc(x-r*.38,y-r*.42,r*.16,0,Math.PI*2); cx.fill(); cx.globalAlpha=1; }
+  function draw(){ cx.clearRect(0,0,W,H); cx.save(); cx.beginPath(); cx.rect(Z.x0-40,0,Z.x1-Z.x0+40,Z.y1); cx.clip();
+    for(var i=0;i<orbs.length;i++){ var o=orbs[i], t=Math.min(1,o.life/o.span), r=o.r0*(1-t*.75), a=t<.08?t/.08:(t>.85?Math.max(0,(1-t)/.15):1);
+      ball(o.x+mx*14*o.z, o.y+my*10*o.z, r, o.col, a*.9); } cx.restore(); }
+  function tick(){ if(!running) return; for(var i=0;i<orbs.length;i++){ var o=orbs[i]; o.x+=o.vx*o.z; o.y+=o.vy*o.z; o.life++; if(o.life>o.span||o.y<-80) spawn(o,false); } draw(); requestAnimationFrame(tick); }
+  function play(){ var on=visible && !document.hidden && !reduce && !$("landing").hidden; if(on&&!running){ running=true; requestAnimationFrame(tick); } else if(!on){ running=false; } }
   if("IntersectionObserver" in window){ new IntersectionObserver(function(es){ visible=es[0].isIntersecting; play(); }).observe(cv); }
-  play();
   document.addEventListener("visibilitychange",play);
   var rT; window.addEventListener("resize",function(){ clearTimeout(rT); rT=setTimeout(initOrbs,150); });
   $("top").addEventListener("pointermove",function(e){ if(e.pointerType!=="mouse") return; mx=(e.clientX/window.innerWidth-.5); my=(e.clientY/window.innerHeight-.5); if(!running) draw(); });
 
-  function setHero(c){
-    if(c===heroC) return; heroC=c;
-    document.querySelectorAll("[data-hero]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.hero===c)); });
-    var im=$("heroImg"); im.classList.add("swap");
-    setTimeout(function(){ im.src=img(COL[c].p+"400"); im.alt="NaphClean "+COL[c].name+" naphthalene balls, 400g pouch"; setTimeout(function(){ im.classList.remove("swap"); },120); },220);
-    $("heroPrice").textContent=inr(COL[c].price[400]); $("heroFrom").textContent=inr(COL[c].price[50]);
-    orbs.forEach(function(o){ o.col=pickCol(); }); if(!running) draw();
+  function heroProduct(c){ var L=inCol(c); return L.filter(function(p){ return /best value/i.test(p.badge||""); })[0] || L[L.length-1]; }
+  function segHTML(attr, cur){ return COLS.slice(0,3).map(function(c){ return '<button type="button" '+attr+'="'+esc(c)+'" aria-pressed="'+(c===cur)+'">'+dotHTML(c)+esc(c)+'</button>'; }).join(""); }
+  function paintHero(swap){
+    $("heroSeg").innerHTML=segHTML("data-hero",heroC); $("heroSeg").hidden = COLS.length<2;
+    var hp=heroProduct(heroC); if(!hp) return; var L=inCol(heroC);
+    var im=$("heroImg"), src=img(hp.images[0]);
+    if(swap){ im.classList.add("swap"); setTimeout(function(){ im.src=src; setTimeout(function(){ im.classList.remove("swap"); },120); },220); } else im.src=src;
+    im.alt=hp.title; $("heroPrice").textContent=inr(hp.price); $("heroTagSize").textContent=hp.size_label+" pack";
+    $("heroFrom").textContent=inr(Math.min.apply(null,L.map(function(p){return p.price;})));
   }
-  document.querySelectorAll("[data-hero]").forEach(function(b){ b.addEventListener("click",function(){ setHero(b.dataset.hero); setShop(b.dataset.hero); }); });
+  function setHero(c){ if(c===heroC) return; heroC=c; paintHero(true); orbs.forEach(function(o){ o.col=pickCol(); }); if(!running) draw(); }
   var tr=$("usesTrack"); tr.innerHTML += tr.innerHTML.replace(/<span>/g,'<span aria-hidden="true">');
 
-  /* ---------------- product cards ---------------- */
+  /* ================= product cards ================= */
   function actHTML(p){
+    if(soldOut(p)) return '<button class="btn block ghost" type="button" disabled>Out of stock</button>';
     var q=qty(p.id);
-    return q ? '<div class="stepper" role="group" aria-label="Quantity of '+esc(p.name)+'"><button type="button" data-dec="'+p.id+'" aria-label="Remove one">−</button><span>'+q+' in bag</span><button type="button" data-inc="'+p.id+'" aria-label="Add one">+</button></div>'
+    return q ? '<div class="stepper" role="group" aria-label="Quantity of '+esc(p.title)+'"><button type="button" data-dec="'+p.id+'" aria-label="Remove one">−</button><span>'+q+' in bag</span><button type="button" data-inc="'+p.id+'" aria-label="Add one">+</button></div>'
              : '<button class="btn block" type="button" data-add="'+p.id+'">Add to bag</button>';
   }
   function cardHTML(p){
-    return '<article class="card">'+
-      (TAG[p.g]?'<span class="badge'+(p.g===400?' best':'')+'">'+TAG[p.g]+'</span>':'')+
-      '<a class="ph" href="#p-'+p.id+'" aria-label="View '+esc(p.title)+'"><img class="main" src="'+img(p.imgs[0])+'" alt="'+esc(p.title)+'" loading="lazy" width="800" height="800"><img class="alt" src="'+img(p.imgs[1])+'" alt="" loading="lazy" width="800" height="800"></a>'+
-      '<div class="bd"><div class="size"><a href="#p-'+p.id+'"><b>'+p.g+'g</b></a><span class="per">'+inr(per100(p))+'/100g</span></div>'+
-      '<p class="fits">'+FITS[p.g]+'</p>'+
-      '<div class="price"><b>'+inr(p.price)+'</b><s>'+inr(p.mrp)+'</s><span class="off">'+pct(p)+'% off</span></div>'+
+    var pp=per100(p);
+    return '<article class="card">'+(p.badge?'<span class="badge'+(/best/i.test(p.badge)?' best':'')+'">'+esc(p.badge)+'</span>':'')+
+      '<a class="ph" href="#p-'+p.id+'" aria-label="View '+esc(p.title)+'"><img class="main" src="'+img(p.images[0])+'" alt="'+esc(p.title)+'" loading="lazy" width="800" height="800">'+(p.images[1]?'<img class="alt" src="'+img(p.images[1])+'" alt="" loading="lazy" width="800" height="800">':'')+'</a>'+
+      '<div class="bd"><div class="size"><a href="#p-'+p.id+'"><b>'+esc(p.size_label)+'</b></a>'+(pp?'<span class="per">'+inr(pp)+'/100g</span>':'')+'</div>'+
+      '<p class="fits">'+esc(p.best_for||p.title)+'</p>'+
+      '<div class="price"><b>'+inr(p.price)+'</b>'+(p.mrp>p.price?'<s>'+inr(p.mrp)+'</s><span class="off">'+pct(p)+'% off</span>':'')+'</div>'+stockNote(p)+
       '<div class="act" data-act="'+p.id+'">'+actHTML(p)+'</div></div></article>';
   }
-  function renderCards(){ $("cards").innerHTML = SIZES.map(function(g){ return cardHTML(P[shopC+"-"+g]); }).join(""); }
-  function setShop(c){ shopC=c; ls("nc3_col",c); document.querySelectorAll("[data-shop]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.shop===c)); }); renderCards(); }
-  document.querySelectorAll("[data-shop]").forEach(function(b){ b.addEventListener("click",function(){ setShop(b.dataset.shop); setHero(b.dataset.shop); }); });
-  function refreshActs(){ document.querySelectorAll("[data-act]").forEach(function(el){ el.innerHTML=actHTML(P[el.dataset.act]); }); }
+  function renderCards(){ $("shopSeg").innerHTML=segHTML("data-shop",shopC); $("shopSeg").hidden=COLS.length<2; $("cards").innerHTML = inCol(shopC).map(cardHTML).join(""); }
+  function setShop(c){ shopC=c; ls("nc3_col",c); renderCards(); }
+  function refreshActs(){ document.querySelectorAll("[data-act]").forEach(function(el){ var p=P[el.dataset.act]; if(p) el.innerHTML=actHTML(p); }); }
 
   document.addEventListener("click",function(e){
+    var h=e.target.closest("[data-hero]"), s=e.target.closest("[data-shop]");
+    if(h){ setHero(h.dataset.hero); setShop(h.dataset.hero); return; }
+    if(s){ setShop(s.dataset.shop); setHero(s.dataset.shop); return; }
     var a=e.target.closest("[data-add]"), i=e.target.closest("[data-inc]"), d=e.target.closest("[data-dec]");
-    if(a){ var id=a.dataset.add; setQty(id,qty(id)+1); toast(P[id],1); }
+    if(a){ var id=a.dataset.add; if(!P[id]||soldOut(P[id])) return; setQty(id,qty(id)+1); toast(P[id],1); }
     else if(i){ setQty(i.dataset.inc,qty(i.dataset.inc)+1); }
     else if(d){ setQty(d.dataset.dec,qty(d.dataset.dec)-1); }
     if(e.target.closest("[data-open-bag]")) openBag();
   });
 
-  /* ---------------- sublimation lab ---------------- */
-  var STAGES=[
-    {max:1, chip:"Fresh pack", cls:"", p:"Full strength. Put the pouch in and close the door."},
-    {max:5, chip:"Working", cls:"", p:"The balls are turning to vapour. Moths and musty smells stay out."},
-    {max:8, chip:"Top up soon", cls:"warn", p:"The balls look noticeably smaller. Add a fresh handful this week."},
-    {max:10,chip:"Replace", cls:"red", p:"Most of the naphthalene has turned to vapour. Time for a new pouch."}
-  ];
-  function lab(){
-    var w=+$("wk").value, s=STAGES.filter(function(x){return w<=x.max})[0];
-    var r=96*Math.max(.22,1-w*.078);
-    $("ball").setAttribute("r",r.toFixed(1)); $("glow").setAttribute("r",(r+34).toFixed(1));
-    $("wkT").textContent = "Week "+w;
+  /* ================= sublimation lab ================= */
+  var STAGES=[{max:1,chip:"Fresh pack",cls:"",p:"Full strength. Put the pouch in and close the door."},{max:5,chip:"Working",cls:"",p:"The balls are turning to vapour. Moths and musty smells stay out."},
+    {max:8,chip:"Top up soon",cls:"warn",p:"The balls look noticeably smaller. Add a fresh handful this week."},{max:10,chip:"Replace",cls:"red",p:"Most of the naphthalene has turned to vapour. Time for a new pouch."}];
+  function lab(){ var w=+$("wk").value, s=STAGES.filter(function(x){return w<=x.max})[0], r=96*Math.max(.22,1-w*.078);
+    $("ball").setAttribute("r",r.toFixed(1)); $("glow").setAttribute("r",(r+34).toFixed(1)); $("wkT").textContent="Week "+w;
     $("wkChip").textContent=s.chip; $("wkChip").className="chip "+s.cls; $("wkP").textContent=s.p;
-    $("sizeLbl").textContent = w===0 ? "Full size" : "About "+Math.round(r/96*100)+"% of the original size";
-    var v="", n = w===0?0:Math.min(12,3+w);
-    for(var k=0;k<n;k++){ var ang=(k/n)*Math.PI*2+w*.6, rr=r+14+((k*37)%34); v+='<circle cx="'+(200+Math.cos(ang)*rr).toFixed(1)+'" cy="'+(140+Math.sin(ang)*rr*.8-6).toFixed(1)+'" r="'+(1.5+(k%3)).toFixed(1)+'" opacity="'+(.25+(k%4)*.12).toFixed(2)+'"/>'; }
-    $("vapour").innerHTML=v;
-  }
+    $("sizeLbl").textContent = w===0?"Full size":"About "+Math.round(r/96*100)+"% of the original size";
+    var v="", n=w===0?0:Math.min(12,3+w); for(var k=0;k<n;k++){ var ang=(k/n)*Math.PI*2+w*.6, rr=r+14+((k*37)%34);
+      v+='<circle cx="'+(200+Math.cos(ang)*rr).toFixed(1)+'" cy="'+(140+Math.sin(ang)*rr*.8-6).toFixed(1)+'" r="'+(1.5+(k%3)).toFixed(1)+'" opacity="'+(.25+(k%4)*.12).toFixed(2)+'"/>'; }
+    $("vapour").innerHTML=v; }
   $("wk").addEventListener("input",lab); lab();
 
-  /* ---------------- planner ---------------- */
+  /* ================= planner ================= */
   var SPACES=[
-    {k:"drawer", g:50, t:"Drawers, suitcases, shoe racks", s:"50g each", ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 12h18M10 8.5h4M10 15.5h4"/></svg>'},
-    {k:"cupboard", g:100, t:"Cupboards and bookshelves", s:"100g each", ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 3v18M10 12h.01M14 12h.01"/></svg>'},
-    {k:"bath", g:100, t:"Bathroom corners", s:"100g each", ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2zM6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/></svg>'},
-    {k:"wardrobe", g:200, t:"Full wardrobes and trunks", s:"200g each", ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="17" rx="2"/><path d="M12 3v17M9.5 10v3M14.5 10v3M5 20v1.5M19 20v1.5"/></svg>'},
-    {k:"bedroom", g:400, t:"Bedroom wardrobe with seasonal storage", s:"400g each", ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="13" height="17" rx="2"/><path d="M8.5 3v17M15 11h7v9h-7M18.5 14v3"/></svg>'}
-  ];
-  var plan={drawer:2,cupboard:1,bath:0,wardrobe:1,bedroom:0}, planC="white", planPick=null;
+    {k:"drawer",g:50,t:"Drawers, suitcases, shoe racks",s:"50g each",ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 12h18M10 8.5h4M10 15.5h4"/></svg>'},
+    {k:"cupboard",g:100,t:"Cupboards and bookshelves",s:"100g each",ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 3v18M10 12h.01M14 12h.01"/></svg>'},
+    {k:"bath",g:100,t:"Bathroom corners",s:"100g each",ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2zM6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/></svg>'},
+    {k:"wardrobe",g:200,t:"Full wardrobes and trunks",s:"200g each",ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="17" rx="2"/><path d="M12 3v17M9.5 10v3M14.5 10v3M5 20v1.5M19 20v1.5"/></svg>'},
+    {k:"bedroom",g:400,t:"Bedroom wardrobe with seasonal storage",s:"400g each",ic:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="13" height="17" rx="2"/><path d="M8.5 3v17M15 11h7v9h-7M18.5 14v3"/></svg>'}];
+  var plan={drawer:2,cupboard:1,bath:0,wardrobe:1,bedroom:0}, planC=COLS[0], planPick=null;
+  function planCols(){ return COLS.filter(function(c){ return inCol(c).some(function(p){ return p.family==="naphthalene" && p.size_g && !soldOut(p); }); }); }
   function best(need,c){
     if(need<=0) return null;
-    var price=COL[c].price, top=need+400, cost=[0], cnt=[0], pick=[0];
-    for(var x=50;x<=top;x+=50){ var b=Infinity,bn=Infinity,bp=0;
-      SIZES.forEach(function(g){ var j=(x-g)/50; if(j>=0 && cost[j]<Infinity){ var v=cost[j]+price[g], n=cnt[j]+1; if(v<b || (v===b && n<bn)){b=v;bn=n;bp=g;} } });
+    var packs=inCol(c).filter(function(p){ return p.family==="naphthalene" && p.size_g>0 && p.size_g%50===0 && !soldOut(p); }); if(!packs.length) return null;
+    var top=need+Math.max.apply(null,packs.map(function(p){return p.size_g;})), cost=[0], cnt=[0], pick=[null];
+    for(var x=50;x<=top;x+=50){ var b=Infinity,bn=Infinity,bp=null;
+      packs.forEach(function(p){ var j=(x-p.size_g)/50; if(j>=0 && cost[j]<Infinity){ var v=cost[j]+p.price, n=cnt[j]+1; if(v<b||(v===b&&n<bn)){ b=v; bn=n; bp=p; } } });
       cost[x/50]=b; cnt[x/50]=bn; pick[x/50]=bp; }
-    var bi=-1,bv=Infinity; for(var y=need;y<=top;y+=50){ if(cost[y/50]<bv){bv=cost[y/50];bi=y;} }
-    var counts={}, z=bi; while(z>0){ var g=pick[z/50]; counts[g]=(counts[g]||0)+1; z-=g; }
-    return {grams:bi, cost:bv, counts:counts};
+    var bi=-1,bv=Infinity; for(var y=Math.ceil(need/50)*50;y<=top;y+=50){ if(cost[y/50]<bv){ bv=cost[y/50]; bi=y; } }
+    if(bi<0) return null; var counts={}, z=bi; while(z>0){ var p=pick[z/50]; counts[p.id]=(counts[p.id]||0)+1; z-=p.size_g; }
+    return {grams:bi,cost:bv,counts:counts};
   }
   function renderSpaces(){
-    $("spaces").innerHTML = SPACES.map(function(s){ var n=plan[s.k];
+    $("spaces").innerHTML=SPACES.map(function(s){ var n=plan[s.k];
       return '<div class="space'+(n?' on':'')+'"><span class="ic">'+s.ic+'</span><div><b>'+s.t+'</b><small>'+s.s+'</small></div>'+
         '<div class="stepper light" role="group" aria-label="'+esc(s.t)+'"><button type="button" data-sp="'+s.k+'" data-d="-1" aria-label="One less">−</button><span class="tnum">'+n+'</span><button type="button" data-sp="'+s.k+'" data-d="1" aria-label="One more">+</button></div></div>'; }).join("");
   }
   function renderPlan(){
+    var pcs=planCols(); if(pcs.indexOf(planC)<0) planC=pcs[0];
     var need=0; SPACES.forEach(function(s){ need+=plan[s.k]*s.g; });
-    var r=best(need,planC), h='<div class="seg" role="group" aria-label="Colour"><button type="button" data-pc="white" aria-pressed="'+(planC==="white")+'"><i class="dot"></i>White</button><button type="button" data-pc="multi" aria-pressed="'+(planC==="multi")+'"><i class="dot multi"></i>Multicolour</button></div>';
+    var r=planC?best(need,planC):null, h=pcs.length>1?'<div class="seg" role="group" aria-label="Colour">'+pcs.slice(0,3).map(function(c){ return '<button type="button" data-pc="'+esc(c)+'" aria-pressed="'+(c===planC)+'">'+dotHTML(c)+esc(c)+'</button>'; }).join("")+'</div>':'';
     planPick=r;
-    if(!r){ $("result").innerHTML = h+'<h3>Add a space to start</h3><p class="empty">Use the + buttons to tell us what you want to protect.</p>'; return; }
-    var packs=Object.keys(r.counts).map(Number).sort(function(a,b){return b-a}), mrp=0;
-    packs.forEach(function(g){ mrp+=COL[planC].mrp[g]*r.counts[g]; });
-    h += '<div><p class="eyebrow" style="color:#AFC3F3">You need per refill</p><div class="big tnum">'+need+'<small>grams</small></div></div>'+
-      '<div class="packs">'+packs.map(function(g){ var p=P[planC+"-"+g]; return '<div class="pk"><img src="'+img(p.imgs[0])+'" alt=""><span><b>'+r.counts[g]+' × '+g+'g</b> '+COL[planC].name+'</span><span class="tnum">'+inr(p.price*r.counts[g])+'</span></div>'; }).join("")+'</div>'+
+    if(!r){ $("result").innerHTML=h+'<h3>Add a space to start</h3><p class="empty">Use the + buttons to tell us what you want to protect.</p>'; return; }
+    var ids=Object.keys(r.counts).sort(function(a,b){ return P[b].size_g-P[a].size_g; }), mrp=0;
+    ids.forEach(function(id){ mrp+=Math.max(P[id].mrp,P[id].price)*r.counts[id]; });
+    h+='<div><p class="eyebrow" style="color:#AFC3F3">You need per refill</p><div class="big tnum">'+need+'<small>grams</small></div></div>'+
+      '<div class="packs">'+ids.map(function(id){ var p=P[id]; return '<div class="pk"><img src="'+img(p.images[0])+'" alt=""><span><b>'+r.counts[id]+' × '+esc(p.size_label)+'</b> '+esc(p.collection)+'</span><span class="tnum">'+inr(p.price*r.counts[id])+'</span></div>'; }).join("")+'</div>'+
       '<div class="sum"><span>Cheapest mix'+(r.grams>need?', with '+(r.grams-need)+'g spare':'')+'</span><b class="tnum">'+inr(r.cost)+'</b></div>'+
-      '<p style="font-size:.88rem;color:#AFC3F3;margin-top:-6px">You save '+inr(mrp-r.cost)+' on M.R.P. One refill lasts 6 to 8 weeks.</p>'+
+      (mrp>r.cost?'<p style="font-size:.88rem;color:#AFC3F3;margin-top:-6px">You save '+inr(mrp-r.cost)+' on M.R.P. One refill lasts 6 to 8 weeks.</p>':'')+
       '<button class="btn block" type="button" id="addPlan">Add this plan to bag'+ICON.arrow+'</button>';
     $("result").innerHTML=h;
   }
   $("spaces").addEventListener("click",function(e){ var b=e.target.closest("[data-sp]"); if(!b) return; plan[b.dataset.sp]=Math.max(0,Math.min(20,plan[b.dataset.sp]+(+b.dataset.d))); renderSpaces(); renderPlan(); });
   $("result").addEventListener("click",function(e){
     var pc=e.target.closest("[data-pc]"); if(pc){ planC=pc.dataset.pc; renderPlan(); return; }
-    if(e.target.closest("#addPlan") && planPick){ Object.keys(planPick.counts).forEach(function(g){ var id=planC+"-"+g; bag[id]=(bag[id]||0)+planPick.counts[g]; }); saveBag(); openBag(); }
+    if(e.target.closest("#addPlan") && planPick){ Object.keys(planPick.counts).forEach(function(id){ bag[id]=(bag[id]||0)+planPick.counts[id]; }); saveBag(); openBag(); }
   });
-  renderSpaces(); renderPlan();
 
-  /* ---------------- bag drawer ---------------- */
+  /* ================= bag drawer ================= */
   var drawer=$("drawer"), scrim=$("scrim"), lastFocus=null;
   function isOpen(){ return drawer.classList.contains("on"); }
-  function openBag(s){ step = s||"bag"; paintDrawer(); lastFocus=document.activeElement; scrim.hidden=false; void scrim.offsetWidth; scrim.classList.add("on"); drawer.classList.add("on"); drawer.setAttribute("aria-hidden","false"); lock(true); hideToast(); setTimeout(function(){ $("dClose").focus({preventScroll:true}); },60); }
-  function closeBag(){ scrim.classList.remove("on"); drawer.classList.remove("on"); drawer.setAttribute("aria-hidden","true"); lock(false); setTimeout(function(){ if(!isOpen()) scrim.hidden=true; },300); if(lastFocus&&lastFocus.focus) lastFocus.focus({preventScroll:true}); if(location.hash==="#cart") history.replaceState(null,"",location.pathname+location.search); }
-  $("bagBtn").addEventListener("click",function(){ openBag(); });
-  $("dClose").addEventListener("click",closeBag); scrim.addEventListener("click",closeBag);
-  document.addEventListener("keydown",function(e){ if(e.key!=="Escape") return; if(isOpen()) closeBag(); if(!$("mnav").hidden){ $("mnav").hidden=true; lock(false); } });
-
+  function openBag(){ paintDrawer(); lastFocus=document.activeElement; scrim.hidden=false; void scrim.offsetWidth; scrim.classList.add("on"); drawer.classList.add("on"); drawer.setAttribute("aria-hidden","false"); lock(true); hideToast(); setTimeout(function(){ $("dClose").focus({preventScroll:true}); },60); }
+  function closeBag(){ if(!isOpen()) return; scrim.classList.remove("on"); drawer.classList.remove("on"); drawer.setAttribute("aria-hidden","true"); lock(false); setTimeout(function(){ if(!isOpen()) scrim.hidden=true; },300); if(lastFocus&&lastFocus.focus) lastFocus.focus({preventScroll:true}); }
+  $("bagBtn").addEventListener("click",openBag); $("dClose").addEventListener("click",closeBag); scrim.addEventListener("click",closeBag);
+  document.addEventListener("keydown",function(e){ if(e.key!=="Escape") return; closeBag(); if(!$("mnav").hidden){ $("mnav").hidden=true; lock(false); } });
   function paintBag(){
     var t=totals(lines()); $("bagN").textContent=t.n;
     var b=$("bagBtn"); b.classList.remove("bump"); void b.offsetWidth; b.classList.add("bump");
-    refreshActs(); paintMbar(); if(isOpen()) paintDrawer();
-  }
-  function progress(){
-    var co=step==="checkout";
-    return '<div class="progress" aria-hidden="true"><span class="on-t">Bag</span><i class="on"></i><span class="'+(co?'on-t':'')+'">Address</span><i class="'+(co?'on':'')+'"></i><span>WhatsApp</span></div>';
+    refreshActs(); paintMbar(); if(isOpen()) paintDrawer(); if(!$("coView").hidden) paintSummary();
   }
   function paintDrawer(){
     var L=lines(), t=totals(L), body=$("dBody"), foot=$("dFoot");
-    if(!L.length) step="bag";
-    $("dTitle").textContent = step==="checkout" ? "Checkout" : "Your bag"+(t.n?" ("+t.n+")":"");
-    if(!L.length){
-      body.innerHTML='<div class="emptybag"><span class="ball" aria-hidden="true"></span><b style="color:var(--ink);font-size:1.1rem">Your bag is empty</b><span>Pick a colour and size, or let the planner choose for you.</span></div>';
-      foot.innerHTML='<a class="btn block" href="#shop" data-shut>Shop naphthalene balls</a><a class="btn ghost block" href="#planner" data-shut>Use the pack planner</a>'; return;
-    }
-    if(step==="bag"){
-      var ups=null; ["white-50","multi-50","white-100"].some(function(k){ if(!bag[k]){ ups=P[k]; return true; } return false; });
-      body.innerHTML = progress() + L.map(function(l){ var p=l.p; return '<div class="line"><a href="#p-'+p.id+'" data-shut><img src="'+img(p.imgs[0])+'" alt="'+esc(p.name)+'"></a><div><div class="nm"><a href="#p-'+p.id+'" data-shut>'+esc(p.name)+'</a></div><div class="sub tnum">'+inr(p.price)+' each <s>'+inr(p.mrp)+'</s></div>'+
-        '<div class="stepper light" style="margin-top:8px"><button type="button" data-dec="'+p.id+'" aria-label="Remove one">−</button><span class="tnum">'+l.q+'</span><button type="button" data-inc="'+p.id+'" aria-label="Add one">+</button></div></div>'+
-        '<div class="rt"><span class="amt">'+inr(l.q*p.price)+'</span><button class="rm" type="button" data-rm="'+p.id+'">Remove</button></div></div>'; }).join("") +
-        (ups?'<div class="upsell"><img src="'+img(ups.imgs[0])+'" alt=""><div><b>Add '+esc(ups.name)+'</b><span>'+inr(ups.price)+', handy for drawers and suitcases</span></div><button class="btn sm navy" type="button" data-add="'+ups.id+'">Add</button></div>':"");
-      foot.innerHTML='<div class="totals"><div><span>Items ('+t.n+')</span><span>'+inr(t.mrp)+'</span></div><div class="sv"><span>You save</span><span>−'+inr(t.mrp-t.sum)+'</span></div><div><span>Delivery</span><span class="ok">FREE</span></div><div class="g"><span>Total</span><span>'+inr(t.sum)+'</span></div></div>'+
-        '<button class="btn block" type="button" id="toCheckout">Checkout'+ICON.arrow+'</button><p class="hint" style="text-align:center">Arrives '+dText()+'</p>';
-    } else {
-      var d=draft; if(!d.pin&&pin) d.pin=pin;
-      var f=function(id,label,attrs,full){ return '<div class="fld"'+(full?' style="grid-column:1/-1"':'')+'><label for="c_'+id+'">'+label+'</label><input class="inp" id="c_'+id+'" data-k="'+id+'" value="'+esc(d[id]||"")+'" '+(attrs||"")+'></div>'; };
-      body.innerHTML = progress() + '<form class="form" id="coForm" novalidate><div class="f2">'+
-        f("name","Full name",'autocomplete="name"')+f("phone","Mobile number",'inputmode="tel" autocomplete="tel"')+
-        f("addr","House, building, street",'autocomplete="address-line1"',true)+f("area","Area and landmark (optional)",'autocomplete="address-line2"',true)+
-        f("pin","PIN code",'inputmode="numeric" maxlength="6" autocomplete="postal-code"')+f("city","Town or city",'autocomplete="address-level2"')+
-        f("state","State",'autocomplete="address-level1"',true)+'</div>'+
-        '<label class="radio"><input type="radio" checked name="pay"><span><b style="color:var(--ink)">Pay by UPI after we confirm</b><br><span class="hint">We reply on WhatsApp with your UPI details. Nothing is charged before that.</span></span></label>'+
-        '<div style="display:grid;gap:6px">'+L.map(function(l){ return '<div class="mini"><span>'+l.q+' × '+esc(l.p.name)+'</span><b class="tnum">'+inr(l.q*l.p.price)+'</b></div>'; }).join("")+'</div></form>';
-      foot.innerHTML='<div class="totals"><div class="g"><span>Total, free delivery</span><span>'+inr(t.sum)+'</span></div></div><p class="err" id="coErr" role="alert"></p>'+
-        '<button class="btn block" type="button" id="placeBtn">'+ICON.wa+'Place order on WhatsApp</button>'+
-        '<button class="btn ghost block" type="button" id="backBag">'+ICON.back+'Back to bag</button>';
-      body.querySelectorAll("[data-k]").forEach(function(i){ i.addEventListener("input",function(){ d[i.dataset.k]=i.value; i.classList.remove("bad"); }); });
-      $("coForm").addEventListener("submit",function(e){ e.preventDefault(); placeOrder(); });
-    }
+    $("dTitle").textContent="Your bag"+(t.n?" ("+t.n+")":"");
+    if(!L.length){ body.innerHTML='<div class="emptybag"><span class="ball" aria-hidden="true"></span><b style="color:var(--ink);font-size:1.1rem">Your bag is empty</b><span>Pick a colour and size, or let the planner choose for you.</span></div>';
+      foot.innerHTML='<a class="btn block" href="#shop" data-shut>Shop naphthalene balls</a><a class="btn ghost block" href="#planner" data-shut>Use the pack planner</a>'; return; }
+    var ups=null; PRODUCTS.some(function(p){ if(!bag[p.id] && !soldOut(p) && p.size_g===50){ ups=p; return true; } return false; });
+    body.innerHTML=L.map(function(l){ var p=l.p; return '<div class="line"><a href="#p-'+p.id+'" data-shut><img src="'+img(p.images[0])+'" alt="'+esc(p.title)+'"></a><div><div class="nm"><a href="#p-'+p.id+'" data-shut>'+esc(p.collection)+' '+esc(p.size_label)+'</a></div><div class="sub tnum">'+inr(p.price)+' each'+(p.mrp>p.price?' <s>'+inr(p.mrp)+'</s>':'')+'</div>'+
+      '<div class="stepper light" style="margin-top:8px"><button type="button" data-dec="'+p.id+'" aria-label="Remove one">−</button><span class="tnum">'+l.q+'</span><button type="button" data-inc="'+p.id+'" aria-label="Add one">+</button></div></div>'+
+      '<div class="rt"><span class="amt">'+inr(l.q*p.price)+'</span><button class="rm" type="button" data-rm="'+p.id+'">Remove</button></div></div>'; }).join("")+
+      (ups?'<div class="upsell"><img src="'+img(ups.images[0])+'" alt=""><div><b>Add '+esc(ups.collection)+' '+esc(ups.size_label)+'</b><span>'+inr(ups.price)+', handy for drawers and suitcases</span></div><button class="btn sm navy" type="button" data-add="'+ups.id+'">Add</button></div>':"");
+    var ship=shipFor(t.sum);
+    foot.innerHTML='<div class="totals"><div><span>Items ('+t.n+')</span><span>'+inr(t.mrp)+'</span></div>'+(t.mrp>t.sum?'<div class="sv"><span>You save</span><span>−'+inr(t.mrp-t.sum)+'</span></div>':'')+
+      '<div><span>Delivery</span><span class="'+(ship?'':'ok')+'">'+(ship?inr(ship):'FREE')+'</span></div><div class="g"><span>Total</span><span>'+inr(t.sum+ship)+'</span></div></div>'+
+      '<a class="btn block" href="#checkout" data-shut>Checkout'+ICON.arrow+'</a><p class="hint" style="text-align:center">Arrives '+dText()+'</p>';
   }
-  drawer.addEventListener("click",function(e){
-    if(e.target.closest("[data-shut]")){ closeBag(); return; }
-    var rm=e.target.closest("[data-rm]"); if(rm){ setQty(rm.dataset.rm,0); return; }
-    if(e.target.closest("#toCheckout")){ step="checkout"; paintDrawer(); var f=$("c_name"); if(f) f.focus(); return; }
-    if(e.target.closest("#backBag")){ step="bag"; paintDrawer(); return; }
-    if(e.target.closest("#placeBtn")) placeOrder();
-  });
-  function placeOrder(){
-    var d=draft, v=function(k){ return (d[k]||"").trim(); }, ph=v("phone").replace(/\D/g,"").slice(-10);
-    var chk=[["name",!v("name"),"Enter your full name."],["phone",ph.length<10,"Enter a 10-digit mobile number."],["addr",!v("addr"),"Enter your house and street."],
-      ["pin",!/^[1-9]\d{5}$/.test(v("pin")),"Enter a valid 6-digit PIN code."],["city",!v("city"),"Enter your town or city."],["state",!v("state"),"Enter your state."]];
-    var bad=chk.filter(function(c){return c[1]});
-    document.querySelectorAll("#coForm .inp").forEach(function(i){ i.classList.remove("bad"); });
-    if(bad.length){ $("coErr").textContent=bad[0][2]; bad.forEach(function(c){ var el=$("c_"+c[0]); if(el) el.classList.add("bad"); }); var f=$("c_"+bad[0][0]); if(f) f.focus(); return; }
-    $("coErr").textContent="";
-    pin=v("pin"); ls("nc3_pin",pin);
-    var L=lines(), t=totals(L), msg="Hello NaphClean, I would like to place an order.\n";
-    L.forEach(function(l){ msg+="\n"+l.q+" x "+l.p.title+" ("+l.p.sku+"), "+inr(l.q*l.p.price); });
-    msg+="\n\nOrder total: "+inr(t.sum)+" (free delivery)\nPayment: UPI\n\nName: "+v("name")+"\nMobile: "+ph+"\nAddress: "+v("addr")+(v("area")?", "+v("area"):"")+", "+v("city")+", "+v("state")+" "+pin;
-    openWA(msg);
-  }
-  function openWA(msg){
-    /* A real link click opens WhatsApp (app on phones, new tab on desktop) and never navigates the store away. */
-    var a=document.createElement("a"); a.href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg); a.target="_blank"; a.rel="noopener";
-    document.body.appendChild(a); a.click(); a.remove();
-  }
+  drawer.addEventListener("click",function(e){ if(e.target.closest("[data-shut]")){ closeBag(); return; } var rm=e.target.closest("[data-rm]"); if(rm) setQty(rm.dataset.rm,0); });
 
-  /* ---------------- mobile bars ---------------- */
+  /* ================= mobile bar + toast ================= */
   var pdpBar=null;
   function paintMbar(){
-    var m=$("mbar"), t=totals(lines());
-    if(pdpBar){ m.hidden=false; m.innerHTML=pdpBar(); }
-    else if(!t.n){ m.hidden=true; m.innerHTML=""; }
-    else { m.hidden=false; m.innerHTML='<div class="p"><b class="tnum">'+inr(t.sum)+'</b><small>'+t.n+' item'+(t.n>1?"s":"")+', free delivery</small></div><button class="btn" type="button" data-open-bag>View bag'+ICON.arrow+'</button>'; }
-    document.body.style.paddingBottom = (!m.hidden && window.innerWidth<=900) ? "78px" : "";
+    var m=$("mbar"), t=totals(lines()), view=currentView();
+    if(view==="pdp" && pdpBar){ m.hidden=false; m.innerHTML=pdpBar(); }
+    else if(view==="landing" && t.n){ m.hidden=false; m.innerHTML='<div class="p"><b class="tnum">'+inr(t.sum)+'</b><small>'+t.n+' item'+(t.n>1?"s":"")+'</small></div><a class="btn" href="#checkout">Checkout'+ICON.arrow+'</a>'; }
+    else { m.hidden=true; m.innerHTML=""; }
+    document.body.style.paddingBottom=(!m.hidden && window.innerWidth<=900)?"78px":"";
   }
-
-  /* ---------------- toast ---------------- */
   var tt;
-  function toast(p,n){
-    var el=$("toast"); el.innerHTML='<img src="'+img(p.imgs[0])+'" alt=""><div><b>Added to bag</b><small>'+(n>1?n+" × ":"")+esc(p.name)+'</small></div><button class="btn" type="button" data-open-bag>View bag</button>';
-    el.classList.add("on"); clearTimeout(tt); tt=setTimeout(hideToast,3200);
-  }
+  function toast(p,n){ var el=$("toast"); el.innerHTML='<img src="'+img(p.images[0])+'" alt=""><div><b>Added to bag</b><small>'+(n>1?n+" × ":"")+esc(p.collection)+' '+esc(p.size_label)+'</small></div><button class="btn" type="button" data-open-bag>View bag</button>';
+    el.classList.add("on"); clearTimeout(tt); tt=setTimeout(hideToast,3200); }
   function hideToast(){ $("toast").classList.remove("on"); }
+  function notice(msg){ var el=$("toast"); el.innerHTML='<div><b>'+esc(msg)+'</b></div>'; el.classList.add("on"); clearTimeout(tt); tt=setTimeout(hideToast,3600); }
 
-  /* ---------------- product page ---------------- */
+  /* ================= product page ================= */
   function pdp(id){
-    var p=P[id]; if(!p) return false;
-    var C=COL[p.c], v=$("pdpView"), q=1;
+    var p=P[id], C=p.collection, v=$("pdpView"), q=1, pp=per100(p);
+    var fam=PRODUCTS.filter(function(x){ return x.family===p.family; });
+    var colorOpts=[]; fam.forEach(function(x){ if(x.size_label===p.size_label && colorOpts.indexOf(x)<0) colorOpts.push(x); });
+    var sizeOpts=inCol(C).filter(function(x){ return x.family===p.family; });
     v.innerHTML='<div class="wrap pdp">'+
-      '<nav class="crumbs" aria-label="Breadcrumb"><a href="#shop">'+ICON.back+'All packs</a><span>/</span><span>'+C.name+'</span><span>/</span><span>'+p.g+'g</span></nav>'+
+      '<nav class="crumbs" aria-label="Breadcrumb"><a href="#shop">'+ICON.back+'All packs</a><span>/</span><span>'+esc(C)+'</span><span>/</span><span>'+esc(p.size_label)+'</span></nav>'+
       '<div class="pgrid">'+
-        '<div class="gallery"><div class="thumbs" id="thumbs">'+p.imgs.map(function(s,i){return '<button type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'" aria-label="Photo '+(i+1)+'"><img src="'+img(s)+'" alt=""></button>'}).join("")+'</div>'+
-          '<div class="mainimg" id="mainImg"><img id="mainPic" src="'+img(p.imgs[0])+'" alt="'+esc(p.title)+'"></div></div>'+
+        '<div class="gallery"><div class="thumbs" id="thumbs">'+p.images.map(function(s,i){ return '<button type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'" aria-label="Photo '+(i+1)+'"><img src="'+img(s)+'" alt=""></button>'; }).join("")+'</div>'+
+          '<div class="mainimg" id="mainImg"><img id="mainPic" src="'+img(p.images[0])+'" alt="'+esc(p.title)+'"></div></div>'+
         '<div class="pinfo">'+
-          '<div><p class="eyebrow">'+C.name+(TAG[p.g]?' · '+TAG[p.g]:'')+'</p><h1 style="margin-top:12px">'+C.name+' Naphthalene Balls, '+p.g+'g</h1><p class="sub" style="margin-top:10px">'+FITS[p.g]+'. Lab-tested, 99.5%+ pure.</p></div>'+
-          '<div><div class="pprice"><b class="tnum">'+inr(p.price)+'</b><s>'+inr(p.mrp)+'</s><span class="off">'+pct(p)+'% off</span></div><p class="tax tnum" style="margin-top:8px">'+inr(per100(p))+' per 100g. Inclusive of all taxes.</p></div>'+
-          '<div class="opt"><h3>Colour<span>'+C.name+'</span></h3><div class="swatches">'+["white","multi"].map(function(c){ return '<button type="button" data-go="'+c+"-"+p.g+'" aria-pressed="'+(c===p.c)+'"><i class="dot'+(c==="multi"?" multi":"")+'"></i>'+COL[c].name+'</button>'; }).join("")+'</div></div>'+
-          '<div class="opt"><h3>Size<span>'+p.g+'g</span></h3><div class="sizes">'+SIZES.map(function(g){ var o=P[p.c+"-"+g]; return '<button type="button" data-go="'+o.id+'" aria-pressed="'+(g===p.g)+'">'+(TAG[g]?'<span class="flag">'+TAG[g]+'</span>':'')+'<b>'+g+'g</b><span>'+inr(o.price)+'</span><small>'+inr(per100(o))+'/100g</small></button>'; }).join("")+'</div></div>'+
+          '<div><p class="eyebrow">'+esc(C)+(p.badge?' · '+esc(p.badge):'')+'</p><h1 style="margin-top:12px">'+esc(p.title.replace(/^NaphClean\s+/,""))+'</h1>'+(p.best_for?'<p class="sub" style="margin-top:10px">'+esc(p.best_for)+'.</p>':'')+'</div>'+
+          '<div><div class="pprice"><b class="tnum">'+inr(p.price)+'</b>'+(p.mrp>p.price?'<s>'+inr(p.mrp)+'</s><span class="off">'+pct(p)+'% off</span>':'')+'</div><p class="tax tnum" style="margin-top:8px">'+(pp?inr(pp)+' per 100g. ':'')+'Inclusive of all taxes.</p>'+stockNote(p)+'</div>'+
+          (colorOpts.length>1?'<div class="opt"><h3>Colour<span>'+esc(C)+'</span></h3><div class="swatches">'+colorOpts.map(function(o){ return '<button type="button" data-go="'+o.id+'" aria-pressed="'+(o.id===p.id)+'">'+dotHTML(o.collection)+esc(o.collection)+'</button>'; }).join("")+'</div></div>':'')+
+          (sizeOpts.length>1?'<div class="opt"><h3>Size<span>'+esc(p.size_label)+'</span></h3><div class="sizes">'+sizeOpts.map(function(o){ var op=per100(o); return '<button type="button" data-go="'+o.id+'" aria-pressed="'+(o.id===p.id)+'"'+(soldOut(o)?' class="so"':'')+'>'+(o.badge?'<span class="flag">'+esc(o.badge)+'</span>':'')+'<b>'+esc(o.size_label)+'</b><span>'+inr(o.price)+'</span><small>'+(soldOut(o)?'Sold out':(op?inr(op)+'/100g':'&nbsp;'))+'</small></button>'; }).join("")+'</div></div>':'')+
+          (soldOut(p)?'<button class="btn block ghost" type="button" disabled>Out of stock</button><a class="btn navy block" href="https://wa.me/'+esc(S.whatsapp)+'?text='+encodeURIComponent("Hello NaphClean, please tell me when "+p.title+" is back in stock.")+'" target="_blank" rel="noopener">'+ICON.wa+'Tell me when it is back</a>':
           '<div class="buyrow"><div class="stepper light" role="group" aria-label="Quantity"><button type="button" id="qm" aria-label="One less">−</button><span id="qv" class="tnum">1</span><button type="button" id="qp" aria-label="One more">+</button></div>'+
             '<button class="btn block" type="button" id="pAdd">Add to bag · <span id="qAmt">'+inr(p.price)+'</span></button></div>'+
-          '<button class="btn navy block" type="button" id="pBuy">Buy now</button>'+
-          '<div class="deliver"><b style="color:var(--ink)">Free delivery</b><div class="pin"><input class="inp" id="pinIn" inputmode="numeric" maxlength="6" placeholder="Enter PIN code" value="'+esc(pin)+'" aria-label="PIN code"><button class="btn sm navy" type="button" id="pinGo">Check</button></div><div id="pinOut" class="hint">'+(pin?'<span class="ok">Delivers to '+esc(pin)+' by '+dText()+'</span>':'Usually arrives in '+DELIVERY_DAYS[0]+' to '+DELIVERY_DAYS[1]+' days')+'</div></div>'+
-          '<div class="perks"><div>'+ICON.check+'<b>99.5%+ pure</b>Lab tested</div><div>'+ICON.check+'<b>7-day</b>Damage replacement</div><div>'+ICON.check+'<b>UPI</b>Pay after we confirm</div></div>'+
+          '<button class="btn navy block" type="button" id="pBuy">Buy now</button>')+
+          '<div class="deliver"><b style="color:var(--ink)">'+(shipFor(p.price)?'Delivery '+inr(S.shipping_fee)+(S.free_shipping_over?', free over '+inr(S.free_shipping_over):''):'Free delivery')+'</b><div class="pin"><input class="inp" id="pinIn" inputmode="numeric" maxlength="6" placeholder="Enter PIN code" value="'+esc(ls("nc3_pin")||"")+'" aria-label="PIN code"><button class="btn sm navy" type="button" id="pinGo">Check</button></div><div id="pinOut" class="hint">Usually arrives in '+(S.delivery_min||3)+' to '+(S.delivery_max||6)+' days</div></div>'+
+          '<div class="perks"><div>'+ICON.check+'<b>99.5%+ pure</b>Lab tested</div><div>'+ICON.check+'<b>7-day</b>Damage replacement</div><div>'+ICON.check+'<b>Secure</b>UPI, cards, WhatsApp</div></div>'+
           '<div class="acc pacc">'+
-            '<details open><summary>About this pack</summary><div class="ans"><ul><li>Protects clothes from moths, silverfish and fabric-damaging insects.</li><li>Helps prevent mildew and musty smells in closed spaces.</li><li>'+(p.c==="white"?"Non-staining on clothes, linen and delicate fabric when kept in a pouch.":"Colourful mix for drawers and washrooms. Keep off fabric to avoid colour transfer.")+'</li><li>Airtight, resealable zip pouch keeps unused balls at full strength.</li></ul></div></details>'+
-            '<details><summary>How to use</summary><div class="ans"><ul><li>Put 4 to 6 balls in a small mesh or cloth pouch.</li><li>Hang it high in the wardrobe, not on the clothes.</li><li>Keep the door closed.</li><li>Top up every 6 to 8 weeks, or when the balls look small.</li></ul></div></details>'+
-            '<details><summary>Specifications</summary><div class="ans"><table class="spec"><tbody>'+
-              '<tr><th>Brand</th><td>NaphClean</td></tr><tr><th>Colour</th><td>'+C.name+'</td></tr><tr><th>Net weight</th><td>'+p.g+' g</td></tr><tr><th>Purity</th><td>99.5%+ naphthalene</td></tr><tr><th>Pack</th><td>Resealable zip pouch</td></tr><tr><th>SKU</th><td>'+p.sku+'</td></tr>'+
-              '<tr><th>Shelf life</th><td>Best before 36 months from packing</td></tr><tr><th>Manufactured by</th><td>Calcutta Chemical Products, Kolkata 700001</td></tr><tr><th>Packed and marketed by</th><td>Lumisha India Private Limited, 16 Golaghata Road, Kolkata 700048</td></tr><tr><th>Country of origin</th><td>India</td></tr><tr><th>Customer care</th><td>+91 62894 79696, care@naphclean.com</td></tr>'+
-            '</tbody></table></div></details>'+
+            (p.bullets&&p.bullets.length?'<details open><summary>About this pack</summary><div class="ans"><ul>'+p.bullets.map(function(b){ return '<li>'+esc(b)+'</li>'; }).join("")+'</ul></div></details>':'')+
+            (p.family==="naphthalene"?'<details><summary>How to use</summary><div class="ans"><ul><li>Put 4 to 6 balls in a small mesh or cloth pouch.</li><li>Hang it high in the wardrobe, not on the clothes.</li><li>Keep the door closed.</li><li>Top up every 6 to 8 weeks, or when the balls look small.</li></ul></div></details>':'')+
+            '<details><summary>Specifications</summary><div class="ans"><table class="spec"><tbody><tr><th>Brand</th><td>NaphClean</td></tr><tr><th>Variant</th><td>'+esc(C)+'</td></tr><tr><th>Net quantity</th><td>'+esc(p.size_label)+'</td></tr>'+(p.family==="naphthalene"?'<tr><th>Purity</th><td>99.5%+ naphthalene</td></tr>':'')+'<tr><th>Pack</th><td>Resealable zip pouch</td></tr>'+(p.sku?'<tr><th>SKU</th><td>'+esc(p.sku)+'</td></tr>':'')+
+              '<tr><th>Shelf life</th><td>Best before 36 months from packing</td></tr><tr><th>Manufactured by</th><td>Calcutta Chemical Products, Kolkata 700001</td></tr><tr><th>Packed and marketed by</th><td>Lumisha India Private Limited, 16 Golaghata Road, Kolkata 700048</td></tr><tr><th>Country of origin</th><td>India</td></tr><tr><th>Customer care</th><td><span data-wa-num>'+fmtPhone(S.whatsapp)+'</span>, '+esc(S.support_email||"care@naphclean.com")+'</td></tr></tbody></table></div></details>'+
             '<details><summary>Safety</summary><div class="ans"><p class="safety"><b>Keep away from children and pets.</b> Do not ingest. If swallowed, seek medical advice. Not for kitchens or anywhere near food. For enclosed storage spaces only. Store in a cool, dry place away from heat and flame.</p></div></details>'+
           '</div>'+
         '</div>'+
       '</div>'+
-      '<section style="margin-top:72px"><div class="sec-head" style="margin-bottom:10px"><p class="eyebrow">Compare</p><h2 style="font-size:clamp(1.8rem,3.4vw,2.5rem)">Every size in '+C.name+'</h2></div><div class="cmpwrap"><table class="cmp"><thead><tr><th></th>'+
-        SIZES.map(function(g){ var o=P[p.c+"-"+g]; return '<th class="'+(g===p.g?'hl':'')+'"><a href="#p-'+o.id+'"><img src="'+img(o.imgs[0])+'" alt="'+g+'g pack" loading="lazy"></a><div style="margin-top:6px"><a href="#p-'+o.id+'"><b>'+g+'g</b></a></div></th>'; }).join("")+'</tr></thead><tbody>'+
-        '<tr><td>Price</td>'+SIZES.map(function(g){var o=P[p.c+"-"+g];return '<td class="'+(g===p.g?'hl':'')+'"><b>'+inr(o.price)+'</b></td>'}).join("")+'</tr>'+
-        '<tr><td>Per 100g</td>'+SIZES.map(function(g){var o=P[p.c+"-"+g];return '<td class="'+(g===p.g?'hl':'')+'">'+inr(per100(o))+'</td>'}).join("")+'</tr>'+
-        '<tr><td>Best for</td>'+SIZES.map(function(g){return '<td class="'+(g===p.g?'hl':'')+'" style="font-size:.85rem">'+FITS[g]+'</td>'}).join("")+'</tr>'+
-        '<tr><td></td>'+SIZES.map(function(g){var o=P[p.c+"-"+g];return '<td class="'+(g===p.g?'hl':'')+'"><button class="btn sm" type="button" data-add="'+o.id+'">Add</button></td>'}).join("")+'</tr>'+
-      '</tbody></table></div></section>'+
+      (sizeOpts.length>1?'<section style="margin-top:72px"><div class="sec-head" style="margin-bottom:10px"><p class="eyebrow">Compare</p><h2 style="font-size:clamp(1.8rem,3.4vw,2.5rem)">Every size in '+esc(C)+'</h2></div><div class="cmpwrap"><table class="cmp"><thead><tr><th></th>'+
+        sizeOpts.map(function(o){ return '<th class="'+(o.id===p.id?'hl':'')+'"><a href="#p-'+o.id+'"><img src="'+img(o.images[0])+'" alt="'+esc(o.size_label)+' pack" loading="lazy"></a><div style="margin-top:6px"><a href="#p-'+o.id+'"><b>'+esc(o.size_label)+'</b></a></div></th>'; }).join("")+'</tr></thead><tbody>'+
+        '<tr><td>Price</td>'+sizeOpts.map(function(o){ return '<td class="'+(o.id===p.id?'hl':'')+'"><b>'+inr(o.price)+'</b></td>'; }).join("")+'</tr>'+
+        '<tr><td>Per 100g</td>'+sizeOpts.map(function(o){ var op=per100(o); return '<td class="'+(o.id===p.id?'hl':'')+'">'+(op?inr(op):'')+'</td>'; }).join("")+'</tr>'+
+        '<tr><td>Best for</td>'+sizeOpts.map(function(o){ return '<td class="'+(o.id===p.id?'hl':'')+'" style="font-size:.85rem">'+esc(o.best_for||"")+'</td>'; }).join("")+'</tr>'+
+        '<tr><td></td>'+sizeOpts.map(function(o){ return '<td class="'+(o.id===p.id?'hl':'')+'">'+(soldOut(o)?'<span class="hint">Sold out</span>':'<button class="btn sm" type="button" data-add="'+o.id+'">Add</button>')+'</td>'; }).join("")+'</tr>'+
+      '</tbody></table></div></section>':'')+
       '<section style="margin-top:64px"><div class="sec-head" style="margin-bottom:18px"><p class="eyebrow">More from NaphClean</p><h2 style="font-size:clamp(1.8rem,3.4vw,2.5rem)">You may also like</h2></div><div class="rail">'+
-        Object.keys(P).filter(function(k){return k!==p.id}).sort(function(a,b){ return (P[a].c===p.c?1:0)-(P[b].c===p.c?1:0); }).map(function(k){return cardHTML(P[k])}).join("")+'</div></section>'+
+        PRODUCTS.filter(function(k){ return k.id!==p.id; }).sort(function(a,b){ return (a.collection===C?1:0)-(b.collection===C?1:0); }).map(cardHTML).join("")+'</div></section>'+
     '</div>';
     var pic=$("mainPic"), mi=$("mainImg");
-    function show(i){ pic.src=img(p.imgs[i]); pic.style.transform=""; mi.classList.toggle("cover", i>=2); v.querySelectorAll("#thumbs button").forEach(function(b,j){ b.setAttribute("aria-pressed", String(i===j)); }); }
+    function show(i){ pic.src=img(p.images[i]); pic.style.transform=""; mi.classList.toggle("cover", i>=2); v.querySelectorAll("#thumbs button").forEach(function(b,j){ b.setAttribute("aria-pressed",String(i===j)); }); }
     $("thumbs").addEventListener("click",function(e){ var b=e.target.closest("button"); if(b) show(+b.dataset.i); });
     if(window.matchMedia && matchMedia("(hover:hover) and (pointer:fine)").matches){
       mi.addEventListener("mousemove",function(e){ var r=mi.getBoundingClientRect(); pic.style.transformOrigin=((e.clientX-r.left)/r.width*100)+"% "+((e.clientY-r.top)/r.height*100)+"%"; pic.style.transform="scale(2)"; });
-      mi.addEventListener("mouseleave",function(){ pic.style.transform=""; });
-    }
+      mi.addEventListener("mouseleave",function(){ pic.style.transform=""; }); }
     v.querySelectorAll("[data-go]").forEach(function(b){ b.addEventListener("click",function(){ location.hash="p-"+b.dataset.go; }); });
-    function setQ(n){ q=Math.max(1,Math.min(20,n)); $("qv").textContent=q; $("qAmt").textContent=inr(q*p.price); paintMbar(); }
-    $("qm").addEventListener("click",function(){ setQ(q-1); }); $("qp").addEventListener("click",function(){ setQ(q+1); });
-    function add(){ setQty(p.id,qty(p.id)+q); toast(p,q); }
-    $("pAdd").addEventListener("click",add);
-    $("pBuy").addEventListener("click",function(){ setQty(p.id,qty(p.id)+q); openBag("checkout"); });
     $("pinGo").addEventListener("click",function(){ var val=$("pinIn").value.trim();
       if(!/^[1-9]\d{5}$/.test(val)){ $("pinOut").innerHTML='<span style="color:var(--deal);font-weight:650">Enter a valid 6-digit PIN code.</span>'; return; }
-      pin=val; ls("nc3_pin",pin); draft.pin=pin; $("pinOut").innerHTML='<span class="ok">Delivers to '+esc(pin)+' by '+dText()+'</span>'; });
+      ls("nc3_pin",val); $("pinOut").innerHTML='<span class="ok">Delivers to '+esc(val)+' by '+dText()+'</span>'; });
     $("pinIn").addEventListener("keydown",function(e){ if(e.key==="Enter") $("pinGo").click(); });
-    pdpBar=function(){ return '<div class="p"><b class="tnum">'+inr(q*p.price)+'</b><small>'+(q>1?q+" × ":"")+esc(p.name)+'</small></div><button class="btn" type="button" id="mAdd">Add to bag</button>'; };
+    pdpBar=null;
+    if(!soldOut(p)){
+      var maxQ=p.stock!=null?Math.min(20,p.stock):20;
+      function setQ(n){ q=Math.max(1,Math.min(maxQ,n)); $("qv").textContent=q; $("qAmt").textContent=inr(q*p.price); paintMbar(); }
+      $("qm").addEventListener("click",function(){ setQ(q-1); }); $("qp").addEventListener("click",function(){ setQ(q+1); });
+      function add(){ setQty(p.id,qty(p.id)+q); toast(p,q); }
+      $("pAdd").addEventListener("click",add);
+      $("pBuy").addEventListener("click",function(){ setQty(p.id,qty(p.id)+q); location.hash="checkout"; });
+      pdpBar=function(){ return '<div class="p"><b class="tnum">'+inr(q*p.price)+'</b><small>'+(q>1?q+" × ":"")+esc(C)+' '+esc(p.size_label)+'</small></div><button class="btn" type="button" id="mAdd">Add to bag</button>'; };
+      $("mbar").onclick=function(e){ if(e.target.closest("#mAdd")) add(); };
+    }
     paintMbar();
-    $("mbar").onclick=function(e){ if(e.target.closest("#mAdd")) add(); };
     document.title=p.title+" | NaphClean";
-    return true;
   }
 
-  /* ---------------- router ---------------- */
-  function showLanding(){ pdpBar=null; $("mbar").onclick=null; $("pdpView").hidden=true; $("pdpView").innerHTML=""; $("landing").hidden=false; document.title="NaphClean Store"; paintMbar(); }
+  /* ================= checkout ================= */
+  var co = {}; try{ co = JSON.parse(ls("nc3_co")||"{}")||{}; }catch(e){ co={}; }
+  var coDisc = null, placing = false;
+  function saveCo(){ var keep={}; ["name","phone","email","address1","address2","pin","city","state","method"].forEach(function(k){ if(co[k]) keep[k]=co[k]; }); ls("nc3_co",JSON.stringify(keep)); }
+  function methods(){
+    var m=[];
+    if(S.pay_razorpay && S.razorpay_key_id) m.push({k:"razorpay",t:"Pay online",d:"UPI, cards, netbanking and wallets through Razorpay. Confirmed instantly.",ic:ICON.lock});
+    if(S.pay_upi && S.upi_id) m.push({k:"upi",t:"Pay by UPI",d:"Scan a QR or open GPay, PhonePe or Paytm with the amount filled in.",ic:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v7h-4M14 18v3"/></svg>'});
+    if(S.pay_whatsapp || !m.length) m.push({k:"whatsapp",t:"Order on WhatsApp",d:"Send your order on WhatsApp. We confirm and share payment details in the chat.",ic:ICON.wa});
+    return m;
+  }
+  function renderCheckout(){
+    var v=$("coView"), L=lines();
+    if(!L.length){ v.innerHTML='<div class="wrap co-empty"><div class="emptybag"><span class="ball" aria-hidden="true"></span><h1 style="font-size:2rem">Your bag is empty</h1><p>Add a pack to check out.</p><a class="btn" href="#shop">Shop naphthalene balls</a></div></div>'; return; }
+    var M=methods(); if(!M.some(function(m){ return m.k===co.method; })) co.method=M[0].k;
+    function f(id,label,attrs,full,hint){ return '<div class="fld'+(full?' full':'')+'"><label for="co_'+id+'">'+label+'</label><input class="inp" id="co_'+id+'" data-k="'+id+'" value="'+esc(co[id]||"")+'" '+(attrs||"")+'>'+(hint?'<span class="hint">'+hint+'</span>':'')+'</div>'; }
+    v.innerHTML='<div class="wrap co">'+
+      '<nav class="crumbs" aria-label="Breadcrumb"><a href="#shop">'+ICON.back+'Continue shopping</a></nav>'+
+      (NC.live?'':'<div class="demo-note">Preview mode: orders placed here are saved only in this browser.</div>')+
+      '<h1 class="co-h">Checkout</h1>'+
+      '<div class="co-grid">'+
+        '<form id="coForm" novalidate class="co-main">'+
+          '<section class="co-card"><h2><span>1</span>Contact</h2><div class="f2">'+
+            f("name","Full name",'autocomplete="name" required')+f("phone","Mobile number",'inputmode="tel" autocomplete="tel" required',false,"For delivery updates on WhatsApp")+
+            f("email","Email (optional)",'type="email" autocomplete="email"',true)+'</div></section>'+
+          '<section class="co-card"><h2><span>2</span>Delivery address</h2><div class="f2">'+
+            f("address1","House, building, street",'autocomplete="address-line1" required',true)+f("address2","Area and landmark (optional)",'autocomplete="address-line2"',true)+
+            f("pin","PIN code",'inputmode="numeric" maxlength="6" autocomplete="postal-code" required')+f("city","Town or city",'autocomplete="address-level2" required')+
+            '<div class="fld full"><label for="co_state">State</label><select class="inp" id="co_state" data-k="state" autocomplete="address-level1"><option value="">Select state</option>'+NC.STATES.map(function(s){ return '<option'+(co.state===s?' selected':'')+'>'+s+'</option>'; }).join("")+'</select></div>'+
+            '<div class="fld full"><label for="co_note">Note for us (optional)</label><input class="inp" id="co_note" data-k="note" maxlength="200" value="'+esc(co.note||"")+'" placeholder="Gate code, preferred delivery time"></div>'+
+          '</div><p class="hint co-eta">Arrives '+dText()+'</p></section>'+
+          '<section class="co-card"><h2><span>3</span>Payment</h2><div class="paylist" role="radiogroup" aria-label="Payment method">'+
+            M.map(function(m){ return '<label class="paym'+(co.method===m.k?' on':'')+'"><input type="radio" name="pay" value="'+m.k+'"'+(co.method===m.k?' checked':'')+'><span class="pic">'+m.ic+'</span><span><b>'+m.t+'</b><small>'+m.d+'</small></span></label>'; }).join("")+
+          '</div></section>'+
+        '</form>'+
+        '<aside class="co-side"><div class="co-card sum" id="coSum"></div></aside>'+
+      '</div></div>';
+    v.querySelectorAll("[data-k]").forEach(function(i){ i.addEventListener("input",function(){ co[i.dataset.k]=i.value; i.classList.remove("bad"); saveCo(); }); i.addEventListener("change",function(){ co[i.dataset.k]=i.value; i.classList.remove("bad"); saveCo(); }); });
+    v.querySelectorAll('input[name="pay"]').forEach(function(r){ r.addEventListener("change",function(){ co.method=r.value; saveCo(); v.querySelectorAll(".paym").forEach(function(l){ l.classList.toggle("on", l.querySelector("input").checked); }); paintSummary(); }); });
+    $("coForm").addEventListener("submit",function(e){ e.preventDefault(); placeOrder(); });
+    paintSummary();
+    if(coDisc) recheckDiscount();
+  }
+  function paintSummary(){
+    var el=$("coSum"); if(!el) return; var L=lines(), t=totals(L);
+    if(!L.length){ renderCheckout(); return; }
+    var disc=coDisc&&coDisc.ok?coDisc.discount:0, ship=shipFor(t.sum-disc), total=t.sum-disc+ship;
+    var btn={razorpay:ICON.lock+"Pay "+inr(total)+" securely", upi:"Place order and pay "+inr(total), whatsapp:ICON.wa+"Place order · "+inr(total)}[co.method]||"Place order";
+    el.innerHTML='<h2>Order summary</h2>'+
+      '<div class="sumlines">'+L.map(function(l){ var p=l.p; return '<div class="sl"><span class="im"><img src="'+img(p.images[0])+'" alt=""><i>'+l.q+'</i></span><span class="nm">'+esc(p.collection)+' '+esc(p.size_label)+'<small class="stepper light mini-st"><button type="button" data-dec="'+p.id+'" aria-label="Remove one">−</button><span class="tnum">'+l.q+'</span><button type="button" data-inc="'+p.id+'" aria-label="Add one">+</button></small></span><b class="tnum">'+inr(l.q*p.price)+'</b></div>'; }).join("")+'</div>'+
+      '<form class="disc" id="discForm" novalidate><input class="inp" id="discIn" placeholder="Discount code" autocomplete="off" value="'+esc(coDisc?coDisc.code||co.code||"":"")+'" aria-label="Discount code"><button class="btn sm ghost" type="submit">Apply</button></form>'+
+      (coDisc?'<p class="dmsg '+(coDisc.ok?'ok':'bad')+'">'+esc(coDisc.message)+(coDisc.ok?' <button type="button" class="rm" id="discRm">Remove</button>':'')+'</p>':'')+
+      '<div class="totals"><div><span>Subtotal</span><span>'+inr(t.sum)+'</span></div>'+(t.mrp>t.sum?'<div class="sv"><span>You save on M.R.P.</span><span>'+inr(t.mrp-t.sum)+'</span></div>':'')+
+      (disc?'<div class="sv"><span>Discount ('+esc(coDisc.code)+')</span><span>−'+inr(disc)+'</span></div>':'')+
+      '<div><span>Delivery</span><span class="'+(ship?'':'ok')+'">'+(ship?inr(ship):'FREE')+'</span></div><div class="g"><span>Total</span><span>'+inr(total)+'</span></div></div>'+
+      '<p class="err" id="coErr" role="alert"></p>'+
+      '<button class="btn block big" type="submit" form="coForm" id="placeBtn"'+(placing?' disabled':'')+'>'+(placing?'Placing your order…':btn)+'</button>'+
+      '<p class="hint" style="text-align:center">'+ICON.lock+' Your details are used only to deliver this order.</p>';
+    $("discForm").addEventListener("submit",function(e){ e.preventDefault(); var c=$("discIn").value.trim(); if(!c){ coDisc=null; paintSummary(); return; } co.code=c; recheckDiscount(); });
+    var rm=$("discRm"); if(rm) rm.addEventListener("click",function(){ coDisc=null; co.code=""; paintSummary(); });
+  }
+  function recheckDiscount(){ var t=totals(lines()); var code=co.code||(coDisc&&coDisc.code); if(!code) return;
+    NC.checkDiscount(code, t.sum).then(function(r){ coDisc=Object.assign({code:String(code).toUpperCase()},r); paintSummary(); }).catch(function(){ coDisc={ok:false,code:code,message:"Could not check the code. Try again."}; paintSummary(); }); }
+  function placeOrder(){
+    if(placing) return;
+    var v=function(k){ return String(co[k]||"").trim(); }, ph=NC.phone10(v("phone"));
+    var chk=[["name",v("name").length<2,"Enter your full name."],["phone",!/^[6-9]\d{9}$/.test(ph),"Enter a valid 10-digit mobile number."],
+      ["address1",v("address1").length<4,"Enter your house and street."],["pin",!/^[1-9]\d{5}$/.test(v("pin")),"Enter a valid 6-digit PIN code."],
+      ["city",v("city").length<2,"Enter your town or city."],["state",!v("state"),"Select your state."]];
+    var bad=chk.filter(function(c){ return c[1]; });
+    document.querySelectorAll("#coForm .inp").forEach(function(i){ i.classList.remove("bad"); });
+    if(bad.length){ $("coErr").textContent=bad[0][2]; bad.forEach(function(c){ var el=$("co_"+c[0]); if(el) el.classList.add("bad"); }); var f=$("co_"+bad[0][0]); if(f){ f.focus(); f.scrollIntoView({block:"center",behavior:reduce?"auto":"smooth"}); } return; }
+    placing=true; paintSummary();
+    var payload={payment_method:co.method,name:v("name"),phone:ph,email:v("email"),address1:v("address1"),address2:v("address2"),city:v("city"),state:v("state"),pin:v("pin"),note:v("note"),
+      discount_code:coDisc&&coDisc.ok?coDisc.code:"", items:lines().map(function(l){ return {id:l.p.id,qty:l.q}; })};
+    NC.placeOrder(payload).then(function(res){
+      placing=false;
+      var rec={no:res.order_no, phone:ph, res:res, name:payload.name, address:[payload.address1,payload.address2,payload.city,payload.state+" "+payload.pin].filter(Boolean).join(", "), at:Date.now(), paid:false};
+      ls("nc3_last",JSON.stringify(rec)); rememberOrder(res.order_no, ph);
+      bag={}; saveBag(); coDisc=null; co.note=""; co.code=""; saveCo();
+      location.hash="order-"+res.order_no;
+      if(res.payment_method==="razorpay") setTimeout(function(){ payOnline(rec); },250);
+    }).catch(function(e){
+      placing=false; paintSummary(); var m=NC.err(e);
+      $("coErr").innerHTML=esc(m)+(/network|fetch|Failed/i.test(m)?' <a href="#" id="waFallback">Order on WhatsApp instead</a>':'');
+      var fb=$("waFallback"); if(fb) fb.addEventListener("click",function(ev){ ev.preventDefault(); openWA(waOrderText(null,payload)); });
+      loadCat();
+    });
+  }
+  function rememberOrder(no, ph){ var list=[]; try{ list=JSON.parse(ls("nc3_orders")||"[]"); }catch(e){} list=list.filter(function(o){ return o.no!==no; }); list.unshift({no:no,phone:ph}); ls("nc3_orders",JSON.stringify(list.slice(0,10))); }
+  function waOrderText(rec, payload){
+    var items = rec ? rec.res.items : payload.items.map(function(i){ var p=P[i.id]; return {title:p.title,qty:i.qty,price:p.price,sku:p.sku}; });
+    var msg="Hello NaphClean, "+(rec?"I just placed order "+rec.no+" on naphclean.com.":"I would like to place an order.")+"\n";
+    items.forEach(function(l){ msg+="\n"+l.qty+" x "+l.title+(l.sku?" ("+l.sku+")":"")+", "+inr(l.qty*l.price); });
+    if(rec){ msg+="\n\nTotal: "+inr(rec.res.total)+"\nPayment: "+({upi:"UPI",razorpay:"Online",whatsapp:"Please share payment details"}[rec.res.payment_method])+"\n\nName: "+rec.name+"\nMobile: "+rec.phone+"\nAddress: "+rec.address; }
+    else { msg+="\n\nName: "+payload.name+"\nMobile: "+payload.phone+"\nAddress: "+[payload.address1,payload.address2,payload.city,payload.state+" "+payload.pin].filter(Boolean).join(", "); }
+    return msg;
+  }
+  function openWA(msg){ var a=document.createElement("a"); a.href="https://wa.me/"+S.whatsapp+"?text="+encodeURIComponent(msg); a.target="_blank"; a.rel="noopener"; document.body.appendChild(a); a.click(); a.remove(); }
+  function waHref(msg){ return "https://wa.me/"+S.whatsapp+"?text="+encodeURIComponent(msg); }
+
+  /* ================= online payment (Razorpay) ================= */
+  function loadScript(src){ return new Promise(function(res,rej){ if(window.Razorpay) return res(); var s=document.createElement("script"); s.src=src; s.onload=res; s.onerror=function(){ rej(new Error("Could not load the payment window. Check your connection.")); }; document.head.appendChild(s); }); }
+  function payOnline(rec){
+    var box=$("payBox"); if(box) box.innerHTML='<p class="hint">Opening secure payment…</p>';
+    NC.razorpay("create",{order_no:rec.no}).then(function(d){
+      return loadScript("https://checkout.razorpay.com/v1/checkout.js").then(function(){
+        var rz=new window.Razorpay({key:d.key_id, amount:d.amount, currency:"INR", name:S.store_name||"NaphClean", description:"Order "+rec.no, order_id:d.razorpay_order_id,
+          prefill:{name:rec.name, contact:"+91"+rec.phone}, theme:{color:"#0A1F5C"},
+          handler:function(resp){ NC.razorpay("verify",{order_no:rec.no, razorpay_order_id:resp.razorpay_order_id, razorpay_payment_id:resp.razorpay_payment_id, razorpay_signature:resp.razorpay_signature})
+            .then(function(){ rec.paid=true; ls("nc3_last",JSON.stringify(rec)); renderOrder(rec.no); })
+            .catch(function(e){ renderOrder(rec.no, "We could not confirm the payment: "+NC.err(e)+" If money was deducted, message us with order "+rec.no+"."); }); },
+          modal:{ondismiss:function(){ renderOrder(rec.no, "Payment was not completed. You can try again."); }}});
+        rz.on("payment.failed",function(r){ renderOrder(rec.no, "Payment failed: "+((r.error&&r.error.description)||"please try again")+"."); });
+        rz.open();
+      });
+    }).catch(function(e){ renderOrder(rec.no, NC.err(e)); });
+  }
+
+  /* ================= order confirmation + tracking ================= */
+  var STEPS=[["new","Placed"],["confirmed","Confirmed"],["packed","Packed"],["shipped","Shipped"],["delivered","Delivered"]];
+  function timeline(status){ if(status==="cancelled") return '<div class="cancelled">This order was cancelled.</div>';
+    var idx=STEPS.findIndex(function(s){ return s[0]===status; }); if(idx<0) idx=0;
+    return '<ol class="tl">'+STEPS.map(function(s,i){ return '<li class="'+(i<=idx?'done':'')+(i===idx?' cur':'')+'"><i></i><span>'+s[1]+'</span></li>'; }).join("")+'</ol>'; }
+  function upiUri(id,name,amt,no){ return "upi://pay?pa="+encodeURIComponent(id)+"&pn="+encodeURIComponent(name||"NaphClean")+"&am="+Number(amt).toFixed(2)+"&cu=INR&tn="+encodeURIComponent("NaphClean "+no); }
+  function qrSvg(text){ try{ var q=window.qrcode(0,"M"); q.addData(text); q.make(); return q.createSvgTag({cellSize:5,margin:2,scalable:true}); }catch(e){ return ""; } }
+  function renderOrder(no, flash){
+    var v=$("orderView"), rec=null; try{ rec=JSON.parse(ls("nc3_last")||"null"); }catch(e){}
+    if(rec && rec.no!==no) rec=null;
+    if(!rec){ var known=[]; try{ known=JSON.parse(ls("nc3_orders")||"[]"); }catch(e){} var k=known.filter(function(o){ return o.no===no; })[0];
+      if(k){ return lookup(no,k.phone); } return renderTrack(no); }
+    var r=rec.res, first=String(rec.name||"").split(" ")[0], pay="";
+    if(r.payment_method==="upi"){
+      var uri=upiUri(r.upi_id,r.upi_name,r.total,no);
+      pay='<div class="paybox" id="payBox"><div class="qr">'+qrSvg(uri)+'</div><div class="payinfo"><h3>Pay '+inr(r.total)+' by UPI</h3>'+
+        '<p>Scan the code with any UPI app, or tap the button on your phone. The amount and order number are filled in.</p>'+
+        '<a class="btn block" href="'+esc(uri)+'">Open UPI app</a>'+
+        '<div class="upiid"><span>UPI ID <b>'+esc(r.upi_id)+'</b></span><button class="copy" type="button" data-copy="'+esc(r.upi_id)+'">Copy</button></div>'+
+        '<form id="utrForm" class="utr" novalidate><label for="utrIn">Paid? Enter the 12-digit UPI reference so we can match it faster</label><div class="pinrow"><input class="inp" id="utrIn" inputmode="numeric" maxlength="30" placeholder="UPI reference (UTR)"><button class="btn sm navy" type="submit">Send</button></div><p class="hint" id="utrOut"></p></form></div></div>';
+    } else if(r.payment_method==="razorpay"){
+      pay='<div class="paybox single" id="payBox">'+(rec.paid?'<div class="paidok">'+ICON.check+' Payment received. Thank you!</div>':'<h3>Pay '+inr(r.total)+' securely</h3><p>UPI, cards, netbanking and wallets through Razorpay.</p><button class="btn block" type="button" id="payAgain">'+ICON.lock+'Pay '+inr(r.total)+'</button>')+'</div>';
+    } else {
+      pay='<div class="paybox single" id="payBox"><h3>One last step: send it on WhatsApp</h3><p>Your order is saved. Send us the WhatsApp message and we will confirm it and share payment details.</p><a class="btn block" href="'+esc(waHref(waOrderText(rec)))+'" target="_blank" rel="noopener">'+ICON.wa+'Send order on WhatsApp</a></div>';
+    }
+    v.innerHTML='<div class="wrap ord">'+(NC.live?'':'<div class="demo-note">Preview mode: this order is saved only in this browser.</div>')+
+      '<div class="ord-head"><span class="okball">'+ICON.check+'</span><div><p class="eyebrow">Order '+esc(no)+'</p><h1>Thank you'+(first?', '+esc(first):'')+'!</h1><p class="lede">We have your order. '+(r.payment_method==="whatsapp"?'Send the WhatsApp message to confirm it.':(rec.paid?'Your payment is confirmed.':'Complete the payment below to confirm it.'))+'</p></div></div>'+
+      (flash?'<p class="flash">'+esc(flash)+'</p>':'')+
+      '<div class="ord-grid"><div>'+pay+'<div class="co-card" style="margin-top:18px"><h2>Status</h2>'+timeline(rec.paid?"confirmed":"new")+'<p class="hint">Track this order any time with your order number and mobile number. <a href="#track">Track an order</a></p></div></div>'+
+      '<aside class="co-card sum"><h2>Your order</h2><div class="sumlines">'+r.items.map(function(l){ return '<div class="sl"><span class="im"><img src="'+img(l.image)+'" alt=""><i>'+l.qty+'</i></span><span class="nm">'+esc(l.title.replace(/^NaphClean\s+/,""))+'</span><b class="tnum">'+inr(l.qty*l.price)+'</b></div>'; }).join("")+'</div>'+
+        '<div class="totals"><div><span>Subtotal</span><span>'+inr(r.subtotal)+'</span></div>'+(r.discount?'<div class="sv"><span>Discount</span><span>−'+inr(r.discount)+'</span></div>':'')+'<div><span>Delivery</span><span class="'+(r.shipping?'':'ok')+'">'+(r.shipping?inr(r.shipping):'FREE')+'</span></div><div class="g"><span>Total</span><span>'+inr(r.total)+'</span></div></div>'+
+        '<div class="addr"><small>Delivering to</small><b>'+esc(rec.name)+'</b><span>'+esc(rec.address)+'</span><span>+91 '+esc(rec.phone)+'</span></div>'+
+        '<p class="hint">Questions? WhatsApp <span data-wa-num>'+fmtPhone(S.whatsapp)+'</span> with your order number.</p></aside></div></div>';
+    var pa=$("payAgain"); if(pa) pa.addEventListener("click",function(){ payOnline(rec); });
+    var uf=$("utrForm"); if(uf) uf.addEventListener("submit",function(e){ e.preventDefault(); var ref=$("utrIn").value.trim(); $("utrOut").textContent="Sending…";
+      NC.submitUpiRef(no, rec.phone, ref).then(function(ok){ $("utrOut").innerHTML=ok?'<span class="ok">Thanks. We will confirm your payment shortly.</span>':'We could not attach it. Please WhatsApp us the reference.'; })
+        .catch(function(er){ $("utrOut").innerHTML='<span style="color:var(--deal)">'+esc(NC.err(er))+'</span>'; }); });
+    bindCopy(v); document.title="Order "+no+" | NaphClean";
+  }
+  function lookup(no, phone){
+    var v=$("orderView"); v.innerHTML='<div class="wrap ord"><p class="hint">Looking up order '+esc(no)+'…</p></div>';
+    NC.orderStatus(no, phone).then(function(o){
+      if(!o){ renderTrack(no, "We could not find that order with this mobile number."); return; }
+      v.innerHTML='<div class="wrap ord"><nav class="crumbs"><a href="#track">'+ICON.back+'Track another order</a></nav><div class="ord-head"><span class="okball">'+ICON.check+'</span><div><p class="eyebrow">Order '+esc(o.order_no)+'</p><h1>'+({new:"Order received",confirmed:"Order confirmed",packed:"Packed and ready",shipped:"On its way",delivered:"Delivered",cancelled:"Order cancelled"}[o.status]||"Order status")+'</h1>'+
+        '<p class="lede">Placed '+new Date(o.created_at).toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"})+' · '+inr(o.total)+' · '+(o.payment_status==="paid"?'Paid':'Payment pending')+'</p></div></div>'+
+        '<div class="ord-grid"><div class="co-card"><h2>Status</h2>'+timeline(o.status)+(o.tracking_no?'<div class="trk"><small>Tracking</small><b>'+esc(o.courier||"Courier")+' · '+esc(o.tracking_no)+'</b></div>':'')+'</div>'+
+        '<aside class="co-card sum"><h2>Items</h2><div class="sumlines">'+o.items.map(function(l){ return '<div class="sl"><span class="im"><img src="'+img(l.image)+'" alt=""><i>'+l.qty+'</i></span><span class="nm">'+esc(l.title.replace(/^NaphClean\s+/,""))+'</span><b class="tnum">'+inr(l.qty*l.price)+'</b></div>'; }).join("")+'</div>'+
+        '<p class="hint">Need help? WhatsApp <span data-wa-num>'+fmtPhone(S.whatsapp)+'</span></p></aside></div></div>';
+      rememberOrder(o.order_no, phone); document.title="Order "+o.order_no+" | NaphClean";
+    }).catch(function(e){ renderTrack(no, NC.err(e)); });
+  }
+  function renderTrack(no, msg){
+    var v=$("orderView");
+    v.innerHTML='<div class="wrap ord narrow"><div class="co-card"><p class="eyebrow">Order tracking</p><h1 style="font-size:clamp(2rem,4vw,2.8rem);margin:10px 0 8px">Track your order</h1><p class="lede" style="margin-bottom:18px">Enter your order number (it starts with NC) and the mobile number you ordered with.</p>'+
+      (msg?'<p class="flash">'+esc(msg)+'</p>':'')+
+      '<form id="trkForm" class="form" novalidate><div class="f2"><div class="fld"><label for="trkNo">Order number</label><input class="inp" id="trkNo" value="'+esc(no||"")+'" placeholder="NC1A2B3C" autocapitalize="characters"></div><div class="fld"><label for="trkPh">Mobile number</label><input class="inp" id="trkPh" inputmode="tel" placeholder="10-digit mobile"></div></div>'+
+      '<p class="err" id="trkErr"></p><button class="btn block" type="submit">Track order</button></form></div></div>';
+    $("trkForm").addEventListener("submit",function(e){ e.preventDefault(); var n=$("trkNo").value.trim().toUpperCase(), ph=NC.phone10($("trkPh").value);
+      if(!/^NC[0-9A-F]{6}$/.test(n)){ $("trkErr").textContent="Order numbers look like NC1A2B3C."; return; } if(ph.length<10){ $("trkErr").textContent="Enter the 10-digit mobile number."; return; }
+      lookup(n, ph); });
+    document.title="Track your order | NaphClean";
+  }
+  function bindCopy(root){ (root||document).querySelectorAll("[data-copy]").forEach(function(b){ if(b.dataset.bound) return; b.dataset.bound=1; b.addEventListener("click",function(){
+    var tx=b.dataset.copy; function ok(){ b.textContent="Copied"; setTimeout(function(){ b.textContent="Copy"; },1500); }
+    try{ navigator.clipboard.writeText(tx).then(ok,function(){ b.textContent=tx; }); }catch(e){ b.textContent=tx; } }); }); }
+
+  /* ================= router ================= */
+  var VIEWS=["landing","pdpView","coView","orderView"];
+  function currentView(){ for(var i=0;i<VIEWS.length;i++){ if(!$(VIEWS[i]).hidden) return VIEWS[i]==="pdpView"?"pdp":VIEWS[i]; } return "landing"; }
+  function show(id){ VIEWS.forEach(function(v){ $(v).hidden = v!==id; }); if(id!=="pdpView"){ pdpBar=null; $("mbar").onclick=null; $("pdpView").innerHTML=""; } play(); }
   function route(first){
-    var h=(location.hash||"").slice(1);
-    if(h.indexOf("p-")===0 && P[h.slice(2)]){ $("landing").hidden=true; $("pdpView").hidden=false; pdp(h.slice(2)); window.scrollTo(0,0); visible=false; play(); return; }
-    var wasPdp = !$("pdpView").hidden; showLanding();
-    if(wasPdp){ initOrbs(); }
-    if(h==="cart"){ openBag(); return; }
-    var id={help:"faq",home:"top"}[h]||h, el = id ? document.getElementById(id) : null;
-    if(el && el.closest("#landing")){ if(wasPdp||first){ setTimeout(function(){ el.scrollIntoView({behavior:"auto"}); }, first?80:0); } }
-    else if(wasPdp){ window.scrollTo(0,0); }
+    var h=decodeURIComponent((location.hash||"").slice(1));
+    closeBag(); hideToast();
+    if(h.indexOf("p-")===0 && P[h.slice(2)]){ show("pdpView"); pdp(h.slice(2)); window.scrollTo(0,0); return; }
+    if(h==="checkout"||h==="cart"){ show("coView"); renderCheckout(); paintMbar(); window.scrollTo(0,0); document.title="Checkout | NaphClean"; return; }
+    if(h.indexOf("order-")===0){ show("orderView"); renderOrder(h.slice(6).toUpperCase()); paintMbar(); window.scrollTo(0,0); return; }
+    if(h==="track"){ show("orderView"); renderTrack(); paintMbar(); window.scrollTo(0,0); return; }
+    var was=currentView(); show("landing"); document.title="NaphClean Store"; paintMbar();
+    if(was!=="landing"){ initOrbs(); }
+    var id={help:"faq",home:"top"}[h]||h, el=id?document.getElementById(id):null;
+    if(el && el.closest("#landing")){ if(was!=="landing"||first) setTimeout(function(){ el.scrollIntoView({behavior:"auto"}); }, first?80:0); }
+    else if(was!=="landing") window.scrollTo(0,0);
   }
   window.addEventListener("hashchange",function(){ route(false); });
 
-  /* ---------------- bulk form ---------------- */
+  /* ================= bulk form ================= */
   $("bulkForm").addEventListener("submit",function(e){
     e.preventDefault(); var n=$("bName").value.trim(), ph=$("bPhone").value.replace(/\D/g,""), c=$("bCity").value.trim();
-    var err=!n?["bName","Enter your name."]:ph.length<10?["bPhone","Enter a phone number we can reach you on."]:!c?["bCity","Enter your city."]:null;
+    var er=!n?["bName","Enter your name."]:ph.length<10?["bPhone","Enter a phone number we can reach you on."]:!c?["bCity","Enter your city."]:null;
     ["bName","bPhone","bCity"].forEach(function(k){ $(k).classList.remove("bad"); });
-    if(err){ $("bErr").textContent=err[1]; $(err[0]).classList.add("bad"); $(err[0]).focus(); return; }
+    if(er){ $("bErr").textContent=er[1]; $(er[0]).classList.add("bad"); $(er[0]).focus(); return; }
     $("bErr").textContent="";
     openWA("Hello NaphClean, bulk enquiry.\n\nName: "+n+"\nBusiness: "+($("bBiz").value.trim()||"-")+"\nType: "+$("bType").value+"\nCity: "+c+"\nPhone: "+ph+"\n\nNeed: "+($("bNeed").value.trim()||"-"));
   });
 
-  /* ---------------- copy buttons ---------------- */
-  document.querySelectorAll("[data-copy]").forEach(function(b){ b.addEventListener("click",function(){
-    var tx=b.dataset.copy; function ok(){ b.textContent="Copied"; setTimeout(function(){ b.textContent="Copy"; },1500); }
-    try{ navigator.clipboard.writeText(tx).then(ok,function(){ b.textContent=tx; }); }catch(e){ b.textContent=tx; }
-  }); });
-
-  setShop(shopC); setHero(shopC);
-  paintBag(); route(true);
+  /* ================= boot ================= */
+  function renderAll(){ if(COLS.indexOf(shopC)<0) shopC=COLS[0]; if(COLS.indexOf(heroC)<0) heroC=shopC; paintHero(false); renderCards(); renderSpaces(); renderPlan(); paintBag(); bindCopy(); }
+  function loadCat(){ return NC.loadCatalogue().then(function(c){ var before=JSON.stringify([S,PRODUCTS]); apply(c); if(JSON.stringify([S,PRODUCTS])!==before){ renderAll(); var v=currentView(); if(v==="pdp") route(false); else if(v==="coView") paintSummary(); } }).catch(function(){}); }
+  renderAll(); initOrbs(); play(); route(true); loadCat();
 })();
 </script>
 </body>
