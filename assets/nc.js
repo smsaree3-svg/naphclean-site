@@ -138,6 +138,9 @@
   var admin = {
     session: function(){ if(!live) return Promise.resolve({user:{email:"demo@naphclean.com"}}); return sb.auth.getSession().then(function(r){ return r.data.session; }); },
     signIn: function(email, pw){ return sb.auth.signInWithPassword({email:email.trim(), password:pw}).then(function(r){ if(r.error) throw new Error(r.error.message==="Invalid login credentials"?"That email and password do not match.":r.error.message); return r.data.session; }); },
+    sendLink: function(email){ if(!live) return Promise.resolve(true); var to=location.origin+location.pathname;
+      return sb.auth.signInWithOtp({email:String(email||"").trim().toLowerCase(), options:{emailRedirectTo:to, shouldCreateUser:true}}).then(function(r){ if(r.error) throw new Error(/rate|seconds/i.test(r.error.message)?"Too many links sent. Wait a minute and try again, or use the link already in your inbox.":r.error.message); return true; }); },
+    onAuth: function(cb){ if(live) sb.auth.onAuthStateChange(function(ev,s){ cb(ev,s); }); },
     signOut: function(){ return live ? sb.auth.signOut() : Promise.resolve(); },
     isAdmin: function(){ if(!live) return Promise.resolve(true); return sb.rpc("is_admin").then(q); },
     orders: function(){ if(!live) return Promise.resolve(clone(demoDB().orders)); return sb.from("orders").select("*").order("created_at",{ascending:false}).limit(2000).then(q); },
