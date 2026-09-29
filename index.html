@@ -235,6 +235,40 @@ section[id]{scroll-margin-top:calc(var(--hdr-h) + 16px)}
 
 /* compare + why */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.bcards{grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){.bcards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.bcards{grid-template-columns:1fr 1fr}}
+.bcard .ph img{padding:0!important;object-fit:cover}
+.bname{font:800 1.5rem/1.1 var(--display);color:var(--ink);letter-spacing:-.02em}
+.savesep{display:inline-block;background:#E9F6DA;color:var(--green-d);font-weight:700;font-size:.82rem;border-radius:999px;padding:5px 10px;justify-self:start}
+.vars{display:grid;gap:14px}
+.vars h3{display:flex;justify-content:space-between;align-items:baseline;font-size:1.1rem}
+.vars h3 span{font:500 .78rem/1 var(--mono);color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.vrow{display:grid;gap:8px}
+.vlab{display:flex;align-items:center;gap:8px;font-weight:650;font-size:.9rem;color:var(--ink);margin:0}
+.dot.vp{background:conic-gradient(#fff 0 50%,#FFD24D 50% 62%,#FF7EB3 62% 75%,#8FE36A 75% 87%,#7EC8FF 87%);border:1px solid var(--line-2)}
+.vgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.vgrid.vb{grid-template-columns:repeat(3,minmax(0,1fr))}
+.vt{position:relative;display:grid;justify-items:center;text-align:center;gap:2px;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:8px 6px 9px;text-decoration:none!important;color:var(--ink);transition:border-color .2s,box-shadow .2s,transform .2s}
+.vt:hover{border-color:var(--navy);transform:translateY(-1px)}
+.vt.on{border-color:var(--navy);box-shadow:0 0 0 2px var(--navy) inset;background:var(--mist)}
+.vt.so{opacity:.55}
+.vt img{width:100%;max-width:74px;aspect-ratio:1;object-fit:contain;border-radius:8px;background:#fff}
+.vgrid.vb .vt img{max-width:96px;object-fit:cover}
+.vt b{font-size:.92rem;line-height:1.15;margin-top:2px}
+.vt .vsub{font-size:.7rem;color:var(--muted);line-height:1.2}
+.vt span{font-weight:700;font-size:.9rem}
+.vt small{font-size:.7rem;color:var(--muted)}
+.vflag{position:absolute;top:-8px;left:50%;transform:translateX(-50%);font:600 .56rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;font-style:normal;background:var(--ink);color:#fff;border-radius:999px;padding:4px 6px;white-space:nowrap}
+@media (max-width:520px){.vgrid{gap:6px}.vt{padding:8px 3px}.vt b{font-size:.84rem}.vt span{font-size:.82rem}}
+.inside{display:grid;gap:10px}
+.inside h3{font-size:1.1rem}
+.inside ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.inside li{display:grid;grid-template-columns:48px 1fr;column-gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 12px 8px 8px}
+.inside li>a{grid-row:span 2;display:block}
+.inside li img{width:48px;height:48px;object-fit:contain;display:block}
+.inside li span{color:var(--ink)}
+.inside li small{color:var(--muted);font-size:.82rem}
 .story{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center;background:linear-gradient(135deg,#FFF6F2 0%,#F4F8FF 60%);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,4vw,52px)}
 .story-tx{display:grid;gap:14px}
 .story h2{font-size:clamp(2rem,4vw,3rem)}
@@ -391,7 +425,7 @@ textarea.inp{min-height:96px;resize:vertical}
 .deliver .pin{display:flex;gap:8px}
 .deliver .pin .inp{background:#fff;min-width:0}
 .ok{color:var(--green-d);font-weight:650}
-.perks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.perks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .perks div{border:1px solid var(--line);background:#fff;border-radius:16px;padding:12px;display:grid;gap:4px;justify-items:start;font-size:.84rem;color:var(--muted)}
 .perks b{color:var(--ink);font-size:.92rem}
 .perks svg{color:var(--green)}
@@ -582,7 +616,7 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
 
 <div class="mnav" id="mnav" hidden role="dialog" aria-label="Menu">
   <div class="top"><span class="brand" style="margin:0"><img src="images/logo.webp" alt="" width="40" height="40"><b>NaphClean</b></span><button class="iconbtn" type="button" data-close aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-  <a href="#shop" data-close>Shop</a><a href="#how" data-close>How it works</a><a href="#planner" data-close>Pack planner</a><a href="#story" data-close>Our story</a><a href="#bulk" data-close>Bulk orders</a><a href="#track" data-close>Track order</a><a href="#faq" data-close>Help</a>
+  <a href="#shop" data-close>Shop</a><a href="#how" data-close>How it works</a><a href="#planner" data-close>Pack planner</a><a href="#packs" data-close>Value packs</a><a href="#story" data-close>Our story</a><a href="#bulk" data-close>Bulk orders</a><a href="#track" data-close>Track order</a><a href="#faq" data-close>Help</a>
   <div class="foot"><span>+91 62894 79696</span><span>care@naphclean.com</span><span>Mon to Sat, 9 AM to 6 PM IST</span></div>
 </div>
 
@@ -633,6 +667,17 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
         <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v4h4"/></svg>Damaged pack? Free replacement within 7 days</span>
         <span>Prices include GST. Also on&nbsp;<a href="https://www.amazon.in/s?k=NaphClean+naphthalene+balls" target="_blank" rel="noopener">Amazon.in</a></span>
       </div>
+    </div>
+  </section>
+
+  <section class="sec" id="packs" style="padding-top:0" hidden>
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:28px">
+        <p class="eyebrow">Value packs</p>
+        <h2>Buy together. Pay less.</h2>
+        <p class="lede">Ready-made sets for a whole home, priced lower than buying the same packs one by one.</p>
+      </div>
+      <div class="cards bcards" id="bundleCards"></div>
     </div>
   </section>
 
@@ -830,7 +875,7 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
   <div class="wrap">
     <div class="top">
       <div><h4>NaphClean</h4><span>Premium naphthalene balls in mess-free zip-lock packs. A family-owned, women-led small business from Kolkata. Packed and marketed by Lumisha India Private Limited.</span></div>
-      <div><h4>Shop</h4><a href="#shop">All packs</a><a href="#planner">Pack planner</a><a href="#bulk">Bulk orders</a><a href="#checkout">Checkout</a></div>
+      <div><h4>Shop</h4><a href="#shop">All packs</a><a href="#packs">Value packs</a><a href="#planner">Pack planner</a><a href="#bulk">Bulk orders</a><a href="#checkout">Checkout</a></div>
       <div><h4>Help</h4><a href="#story">Our story</a><a href="#track">Track your order</a><a href="#faq">FAQ</a><a href="#faq">Shipping and returns</a><a href="#faq">Privacy</a></div>
       <div><h4>Contact</h4><a data-wa-href href="https://wa.me/916289479696?text=Hello%20NaphClean" target="_blank" rel="noopener">WhatsApp <span data-wa-num style="display:inline;padding:0">+91 62894 79696</span></a><a href="mailto:care@naphclean.com">care@naphclean.com</a><span>16 Golaghata Road, Ground Floor, Kolkata, West Bengal 700048</span><span>Mon to Sat, 9 AM to 6 PM IST</span><div class="fsocs"><a class="fsoc" href="https://www.instagram.com/naphclean/" target="_blank" rel="noopener" aria-label="NaphClean on Instagram" title="NaphClean on Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a><a class="fsoc" href="https://www.facebook.com/NaphClean/" target="_blank" rel="noopener" aria-label="NaphClean on Facebook" title="NaphClean on Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.4V14h2.7v8h3.4z"/></svg><span>Facebook</span></a><a class="fsoc" href="https://www.linkedin.com/company/lumisha-india-private-limited" target="_blank" rel="noopener" aria-label="Lumisha India on LinkedIn" title="Lumisha India on LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3v-11zm6.5 0h3.8v1.5h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6v5.4h-4v-4.8c0-1.2 0-2.7-1.6-2.7s-1.9 1.3-1.9 2.6v4.9h-4v-11z"/></svg><span>LinkedIn</span></a><a class="fsoc" data-wa-href href="https://wa.me/916289479696?text=Hello%20NaphClean" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><svg width="20" height="20" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.2 1.4z"/></svg><span>WhatsApp</span></a></div></div>
     </div>
@@ -868,11 +913,12 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
   };
 
   /* ================= catalogue (live from the database, cached for speed) ================= */
-  var S, PRODUCTS, P, COLS;
+  var S, PRODUCTS, P, COLS, BUNDLES=[];
   function apply(c){
     S = c.settings; PRODUCTS = c.products.filter(function(p){ return p.active!==false; }).sort(function(a,b){ return (a.sort||0)-(b.sort||0); });
     P = {}; PRODUCTS.forEach(function(p){ P[p.id]=p; });
-    COLS = []; PRODUCTS.forEach(function(p){ if(COLS.indexOf(p.collection)<0) COLS.push(p.collection); });
+    COLS = []; PRODUCTS.forEach(function(p){ if(p.family!=="bundle" && COLS.indexOf(p.collection)<0) COLS.push(p.collection); });
+    BUNDLES = PRODUCTS.filter(function(p){ return p.family==="bundle"; });
     Object.keys(bag).forEach(function(k){ if(!P[k]) delete bag[k]; });
     var a=$("annA"); if(a && S.announcement) a.textContent=S.announcement;
     document.querySelectorAll("[data-wa-num]").forEach(function(el){ el.textContent=fmtPhone(S.whatsapp); });
@@ -880,9 +926,12 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
   }
   function fmtPhone(n){ var d=String(n||"").replace(/\D/g,""); if(d.length===12 && d.slice(0,2)==="91") return "+91 "+d.slice(2,7)+" "+d.slice(7); return "+"+d; }
   function colOf(p){ return p.collection; }
-  function inCol(c){ return PRODUCTS.filter(function(p){ return p.collection===c; }).sort(function(a,b){ return (a.size_g||0)-(b.size_g||0) || a.sort-b.sort; }); }
+  function inCol(c){ return PRODUCTS.filter(function(p){ return p.collection===c && p.family!=="bundle"; }).sort(function(a,b){ return (a.size_g||0)-(b.size_g||0) || a.sort-b.sort; }); }
   function isMulti(c){ return /multi|colou?r/i.test(c) && !/white/i.test(c); }
   function dotHTML(c){ return '<i class="dot'+(isMulti(c)?' multi':'')+'"></i>'; }
+  function isB(p){ return p && p.family==="bundle"; }
+  function nm(p){ return isB(p) ? p.title.replace(/^NaphClean\s+/,"") : p.collection+" "+p.size_label; }
+  function sepPrice(p){ var t=0, ok=true; (p.includes||[]).forEach(function(i){ var x=P[i.id]; if(x) t+=x.price*(i.qty||1); else ok=false; }); return ok&&t>p.price ? t : 0; }
   function per100(p){ return p.size_g ? Math.round(p.price/p.size_g*100) : null; }
   function pct(p){ return p.mrp>p.price ? Math.round((p.mrp-p.price)/p.mrp*100) : 0; }
   function dText(){ var a=new Date(),b=new Date(); a.setDate(a.getDate()+(S.delivery_min||3)); b.setDate(b.getDate()+(S.delivery_max||6));
@@ -956,6 +1005,7 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
              : '<button class="btn block" type="button" data-add="'+p.id+'">Add to bag</button><button class="btn navy block" type="button" data-buy="'+p.id+'">Buy now</button>';
   }
   function cardHTML(p){
+    if(isB(p)) return bundleCard(p);
     var pp=per100(p);
     return '<article class="card">'+(p.badge?'<span class="badge'+(/best/i.test(p.badge)?' best':'')+'">'+esc(p.badge)+'</span>':'')+
       '<a class="ph" href="#p-'+p.id+'" aria-label="View '+esc(p.title)+'"><img class="main" src="'+img(p.images[0])+'" alt="'+esc(p.title)+'" loading="lazy" width="800" height="800">'+(p.images[1]?'<img class="alt" src="'+img(p.images[1])+'" alt="" loading="lazy" width="800" height="800">':'')+'</a>'+
@@ -964,6 +1014,15 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
       '<div class="price"><b>'+inr(p.price)+'</b>'+(p.mrp>p.price?'<s>'+inr(p.mrp)+'</s><span class="off">'+pct(p)+'% off</span>':'')+'</div>'+stockNote(p)+
       '<div class="act" data-act="'+p.id+'">'+actHTML(p)+'</div></div></article>';
   }
+  function bundleCard(p){ var sp=sepPrice(p);
+    return '<article class="card bcard">'+(p.badge?'<span class="badge best">'+esc(p.badge)+'</span>':'')+
+      '<a class="ph" href="#p-'+p.id+'" aria-label="View '+esc(p.title)+'"><img class="main" src="'+img(p.images[0])+'" alt="'+esc(p.title)+'" loading="lazy" width="1000" height="1000"></a>'+
+      '<div class="bd"><div class="size"><a href="#p-'+p.id+'"><b class="bname">'+esc(p.title.replace(/^NaphClean\s+/,"").replace(/,.*$/,""))+'</b></a><span class="per">'+esc(p.size_label)+'</span></div>'+
+      '<p class="fits">'+esc(p.best_for||"")+'</p>'+
+      '<div class="price"><b>'+inr(p.price)+'</b>'+(p.mrp>p.price?'<s>'+inr(p.mrp)+'</s><span class="off">'+pct(p)+'% off</span>':'')+'</div>'+
+      (sp?'<span class="savesep">Save '+inr(sp-p.price)+' vs buying separately</span>':'')+stockNote(p)+
+      '<div class="act" data-act="'+p.id+'">'+actHTML(p)+'</div></div></article>'; }
+  function renderBundles(){ var el=$("bundleCards"), sec=$("packs"); if(!el) return; sec.hidden=!BUNDLES.length; el.innerHTML=BUNDLES.map(bundleCard).join(""); }
   function renderCards(){ $("shopSeg").innerHTML=segHTML("data-shop",shopC); $("shopSeg").hidden=COLS.length<2; $("cards").innerHTML = inCol(shopC).map(cardHTML).join(""); }
   function setShop(c){ shopC=c; ls("nc3_col",c); renderCards(); }
   function refreshActs(){ document.querySelectorAll("[data-act]").forEach(function(el){ var p=P[el.dataset.act]; if(p) el.innerHTML=actHTML(p); }); }
@@ -1058,7 +1117,7 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
     if(!L.length){ body.innerHTML='<div class="emptybag"><span class="ball" aria-hidden="true"></span><b style="color:var(--ink);font-size:1.1rem">Your bag is empty</b><span>Pick a colour and size, or let the planner choose for you.</span></div>';
       foot.innerHTML='<a class="btn block" href="#shop" data-shut>Shop naphthalene balls</a><a class="btn ghost block" href="#planner" data-shut>Use the pack planner</a>'; return; }
     var ups=null; PRODUCTS.some(function(p){ if(!bag[p.id] && !soldOut(p) && p.size_g===50){ ups=p; return true; } return false; });
-    body.innerHTML=L.map(function(l){ var p=l.p; return '<div class="line"><a href="#p-'+p.id+'" data-shut><img src="'+img(p.images[0])+'" alt="'+esc(p.title)+'"></a><div><div class="nm"><a href="#p-'+p.id+'" data-shut>'+esc(p.collection)+' '+esc(p.size_label)+'</a></div><div class="sub tnum">'+inr(p.price)+' each'+(p.mrp>p.price?' <s>'+inr(p.mrp)+'</s>':'')+'</div>'+
+    body.innerHTML=L.map(function(l){ var p=l.p; return '<div class="line"><a href="#p-'+p.id+'" data-shut><img src="'+img(p.images[0])+'" alt="'+esc(p.title)+'"></a><div><div class="nm"><a href="#p-'+p.id+'" data-shut>'+esc(nm(p))+'</a></div><div class="sub tnum">'+inr(p.price)+' each'+(p.mrp>p.price?' <s>'+inr(p.mrp)+'</s>':'')+'</div>'+
       '<div class="stepper light" style="margin-top:8px"><button type="button" data-dec="'+p.id+'" aria-label="Remove one">−</button><span class="tnum">'+l.q+'</span><button type="button" data-inc="'+p.id+'" aria-label="Add one">+</button></div></div>'+
       '<div class="rt"><span class="amt">'+inr(l.q*p.price)+'</span><button class="rm" type="button" data-rm="'+p.id+'">Remove</button></div></div>'; }).join("")+
       (ups?'<div class="upsell"><img src="'+img(ups.images[0])+'" alt=""><div><b>Add '+esc(ups.collection)+' '+esc(ups.size_label)+'</b><span>'+inr(ups.price)+', handy for drawers and suitcases</span></div><button class="btn sm navy" type="button" data-add="'+ups.id+'">Add</button></div>':"");
@@ -1080,27 +1139,38 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
     document.body.style.paddingBottom=(!m.hidden && window.innerWidth<=900)?"78px":"";
   }
   var tt;
-  function toast(p,n){ var el=$("toast"); el.innerHTML='<img src="'+img(p.images[0])+'" alt=""><div><b>Added to bag</b><small>'+(n>1?n+" × ":"")+esc(p.collection)+' '+esc(p.size_label)+'</small></div><button class="btn" type="button" data-open-bag>View bag</button>';
+  function toast(p,n){ var el=$("toast"); el.innerHTML='<img src="'+img(p.images[0])+'" alt=""><div><b>Added to bag</b><small>'+(n>1?n+" × ":"")+esc(nm(p))+'</small></div><button class="btn" type="button" data-open-bag>View bag</button>';
     el.classList.add("on"); clearTimeout(tt); tt=setTimeout(hideToast,3200); }
   function hideToast(){ $("toast").classList.remove("on"); }
   function notice(msg){ var el=$("toast"); el.innerHTML='<div><b>'+esc(msg)+'</b></div>'; el.classList.add("on"); clearTimeout(tt); tt=setTimeout(hideToast,3600); }
 
   /* ================= product page ================= */
+  function variantsHTML(p){
+    var rows=COLS.map(function(c){ return {label:c, dot:dotHTML(c), items:inCol(c)}; }).filter(function(r){ return r.items.length; });
+    if(BUNDLES.length) rows.push({label:"Value packs", dot:'<i class="dot vp"></i>', items:BUNDLES});
+    var n=rows.reduce(function(a,r){ return a+r.items.length; },0);
+    return '<div class="vars"><h3>Choose your pack<span>'+n+' options</span></h3>'+rows.map(function(r){
+      return '<div class="vrow"><p class="vlab">'+r.dot+esc(r.label)+'</p><div class="vgrid'+(r.label==="Value packs"?' vb':'')+'">'+r.items.map(function(x){ var so=soldOut(x), on=x.id===p.id, op=per100(x), sp=sepPrice(x);
+        return '<a class="vt'+(on?' on':'')+(so?' so':'')+'" href="#p-'+x.id+'" data-keep'+(on?' aria-current="true"':'')+' title="'+esc(x.title)+'">'+(x.badge&&!isB(x)?'<i class="vflag">'+esc(x.badge)+'</i>':'')+
+          '<img src="'+img(x.images[0])+'" alt="" loading="lazy"><b>'+esc(isB(x)?x.title.replace(/^NaphClean\s+/,"").replace(/,.*$/,""):x.size_label)+'</b>'+
+          (isB(x)?'<small class="vsub">'+esc((x.title.match(/,\s*(.*)$/)||[])[1]||x.size_label)+'</small>':'')+
+          '<span class="tnum">'+inr(x.price)+'</span><small>'+(so?'Sold out':(isB(x)&&sp?'Save '+inr(sp-x.price):(op?inr(op)+'/100g':'&nbsp;')))+'</small></a>'; }).join("")+'</div></div>'; }).join("")+'</div>';
+  }
   function pdp(id){
     var p=P[id], C=p.collection, v=$("pdpView"), q=1, pp=per100(p);
     var fam=PRODUCTS.filter(function(x){ return x.family===p.family; });
     var colorOpts=[]; fam.forEach(function(x){ if(x.size_label===p.size_label && colorOpts.indexOf(x)<0) colorOpts.push(x); });
     var sizeOpts=inCol(C).filter(function(x){ return x.family===p.family; });
     v.innerHTML='<div class="wrap pdp">'+
-      '<nav class="crumbs" aria-label="Breadcrumb"><a href="#shop">'+ICON.back+'All packs</a><span>/</span><span>'+esc(C)+'</span><span>/</span><span>'+esc(p.size_label)+'</span></nav>'+
+      '<nav class="crumbs" aria-label="Breadcrumb"><a href="#shop">'+ICON.back+'All packs</a><span>/</span><span>'+esc(isB(p)?"Value packs":C)+'</span><span>/</span><span>'+esc(isB(p)?nm(p):p.size_label)+'</span></nav>'+
       '<div class="pgrid">'+
         '<div class="gallery"><div class="thumbs" id="thumbs">'+p.images.map(function(s,i){ return '<button type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'" aria-label="Photo '+(i+1)+'"><img src="'+img(s)+'" alt=""></button>'; }).join("")+'</div>'+
           '<div class="mainimg" id="mainImg"><img id="mainPic" src="'+img(p.images[0])+'" alt="'+esc(p.title)+'"></div></div>'+
         '<div class="pinfo">'+
           '<div><p class="eyebrow">'+esc(C)+(p.badge?' · '+esc(p.badge):'')+'</p><h1 style="margin-top:12px">'+esc(p.title.replace(/^NaphClean\s+/,""))+'</h1>'+(p.best_for?'<p class="sub" style="margin-top:10px">'+esc(p.best_for)+'.</p>':'')+'</div>'+
-          '<div><div class="pprice"><b class="tnum">'+inr(p.price)+'</b>'+(p.mrp>p.price?'<s>'+inr(p.mrp)+'</s><span class="off">'+pct(p)+'% off</span>':'')+'</div><p class="tax tnum" style="margin-top:8px">'+(pp?inr(pp)+' per 100g. ':'')+'Inclusive of all taxes.</p>'+stockNote(p)+'</div>'+
-          (colorOpts.length>1?'<div class="opt"><h3>Colour<span>'+esc(C)+'</span></h3><div class="swatches">'+colorOpts.map(function(o){ return '<button type="button" data-go="'+o.id+'" aria-pressed="'+(o.id===p.id)+'">'+dotHTML(o.collection)+esc(o.collection)+'</button>'; }).join("")+'</div></div>':'')+
-          (sizeOpts.length>1?'<div class="opt"><h3>Size<span>'+esc(p.size_label)+'</span></h3><div class="sizes">'+sizeOpts.map(function(o){ var op=per100(o); return '<button type="button" data-go="'+o.id+'" aria-pressed="'+(o.id===p.id)+'"'+(soldOut(o)?' class="so"':'')+'>'+(o.badge?'<span class="flag">'+esc(o.badge)+'</span>':'')+'<b>'+esc(o.size_label)+'</b><span>'+inr(o.price)+'</span><small>'+(soldOut(o)?'Sold out':(op?inr(op)+'/100g':'&nbsp;'))+'</small></button>'; }).join("")+'</div></div>':'')+
+          '<div><div class="pprice"><b class="tnum">'+inr(p.price)+'</b>'+(p.mrp>p.price?'<s>'+inr(p.mrp)+'</s><span class="off">'+pct(p)+'% off</span>':'')+'</div><p class="tax tnum" style="margin-top:8px">'+(pp?inr(pp)+' per 100g. ':'')+'Inclusive of all taxes.</p>'+stockNote(p)+(isB(p)&&sepPrice(p)?'<p class="savesep" style="margin-top:10px">Save '+inr(sepPrice(p)-p.price)+' vs buying these packs separately ('+inr(sepPrice(p))+')</p>':'')+'</div>'+
+          (isB(p)&&p.includes?'<div class="inside"><h3>What is inside</h3><ul>'+p.includes.map(function(i){ var x=P[i.id]; return x?'<li><a href="#p-'+x.id+'"><img src="'+img(x.images[0])+'" alt=""></a><span><b>'+(i.qty||1)+' × '+esc(x.size_label)+'</b> '+esc(x.collection)+'</span><small>'+esc(x.best_for||"")+'</small></li>':''; }).join("")+'</ul></div>':'')+
+          variantsHTML(p)+
           (soldOut(p)?'<button class="btn block ghost" type="button" disabled>Out of stock</button><a class="btn navy block" href="https://wa.me/'+esc(S.whatsapp)+'?text='+encodeURIComponent("Hello NaphClean, please tell me when "+p.title+" is back in stock.")+'" target="_blank" rel="noopener">'+ICON.wa+'Tell me when it is back</a>':
           '<div class="buyrow"><div class="stepper light" role="group" aria-label="Quantity"><button type="button" id="qm" aria-label="One less">−</button><span id="qv" class="tnum">1</span><button type="button" id="qp" aria-label="One more">+</button></div>'+
             '<button class="btn block" type="button" id="pAdd">Add to bag · <span id="qAmt">'+inr(p.price)+'</span></button></div>'+
@@ -1109,14 +1179,14 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
           '<div class="perks"><div>'+ICON.check+'<b>Zip-lock pack</b>Stores with no mess</div><div>'+ICON.check+'<b>99.5%+ pure</b>Lab tested</div><div>'+ICON.check+'<b>7-day</b>Damage replacement</div><div>'+ICON.check+'<b>Secure</b>UPI, cards, WhatsApp</div></div>'+
           '<div class="acc pacc">'+
             (p.bullets&&p.bullets.length?'<details open><summary>About this pack</summary><div class="ans"><ul>'+p.bullets.map(function(b){ return '<li>'+esc(b)+'</li>'; }).join("")+'</ul></div></details>':'')+
-            (p.family==="naphthalene"?'<details><summary>How to use</summary><div class="ans"><ul><li>Put 4 to 6 balls in a small mesh or cloth pouch.</li><li>Hang it high in the wardrobe, not on the clothes.</li><li>Keep the door closed.</li><li>Top up every 6 to 8 weeks, or when the balls look small.</li></ul></div></details>':'')+
-            '<details><summary>Specifications</summary><div class="ans"><table class="spec"><tbody><tr><th>Brand</th><td>NaphClean</td></tr><tr><th>Variant</th><td>'+esc(C)+'</td></tr><tr><th>Net quantity</th><td>'+esc(p.size_label)+'</td></tr>'+(p.family==="naphthalene"?'<tr><th>Purity</th><td>99.5%+ naphthalene</td></tr>':'')+'<tr><th>Pack</th><td>Zip-lock pouch, reseals for mess-free storage</td></tr>'+(p.sku?'<tr><th>SKU</th><td>'+esc(p.sku)+'</td></tr>':'')+
+            (p.family==="naphthalene"||isB(p)?'<details><summary>How to use</summary><div class="ans"><ul><li>Put 4 to 6 balls in a small mesh or cloth pouch.</li><li>Hang it high in the wardrobe, not on the clothes.</li><li>Keep the door closed.</li><li>Top up every 6 to 8 weeks, or when the balls look small.</li></ul></div></details>':'')+
+            '<details><summary>Specifications</summary><div class="ans"><table class="spec"><tbody><tr><th>Brand</th><td>NaphClean</td></tr><tr><th>Variant</th><td>'+esc(C)+'</td></tr><tr><th>Net quantity</th><td>'+esc(p.size_label)+'</td></tr>'+(p.family==="naphthalene"||isB(p)?'<tr><th>Purity</th><td>99.5%+ naphthalene</td></tr>':'')+'<tr><th>Pack</th><td>Zip-lock pouch, reseals for mess-free storage</td></tr>'+(p.sku?'<tr><th>SKU</th><td>'+esc(p.sku)+'</td></tr>':'')+
               '<tr><th>Shelf life</th><td>Best before 36 months from packing</td></tr><tr><th>Manufactured by</th><td>Calcutta Chemical Products, Kolkata 700001</td></tr><tr><th>Packed and marketed by</th><td>Lumisha India Private Limited, 16 Golaghata Road, Kolkata 700048</td></tr><tr><th>Country of origin</th><td>India</td></tr><tr><th>Customer care</th><td><span data-wa-num>'+fmtPhone(S.whatsapp)+'</span>, '+esc(S.support_email||"care@naphclean.com")+'</td></tr></tbody></table></div></details>'+
             '<details><summary>Safety</summary><div class="ans"><p class="safety"><b>Keep away from children and pets.</b> Do not ingest. If swallowed, seek medical advice. Not for kitchens or anywhere near food. For enclosed storage spaces only. Store in a cool, dry place away from heat and flame.</p></div></details>'+
           '</div>'+
         '</div>'+
       '</div>'+
-      (sizeOpts.length>1?'<section style="margin-top:72px"><div class="sec-head" style="margin-bottom:10px"><p class="eyebrow">Compare</p><h2 style="font-size:clamp(1.8rem,3.4vw,2.5rem)">Every size in '+esc(C)+'</h2></div><div class="cmpwrap"><table class="cmp"><thead><tr><th></th>'+
+      (sizeOpts.length>1?'<section style="margin-top:72px"><div class="sec-head" style="margin-bottom:10px"><p class="eyebrow">Compare</p><h2 style="font-size:clamp(1.8rem,3.4vw,2.5rem)">'+(isB(p)?'Compare value packs':'Every size in '+esc(C))+'</h2></div><div class="cmpwrap"><table class="cmp"><thead><tr><th></th>'+
         sizeOpts.map(function(o){ return '<th class="'+(o.id===p.id?'hl':'')+'"><a href="#p-'+o.id+'"><img src="'+img(o.images[0])+'" alt="'+esc(o.size_label)+' pack" loading="lazy"></a><div style="margin-top:6px"><a href="#p-'+o.id+'"><b>'+esc(o.size_label)+'</b></a></div></th>'; }).join("")+'</tr></thead><tbody>'+
         '<tr><td>Price</td>'+sizeOpts.map(function(o){ return '<td class="'+(o.id===p.id?'hl':'')+'"><b>'+inr(o.price)+'</b></td>'; }).join("")+'</tr>'+
         '<tr><td>Per 100g</td>'+sizeOpts.map(function(o){ var op=per100(o); return '<td class="'+(o.id===p.id?'hl':'')+'">'+(op?inr(op):'')+'</td>'; }).join("")+'</tr>'+
@@ -1145,7 +1215,7 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
       function add(){ setQty(p.id,qty(p.id)+q); toast(p,q); }
       $("pAdd").addEventListener("click",add);
       $("pBuy").addEventListener("click",function(){ setQty(p.id,qty(p.id)+q); location.hash="checkout"; });
-      pdpBar=function(){ return '<div class="p"><b class="tnum">'+inr(q*p.price)+'</b><small>'+(q>1?q+" × ":"")+esc(C)+' '+esc(p.size_label)+'</small></div><div class="acts"><button class="btn" type="button" id="mAdd">Add to bag</button><button class="btn navy" type="button" id="mBuy">Buy now</button></div>'; };
+      pdpBar=function(){ return '<div class="p"><b class="tnum">'+inr(q*p.price)+'</b><small>'+(q>1?q+" × ":"")+esc(nm(p))+'</small></div><div class="acts"><button class="btn" type="button" id="mAdd">Add to bag</button><button class="btn navy" type="button" id="mBuy">Buy now</button></div>'; };
       $("mbar").onclick=function(e){ if(e.target.closest("#mAdd")) add(); else if(e.target.closest("#mBuy")) $("pBuy").click(); };
     }
     paintMbar();
@@ -1223,7 +1293,7 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
     var disc=coDisc&&coDisc.ok?coDisc.discount:0, ship=shipFor(t.sum-disc), total=t.sum-disc+ship;
     var btn={razorpay:ICON.lock+"Pay "+inr(total)+" securely", upi:"Place order and pay "+inr(total), whatsapp:ICON.wa+"Place order · "+inr(total)}[co.method]||"Place order";
     el.innerHTML='<h2>Order summary</h2>'+
-      '<div class="sumlines">'+L.map(function(l){ var p=l.p; return '<div class="sl"><span class="im"><img src="'+img(p.images[0])+'" alt=""><i>'+l.q+'</i></span><span class="nm">'+esc(p.collection)+' '+esc(p.size_label)+'<small class="stepper light mini-st"><button type="button" data-dec="'+p.id+'" aria-label="Remove one">−</button><span class="tnum">'+l.q+'</span><button type="button" data-inc="'+p.id+'" aria-label="Add one">+</button></small></span><b class="tnum">'+inr(l.q*p.price)+'</b></div>'; }).join("")+'</div>'+
+      '<div class="sumlines">'+L.map(function(l){ var p=l.p; return '<div class="sl"><span class="im"><img src="'+img(p.images[0])+'" alt=""><i>'+l.q+'</i></span><span class="nm">'+esc(nm(p))+'<small class="stepper light mini-st"><button type="button" data-dec="'+p.id+'" aria-label="Remove one">−</button><span class="tnum">'+l.q+'</span><button type="button" data-inc="'+p.id+'" aria-label="Add one">+</button></small></span><b class="tnum">'+inr(l.q*p.price)+'</b></div>'; }).join("")+'</div>'+
       '<form class="disc" id="discForm" novalidate><input class="inp" id="discIn" placeholder="Discount code" autocomplete="off" value="'+esc(coDisc?coDisc.code||co.code||"":"")+'" aria-label="Discount code"><button class="btn sm ghost" type="submit">Apply</button></form>'+
       (coDisc?'<p class="dmsg '+(coDisc.ok?'ok':'bad')+'">'+esc(coDisc.message)+(coDisc.ok?' <button type="button" class="rm" id="discRm">Remove</button>':'')+'</p>':'')+
       '<div class="totals"><div><span>Subtotal</span><span>'+inr(t.sum)+'</span></div>'+(t.mrp>t.sum?'<div class="sv"><span>You save on M.R.P.</span><span>'+inr(t.mrp-t.sum)+'</span></div>':'')+
@@ -1368,13 +1438,14 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
     try{ navigator.clipboard.writeText(tx).then(ok,fb); }catch(e){ fb(); } }); }); }
 
   /* ================= router ================= */
+  var keepY=false; document.addEventListener("click",function(e){ if(e.target.closest("a[data-keep]")) keepY=true; },true);
   var VIEWS=["landing","pdpView","coView","orderView"];
   function currentView(){ for(var i=0;i<VIEWS.length;i++){ if(!$(VIEWS[i]).hidden) return VIEWS[i]==="pdpView"?"pdp":VIEWS[i]; } return "landing"; }
   function show(id){ VIEWS.forEach(function(v){ $(v).hidden = v!==id; }); if(id!=="pdpView"){ pdpBar=null; $("mbar").onclick=null; $("pdpView").innerHTML=""; } play(); }
   function route(first){
     var h=decodeURIComponent((location.hash||"").slice(1));
     closeBag(); hideToast();
-    if(h.indexOf("p-")===0 && P[h.slice(2)]){ show("pdpView"); pdp(h.slice(2)); window.scrollTo(0,0); return; }
+    if(h.indexOf("p-")===0 && P[h.slice(2)]){ var y=window.scrollY, keep=keepY && currentView()==="pdp"; keepY=false; show("pdpView"); pdp(h.slice(2)); window.scrollTo(0,keep?y:0); return; }
     if(h==="checkout"||h==="cart"){ show("coView"); renderCheckout(); paintMbar(); window.scrollTo(0,0); document.title="Checkout | NaphClean"; return; }
     if(h.indexOf("order-")===0){ show("orderView"); renderOrder(h.slice(6).toUpperCase()); paintMbar(); window.scrollTo(0,0); return; }
     if(h==="track"){ show("orderView"); renderTrack(); paintMbar(); window.scrollTo(0,0); return; }
@@ -1397,7 +1468,7 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
   });
 
   /* ================= boot ================= */
-  function renderAll(){ if(COLS.indexOf(shopC)<0) shopC=COLS[0]; if(COLS.indexOf(heroC)<0) heroC=shopC; paintHero(false); renderCards(); renderSpaces(); renderPlan(); paintBag(); bindCopy(); }
+  function renderAll(){ if(COLS.indexOf(shopC)<0) shopC=COLS[0]; if(COLS.indexOf(heroC)<0) heroC=shopC; paintHero(false); renderCards(); renderBundles(); renderSpaces(); renderPlan(); paintBag(); bindCopy(); }
   function loadCat(){ return NC.loadCatalogue().then(function(c){ var before=JSON.stringify([S,PRODUCTS]); apply(c); if(JSON.stringify([S,PRODUCTS])!==before){ renderAll(); var v=currentView(); if(v==="pdp") route(false); else if(v==="coView") paintSummary(); } }).catch(function(){}); }
   renderAll(); initOrbs(); play(); route(true); loadCat();
 })();
