@@ -6,16 +6,20 @@
 <meta name="robots" content="noindex, nofollow">
 <title>NaphClean Admin</title>
 <link rel="icon" type="image/png" href="../images/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<link rel="preload" href="../fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* NaphClean admin. Single light theme by design, matching the store. */
+@font-face{font-family:"Bricolage Grotesque";src:url(../fonts/bricolage-latin.woff2) format("woff2");font-weight:200 800;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2212}
+@font-face{font-family:"Bricolage Grotesque";src:url(../fonts/bricolage-latin-ext.woff2) format("woff2");font-weight:200 800;font-display:swap;unicode-range:U+0100-02FF,U+20A0-20C0}
+@font-face{font-family:"Figtree";src:url(../fonts/figtree-latin.woff2) format("woff2");font-weight:300 900;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2212}
+@font-face{font-family:"Figtree";src:url(../fonts/figtree-latin-ext.woff2) format("woff2");font-weight:300 900;font-display:swap;unicode-range:U+0100-02FF,U+20A0-20C0}
+@font-face{font-family:"DM Mono";src:url(../fonts/dmmono-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(../fonts/dmmono-500.woff2) format("woff2");font-weight:500;font-display:swap}
 :root{
   color-scheme:light;
   --ink:#0A1F5C; --navy:#0B2A78; --blue:#1F5FD6; --mist:#EEF4FF; --mist-2:#E2EBFC; --paper:#F6F8FC; --white:#fff;
   --line:#DCE4F2; --line-2:#C9D5EA; --muted:#5A6680; --text:#16213F;
-  --green:#5FA814; --green-d:#4A870E; --lime:#C8F09E;
+  --green:#3F7D0C; --green-d:#356B0A; --lime:#C8F09E;
   --good:#1E7A3C; --good-bg:#E4F5E9; --warn:#8A5300; --warn-bg:#FFF1DB; --bad:#B42339; --bad-bg:#FDE8EC; --info:#1F4FB8; --info-bg:#E6EEFF; --neutral:#4A5570; --neutral-bg:#EEF1F6;
   --r:14px; --r-lg:20px; --sh:0 1px 2px rgba(10,31,92,.06),0 6px 20px rgba(10,31,92,.06); --sh-2:0 18px 50px rgba(10,31,92,.18);
   --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif; --body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; --mono:"DM Mono",ui-monospace,Menlo,monospace;
