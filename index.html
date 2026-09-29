@@ -677,7 +677,7 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
       </div>
       <div class="cards" id="cards"></div>
       <div class="shopnote">
-        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>Free delivery on every order</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><b id="shipNote" style="font-weight:inherit">Free delivery on every order</b></span>
         <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v4h4"/></svg>Damaged pack? Free replacement within 7 days</span>
         <span>Prices include GST. Also on&nbsp;<a href="https://www.amazon.in/s?k=NaphClean+naphthalene+balls" target="_blank" rel="noopener">Amazon.in</a></span>
       </div>
@@ -939,6 +939,7 @@ select.inp{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns=
     BUNDLES = PRODUCTS.filter(function(p){ return p.family==="bundle"; });
     Object.keys(bag).forEach(function(k){ if(!P[k]) delete bag[k]; });
     var a=$("annA"); if(a && S.announcement) a.textContent=S.announcement;
+    var sn=$("shipNote"); if(sn) sn.textContent = S.shipping_fee>0 ? (S.free_shipping_over ? "Free delivery on orders over "+inr(S.free_shipping_over)+", otherwise "+inr(S.shipping_fee) : "Delivery "+inr(S.shipping_fee)+" per order") : "Free delivery on every order";
     document.querySelectorAll("[data-wa-num]").forEach(function(el){ el.textContent=fmtPhone(S.whatsapp); });
     document.querySelectorAll("[data-wa-href]").forEach(function(el){ el.href="https://wa.me/"+S.whatsapp+"?text="+encodeURIComponent("Hello NaphClean"); });
   }
